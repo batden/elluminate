@@ -54,7 +54,7 @@ DISTRO=$(lsb_release -sc)
 DDTL=1.2.2
 
 # Build dependencies, recommended and script-related packages.
-DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay ddcutil doxygen \
+DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
 libasound2-dev libavif-dev libavahi-client-dev libblkid-dev libbluetooth-dev \

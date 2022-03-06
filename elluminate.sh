@@ -51,6 +51,7 @@ SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
+DDTL=1.2.2
 
 # Build dependencies, recommended and script-related packages.
 DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay ddcutil doxygen \
@@ -607,6 +608,16 @@ set_p_src() {
 
 get_preq() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+
+cd $DLDIR
+  wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+  tar xzvf v$DDTL.tar.gz -C $ESRC
+  cd $ESRC/ddcutil-$DDTL
+  $AUTGN
+  make
+  sudo make install
+  rm -rf $DLDIR/v$DDTL.tar.gz
+  echo
 
   cd $ESRC
   git clone https://github.com/Samsung/rlottie.git

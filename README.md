@@ -4,7 +4,7 @@
 
 Please take a look at the comments in the script (lines beginning with '#') before running it.
 
-*See also [elluminate.sh](https://github.com/batden/elluminate)*
+*See also [extinguish.sh](https://github.com/batden/extinguish)*
 
 ## Get started
 

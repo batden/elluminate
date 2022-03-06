@@ -1,14 +1,14 @@
-# esteem
+# elluminate
 
 **A neat Bash script to build and install Enlightenment 25 on Ubuntu :kiss:**
 
 Please take a look at the comments in the script (lines beginning with '#') before running it.
 
-*See also [meetse.sh](https://github.com/batden/meetse)*
+*See also [elluminate.sh](https://github.com/batden/elluminate)*
 
 ## Get started
 
-Before you start using esteem, you'll need to install Git on your system.
+Before you start using elluminate, you'll need to install Git on your system.
 
 Open a terminal window and type in the following:
 
@@ -19,37 +19,37 @@ sudo apt install git
 Next, clone this repository:
 
 ```bash
-git clone https://github.com/batden/esteem.git .esteem
+git clone https://github.com/batden/elluminate.git .elluminate
 ```
 
-This creates a new hidden folder named **.esteem** in your home directory.
+This creates a new hidden folder named **.elluminate** in your home directory.
 
-Please copy the file esteem.sh from this new folder to the download folder.
+Please copy the file elluminate.sh from this new folder to the download folder.
 
 Now change to the download folder and make the script executable:
 
 ```bash
-chmod +x esteem.sh
+chmod +x elluminate.sh
 ```
 
 Then issue the following command:
 
 ```bash
-./esteem.sh
+./elluminate.sh
 ```
 
 On subsequent runs, open a terminal and simply type:
 
 ```bash
-esteem.sh
+elluminate.sh
 ```
 
-(Use tab completion: Just type *est* and press Tab)
+(Use tab completion: Just type *ell* and press Tab)
 
 ### Update local repository
 
 Be sure to check for updates at least once a week.
-In order to do this, change to ~/.esteem/ and run:
+In order to do this, change to ~/.elluminate/ and run:
 
 ```bash
 git pull

@@ -608,8 +608,7 @@ set_p_src() {
 
 get_preq() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
-
-cd $DLDIR
+  cd $DLDIR
   wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
   tar xzvf v$DDTL.tar.gz -C $ESRC
   cd $ESRC/ddcutil-$DDTL

@@ -1,6 +1,6 @@
 # elluminate
 
-**A neat Bash script to build and install Enlightenment 25 on Ubuntu :kiss:**
+**A neat Bash script to build and install Enlightenment 25 on Ubuntu Jammy Jellyfish :kiss:**
 
 Please take a look at the comments in the script (lines beginning with '#') before running it.
 

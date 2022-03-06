@@ -49,6 +49,7 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
+AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
 DDTL=1.2.2

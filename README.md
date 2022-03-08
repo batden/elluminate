@@ -1,4 +1,4 @@
-# elluminate
+# elluminate (WIP)
 
 **A neat Bash script to build and install Enlightenment 25 on Ubuntu Jammy Jellyfish :tropical_fish:**
 

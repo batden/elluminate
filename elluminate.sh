@@ -3,7 +3,7 @@
 # This Bash script allows you to easily and safely install Enlightenment, along with
 # other EFL-based applications, on your Ubuntu desktop system.
 
-# ELLUMINATE.SH takes care of downloading, configuring and building everything
+# ELLUMINATE takes care of downloading, configuring and building everything
 # you need to enjoy the very latest version of Enlightenment.
 
 # Tip: Set your terminal to unlimited scrolling so that you can scroll up
@@ -16,7 +16,9 @@
 # conflict with programs compiled from git repositories——do not mix source code
 # with prebuilt binaries! So, please remove thoroughly any previous binary
 # installation of EFL/Enlightenment/E-apps (track down and delete any
-# leftover files), before running ELLUMINATE.SH.
+# leftover files), before running ELLUMINATE.
+
+# Also note that ELLUMINATE is not compatible with ESTEEM (previous install script).
 
 # Once installed, you can update your shiny new Enlightenment desktop whenever you want to.
 # However, because software gains entropy over time (performance regression, unexpected
@@ -24,7 +26,7 @@
 # highly recommend doing a complete uninstall and reinstall of your Enlightenment
 # desktop every three weeks or so for an optimal user experience.
 
-# ELLUMINATE.SH is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
+# ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
 # feel free to use this script as you see fit.
 
 # ---------------

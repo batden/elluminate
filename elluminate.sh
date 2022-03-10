@@ -221,7 +221,7 @@ e_bkp() {
   sleep 2
 }
 
-# Used by EXTINGUISH.SH.
+# Used by EXTINGUISH.
 m_bkp() {
   mkdir -p $DOCDIR/mbackups
 

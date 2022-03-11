@@ -222,6 +222,8 @@ e_bkp() {
 }
 
 # Used by EXTINGUISH.
+# See https://github.com/batden/extinguish (companion script).
+#
 m_bkp() {
   mkdir -p $DOCDIR/mbackups
 

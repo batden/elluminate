@@ -79,7 +79,7 @@ xdotool xserver-xephyr xwayland"
 # Latest development code.
 CLONEFL="git clone https://git.enlightenment.org/core/efl.git"
 CLONETY="git clone https://git.enlightenment.org/apps/terminology.git"
-CLONE25="git clone https://git.enlightenment.org/core/enlightenment.git"
+CLONE26="git clone https://git.enlightenment.org/core/enlightenment.git"
 CLONEPH="git clone https://git.enlightenment.org/apps/ephoto.git"
 CLONERG="git clone https://git.enlightenment.org/apps/rage.git"
 CLONEVI="git clone https://git.enlightenment.org/apps/evisum.git"
@@ -231,9 +231,9 @@ m_bkp() {
   cp -aR $ESRC/rlottie/build $DOCDIR/mbackups/rlottie
 
   for I in $PROG_MN; do
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     mkdir -p $DOCDIR/mbackups/$I
-    cp -aR $ESRC/e25/$I/build $DOCDIR/mbackups/$I
+    cp -aR $ESRC/e26/$I/build $DOCDIR/mbackups/$I
   done
 }
 
@@ -299,7 +299,7 @@ build_plain() {
   sudo ldconfig
 
   for I in $PROG_MN; do
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
 
     case $I in
@@ -353,7 +353,7 @@ rebuild_plain() {
   for I in $PROG_MN; do
     elap_start
 
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
@@ -414,7 +414,7 @@ rebuild_optim() {
   for I in $PROG_MN; do
     elap_start
 
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
@@ -486,7 +486,7 @@ rebuild_wld() {
   for I in $PROG_MN; do
     elap_start
 
-    cd $ESRC/e25/$I
+    cd $ESRC/e26/$I
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
@@ -648,15 +648,15 @@ install_now() {
   get_preq
 
   cd $HOME
-  mkdir -p $ESRC/e25
-  cd $ESRC/e25
+  mkdir -p $ESRC/e26
+  cd $ESRC/e26
 
   printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
   $CLONEFL
   echo
   $CLONETY
   echo
-  $CLONE25
+  $CLONE26
   echo
   $CLONEPH
   echo

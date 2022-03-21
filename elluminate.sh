@@ -89,7 +89,7 @@ CLONEVE="git clone https://git.enlightenment.org/tools/enventor.git"
 CLONEDI="git clone https://git.enlightenment.org/apps/edi.git"
 CLONENT="git clone https://github.com/vtorri/entice"
 
-# 'MN' stands for Meson——the Meson build system.
+# “MN” stands for Meson——the Meson build system.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
 # Uncomment the following to force messages to display in English
@@ -208,8 +208,8 @@ elap_stop() {
 #
 # To restore a backup, use the same command that was executed but with
 # the source and destination reversed:
-# e.g. cp -aR /home/riley/Documents/ebackups/E_1636017137/.e* /home/riley/
-# (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into)
+# e.g. cp -aR /home/riley/Documents/ebackups/E_1647849202/.e* /home/riley/
+# (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {
   TSTAMP=$(date +%s)
@@ -540,7 +540,7 @@ do_tests() {
   printf "\n\n$BLD%s $OFF%s\n" "System check..."
 
   if systemd-detect-virt -q --container; then
-    printf "\n$BDR%s %s\n" "ELLUMINATE.SH IS NOT INTENDED FOR USE INSIDE CONTAINERS."
+    printf "\n$BDR%s %s\n" "ELLUMINATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
     printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
@@ -696,8 +696,8 @@ install_now() {
   beep_ok
 
   printf "\n\n$BDY%s %s" "Initial setup wizard tips:"
-  printf "\n$BDY%s %s" "'Update checking' —— you can disable this feature because it serves no useful purpose."
-  printf "\n$BDY%s $OFF%s\n\n\n" "'Network management support' —— Connman is not needed (ignore the warning message)."
+  printf "\n$BDY%s %s" "“Update checking” —— you can disable this feature because it serves no useful purpose."
+  printf "\n$BDY%s $OFF%s\n\n\n" "“Network management support” —— Connman is not needed (ignore the warning message)."
   # Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Desktop, you can safely delete them if it bothers you.
 

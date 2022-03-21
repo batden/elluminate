@@ -679,7 +679,7 @@ install_now() {
   ls_dir
   build_plain
 
-  printf "\n%s\n\n" "Almost done..."
+  printf "\n%s\n\n" "Finalizing..."
 
   mkdir -p $HOME/.elementary/themes
 

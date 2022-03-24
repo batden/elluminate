@@ -6,7 +6,7 @@
 # ELLUMINATE takes care of downloading, configuring and building everything
 # you need to enjoy the very latest version of Enlightenment.
 
-# Tip: Set your terminal to unlimited scrolling so that you can scroll up
+# Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.
 # See README.md for instructions on how to use this script.
 # See also the repository's wiki for post-installation hints.

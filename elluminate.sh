@@ -783,7 +783,7 @@ wld_go() {
     echo
     # Wait a few seconds for the Wayland session to start.
     # When you're done, type exit
-    # Pressing Ctrl+Alt+F1 will bring you back to the login screen.
+    # Pressing Ctrl+Alt+F1 (or Ctrl+Alt+F7) will bring you back to the login screen.
   else
     echo
     cowsay -f www "That's it. Now type: enlightenment_start"

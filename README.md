@@ -6,13 +6,6 @@ Please take a look at the comments in the script before running it.
 
 *See also [extinguish.sh](https://github.com/batden/extinguish) (companion script).*
 
- Source code from Git repositories:
-
-> Our source code is developed collaboratively in a pretty typical open source manner. Our master branches in git are where all new development goes into  as it happens, thus they are technically “unstable”. We try and keep master working and usable daily, as developers generally are living off master themselves, so bugs affect developers directly and immediately. Sometimes issues happen,
-> but they tend to get fixed rapidly.
->
-> *— Get Source*, enlightenment.org.
-
 ## Get started
 
 Before you start using elluminate, you'll need to install Git on your system.

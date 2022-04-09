@@ -44,7 +44,7 @@ On subsequent runs, open a terminal and simply type:
 elluminate.sh
 ```
 
-(Use tab completion: Just type *ell* and press Tab)
+(Use tab completion: Just type *ell* and press Tab.)
 
 ## Update local repository
 

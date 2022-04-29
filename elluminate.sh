@@ -614,6 +614,7 @@ get_preq() {
     wget -c http://http.us.debian.org/debian/pool/main/j/jpeg-xl/libjxl-dev_0.7.0~git20220325.7594374+ds-3_amd64.deb
     sudo dpkg -i libjxl*
     rm -rf libjxl*
+    echo
   fi
 
   cd $ESRC

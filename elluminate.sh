@@ -61,9 +61,9 @@ DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
 libasound2-dev libavif-dev libavahi-client-dev libblkid-dev libbluetooth-dev \
-libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig1-dev libdrm-dev \
-libfreetype6-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
-libgif-dev libgraphviz-dev libgstreamer1.0-dev \
+libbrotli-dev libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig1-dev \
+libdrm-dev libfreetype6-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
+libhwy-dev libgif-dev libgraphviz-dev libgstreamer1.0-dev \
 libgstreamer-plugins-base1.0-dev libharfbuzz-dev libheif-dev \
 libi2c-dev libibus-1.0-dev libinput-dev libinput-tools libjpeg-dev \
 libkmod-dev liblua5.2-dev liblz4-dev libmenu-cache-dev libmount-dev \
@@ -606,6 +606,15 @@ get_preq() {
   sudo make install
   rm -rf $DLDIR/v$DDTL.tar.gz
   echo
+
+  cd $DLDIR
+  apt-cache search libjxl &>/dev/null
+  if [ $? -ne 0 ]; then
+    wget -c http://http.us.debian.org/debian/pool/main/j/jpeg-xl/libjxl0.7_0.7.0~git20220325.7594374+ds-3_amd64.deb
+    wget -c http://http.us.debian.org/debian/pool/main/j/jpeg-xl/libjxl-dev_0.7.0~git20220325.7594374+ds-3_amd64.deb
+    sudo dpkg -i libjxl*
+    rm -rf libjxl*
+  fi
 
   cd $ESRC
   git clone https://github.com/Samsung/rlottie.git

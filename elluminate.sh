@@ -612,7 +612,8 @@ get_preq() {
   if [ $? -ne 0 ]; then
     wget -c http://http.us.debian.org/debian/pool/main/j/jpeg-xl/libjxl0.7_0.7.0~git20220325.7594374+ds-3_amd64.deb
     wget -c http://http.us.debian.org/debian/pool/main/j/jpeg-xl/libjxl-dev_0.7.0~git20220325.7594374+ds-3_amd64.deb
-    sudo dpkg -i libjxl*
+    sudo dpkg -i libjxl0.7_0.7.0~git20220325.7594374+ds-3_amd64.deb
+    sudo dpkg -i libjxl-dev_0.7.0~git20220325.7594374+ds-3_amd64.deb
     rm -rf libjxl*
     echo
   fi

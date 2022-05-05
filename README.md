@@ -1,6 +1,6 @@
 # elluminate
 
-**NEW Bash script to build and install Enlightenment on Ubuntu Jammy Jellyfish :tropical_fish:**
+**A neat Bash script to build and install Enlightenment on Ubuntu Jammy Jellyfish :tropical_fish:**
 
 Please take a look at the comments in the script before running it.
 

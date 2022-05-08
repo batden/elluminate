@@ -18,8 +18,6 @@
 # installation of EFL/Enlightenment/E-apps (track down and delete any
 # leftover files), before running ELLUMINATE.
 
-# Also note that ELLUMINATE is not compatible with ESTEEM (previous installation script).
-
 # Once installed, you can update your shiny new Enlightenment desktop whenever you want to.
 # However, because software gains entropy over time (performance regression, unexpected
 # behavior... and this is especially true when dealing directly with source code),

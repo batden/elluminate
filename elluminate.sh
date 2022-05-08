@@ -77,17 +77,17 @@ texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
 xdotool xserver-xephyr xwayland"
 
 # Latest development code.
-CLONEFL="git clone https://git.enlightenment.org/core/efl.git"
-CLONETY="git clone https://git.enlightenment.org/apps/terminology.git"
-CLONE26="git clone https://git.enlightenment.org/core/enlightenment.git"
-CLONEPH="git clone https://git.enlightenment.org/apps/ephoto.git"
-CLONERG="git clone https://git.enlightenment.org/apps/rage.git"
-CLONEVI="git clone https://git.enlightenment.org/apps/evisum.git"
-CLONEXP="git clone https://git.enlightenment.org/apps/express.git"
-CLONECR="git clone https://git.enlightenment.org/apps/ecrire.git"
-CLONEVE="git clone https://git.enlightenment.org/tools/enventor.git"
-CLONEDI="git clone https://git.enlightenment.org/apps/edi.git"
-CLONENT="git clone https://github.com/vtorri/entice"
+CLONEFL="git clone http://git.enlightenment.org/enlightenment/efl.git"
+CLONETY="git clone http://git.enlightenment.org/enlightenment/terminology.git"
+CLONE26="git clone http://git.enlightenment.org/enlightenment/enlightenment.git"
+CLONEPH="git clone http://git.enlightenment.org/enlightenment/ephoto.git"
+CLONERG="git clone http://git.enlightenment.org/enlightenment/rage.git"
+CLONEVI="git clone http://git.enlightenment.org/enlightenment/evisum.git"
+CLONEXP="git clone http://git.enlightenment.org/enlightenment/express.git"
+CLONECR="git clone http://git.enlightenment.org/enlightenment/ecrire.git"
+CLONEVE="git clone http://git.enlightenment.org/enlightenment/enventor.git"
+CLONEDI="git clone http://git.enlightenment.org/enlightenment/edi.git"
+CLONENT="git clone http://github.com/vtorri/entice"
 
 # “MN” stands for Meson——the Meson build system.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"

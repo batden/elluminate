@@ -539,7 +539,7 @@ do_tests() {
     exit 1
   fi
 
-  git ls-remote https://git.enlightenment.org/core/efl.git HEAD &>/dev/null
+  git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null
   if [ $? -ne 0 ]; then
     printf "\n$BDR%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
     printf "$BDR%s $OFF%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."

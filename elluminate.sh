@@ -87,7 +87,7 @@ CLONEXP="git clone http://git.enlightenment.org/enlightenment/express.git"
 CLONECR="git clone http://git.enlightenment.org/enlightenment/ecrire.git"
 CLONEVE="git clone http://git.enlightenment.org/enlightenment/enventor.git"
 CLONEDI="git clone http://git.enlightenment.org/enlightenment/edi.git"
-CLONENT="git clone http://github.com/vtorri/entice"
+CLONENT="git clone https://github.com/vtorri/entice"
 
 # “MN” stands for Meson——the Meson build system.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"

@@ -126,10 +126,10 @@ beep_ok() {
 menu_sel() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $BDG%s $OFF%s\n\n" "INSTALL Enlightenment now"
-    printf "2  $LWG%s $OFF%s\n\n" "Update and REBUILD Enlightenment"
-    printf "3  $LWP%s $OFF%s\n\n" "Update and rebuild Enlightenment in RELEASE mode"
-    printf "4  $LWY%s $OFF%s\n\n" "Update and rebuild Enlightenment with WAYLAND support"
+    printf "1  $BDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
+    printf "2  $LWG%s $OFF%s\n\n" "Update and REBUILD the ecosystem"
+    printf "3  $LWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
+    printf "4  $LWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
     sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
@@ -139,10 +139,10 @@ menu_sel() {
 sel_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $LWG%s $OFF%s\n\n" "INSTALL Enlightenment now"
-    printf "2  $BDG%s $OFF%s\n\n" "Update and REBUILD Enlightenment"
-    printf "3  $BDP%s $OFF%s\n\n" "Update and rebuild Enlightenment in RELEASE mode"
-    printf "4  $BDY%s $OFF%s\n\n" "Update and rebuild Enlightenment with WAYLAND support"
+    printf "1  $LWG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
+    printf "2  $BDG%s $OFF%s\n\n" "Update and REBUILD the ecosystem"
+    printf "3  $BDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
+    printf "4  $BDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
     sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT

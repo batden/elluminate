@@ -408,8 +408,8 @@ rebuild_optim() {
     efl)
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
-        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Dbuild-tests=false \
-        -Dbuild-examples=false -Devas-loaders-disabler= -Dwl=false -Ddrm=false \
+        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler= \
+        -Dbuild-tests=false -Dbuild-examples=false -Dwl=false -Ddrm=false \
         -Dbuildtype=release \
         build
       ninja -C build || mng_err
@@ -481,9 +481,9 @@ rebuild_wld() {
     efl)
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
-        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Ddrm=true \
-        -Dwl=true -Dopengl=es-egl -Dbuild-tests=false -Dbuild-examples=false \
-        -Devas-loaders-disabler= -Dbuildtype=release \
+        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler= \
+        -Ddrm=true -Dwl=true -Dopengl=es-egl -Dbuild-tests=false -Dbuild-examples=false \
+        -Dbuildtype=release \
         build
       ninja -C build || mng_err
       ;;

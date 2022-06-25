@@ -409,13 +409,14 @@ rebuild_optim() {
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
         -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Dbuild-tests=false \
-        -Dbuild-examples=false -Devas-loaders-disabler= -Dbuildtype=release \
+        -Dbuild-examples=false -Devas-loaders-disabler= -Dwl=false -Ddrm=false \
+        -Dbuildtype=release \
         build
       ninja -C build || mng_err
       ;;
     enlightenment)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dbuildtype=release \
+      meson --reconfigure -Dwl=false -Dbuildtype=release \
         build
       ninja -C build || mng_err
       ;;

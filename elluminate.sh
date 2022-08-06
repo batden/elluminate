@@ -60,7 +60,7 @@ DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
 libasound2-dev libavif-dev libavahi-client-dev libblkid-dev libbluetooth-dev \
-libbrotli-dev libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig1-dev \
+libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig1-dev \
 libdrm-dev libfreetype6-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
 libgif-dev libgraphviz-dev libgstreamer1.0-dev \
 libgstreamer-plugins-base1.0-dev libharfbuzz-dev libheif-dev \

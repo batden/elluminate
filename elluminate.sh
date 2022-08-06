@@ -70,12 +70,12 @@ libopenjp2-7-dev libosmesa6-dev libpam0g-dev libpoppler-cpp-dev \
 libpoppler-dev libpoppler-private-dev libpulse-dev libraw-dev \
 librsvg2-dev libsdl1.2-dev libscim-dev libsndfile1-dev libspectre-dev \
 libssl-dev libsystemd-dev libtiff5-dev libtool libudev-dev libudisks2-dev \
-libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev libxcb-keysyms1-dev \
-libxcursor-dev libxinerama-dev libxkbcommon-x11-dev libxkbfile-dev \
-lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev lolcat \
-manpages-dev manpages-posix-dev meson mlocate nasm ninja-build \
-papirus-icon-theme texlive-base unity-greeter-badges valgrind wayland-protocols \
-wmctrl xdotool xserver-xephyr xwayland"
+libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
+libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
+libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
+lolcat manpages-dev manpages-posix-dev meson mlocate nasm ninja-build \
+papirus-icon-theme texlive-base unity-greeter-badges valgrind \
+wayland-protocols wmctrl xdotool xserver-xephyr xwayland"
 
 # Latest development code.
 CLONEFL="git clone http://git.enlightenment.org/enlightenment/efl.git"

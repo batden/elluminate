@@ -88,7 +88,7 @@ CLONEXP="git clone http://git.enlightenment.org/enlightenment/express.git"
 CLONECR="git clone http://git.enlightenment.org/enlightenment/ecrire.git"
 CLONEVE="git clone http://git.enlightenment.org/enlightenment/enventor.git"
 CLONEDI="git clone http://git.enlightenment.org/enlightenment/edi.git"
-CLONENT="git clone https://github.com/vtorri/entice"
+CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 
 # “MN” stands for Meson——the Meson build system.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
@@ -660,7 +660,6 @@ install_now() {
   echo
   $CLONEDI
   echo
-  printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from vtorri's github repo..."
   $CLONENT
   echo
 

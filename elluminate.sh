@@ -289,8 +289,7 @@ build_plain() {
 
     case $I in
     efl)
-      meson -Dbuild-examples=false -Dbuild-tests=false \
-        -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
+      meson -Dbuild-tests=false -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
         -Dbindings= \
         build
       ninja -C build || mng_err
@@ -348,8 +347,7 @@ rebuild_plain() {
 
     case $I in
     efl)
-      meson -Dbuild-examples=false -Dbuild-tests=false \
-        -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
+      meson -Dbuild-tests=false -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
         -Dbindings= \
         build
       ninja -C build || mng_err
@@ -411,7 +409,7 @@ rebuild_optim() {
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
         -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
-        -Dbuild-tests=false -Dbuild-examples=false -Dwl=false -Ddrm=false \
+        -Dbuild-tests=false -Dwl=false -Ddrm=false \
         -Dbuildtype=release \
         build
       ninja -C build || mng_err
@@ -484,7 +482,7 @@ rebuild_wld() {
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
         -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
-        -Ddrm=true -Dwl=true -Dopengl=es-egl -Dbuild-tests=false -Dbuild-examples=false \
+        -Ddrm=true -Dwl=true -Dopengl=es-egl -Dbuild-tests=false \
         -Dbuildtype=release \
         build
       ninja -C build || mng_err

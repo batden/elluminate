@@ -786,34 +786,30 @@ wld_go() {
   fi
 }
 
-main() {
-  trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
-  INPUT=0
-  printf "\n$BLD%s $OFF%s\n" "Please enter the number of your choice:"
+INPUT=0
+printf "\n$BLD%s $OFF%s\n" "Please enter the number of your choice:"
 
-  if [ ! -x /usr/local/bin/enlightenment_start ]; then
-    menu_sel
-  else
-    sel_menu
-  fi
+if [ ! -x /usr/local/bin/enlightenment_start ]; then
+  menu_sel
+else
+  sel_menu
+fi
 
-  if [ $INPUT == 1 ]; then
-    do_tests
-    install_now
-  elif [ $INPUT == 2 ]; then
-    do_tests
-    update_go
-  elif [ $INPUT == 3 ]; then
-    do_tests
-    release_go
-  elif [ $INPUT == 4 ]; then
-    do_tests
-    wld_go
-  else
-    beep_exit
-    exit 1
-  fi
-}
-
-main "$@"
+if [ $INPUT == 1 ]; then
+  do_tests
+  install_now
+elif [ $INPUT == 2 ]; then
+  do_tests
+  update_go
+elif [ $INPUT == 3 ]; then
+  do_tests
+  release_go
+elif [ $INPUT == 4 ]; then
+  do_tests
+  wld_go
+else
+  beep_exit
+  exit 1
+fi

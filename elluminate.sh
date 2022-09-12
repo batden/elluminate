@@ -56,7 +56,7 @@ DISTRO=$(lsb_release -sc)
 DDTL=1.3.0
 
 # Build dependencies, recommended and script-related packages.
-DEPS="arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
+DEPS="acpid arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
 libasound2-dev libavif-dev libavahi-client-dev libblkid-dev libbluetooth-dev \
@@ -532,7 +532,7 @@ do_tests() {
     exit 1
   fi
 
-  if [ $DISTRO == jammy ]; then
+  if [ $DISTRO == jammy ] || [ $DISTRO == kinetic ]; then
     printf "\n$BDG%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
     sleep 1
   else

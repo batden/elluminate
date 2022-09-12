@@ -786,6 +786,7 @@ wld_go() {
   fi
 }
 
+# Lo and behold!
 lo() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 

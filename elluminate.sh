@@ -116,7 +116,7 @@ beep_exit() {
 }
 
 beep_ok() {
-  aplay /usr/share/sounds/sound-icons/trumpet-12.wav
+  aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav
 }
 
 # Hints.

@@ -800,7 +800,7 @@ lo() {
   fi
 }
 
-hld() {
+bhd() {
   if [ $INPUT == 1 ]; then
     do_tests
     install_now
@@ -820,4 +820,4 @@ hld() {
 }
 
 lo
-hld
+bhd

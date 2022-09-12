@@ -798,7 +798,9 @@ lo() {
   else
     sel_menu
   fi
+}
 
+hld() {
   if [ $INPUT == 1 ]; then
     do_tests
     install_now
@@ -818,3 +820,4 @@ lo() {
 }
 
 lo
+hld

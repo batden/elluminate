@@ -786,7 +786,7 @@ wld_go() {
   fi
 }
 
-presto() {
+fizzy() {
   trap '{ printf "\n$BDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   INPUT=0
@@ -816,4 +816,4 @@ presto() {
   fi
 }
 
-presto
+fizzy "$@"

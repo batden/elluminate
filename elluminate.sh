@@ -74,7 +74,7 @@ libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
 libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
 libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
 lolcat manpages-dev manpages-posix-dev meson mlocate nasm ninja-build \
-papirus-icon-theme texlive-base unity-greeter-badges valgrind \
+papirus-icon-theme sound-icons texlive-base unity-greeter-badges valgrind \
 wayland-protocols wmctrl xdotool xserver-xephyr xwayland"
 
 # Latest development code.
@@ -104,19 +104,19 @@ PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire envento
 
 # Audible feedback (error, sudo prompt...). Make sure the sound is turned on and loud enough.
 beep_attention() {
-  paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga
+  aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav
 }
 
 beep_question() {
-  paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav
 }
 
 beep_exit() {
-  paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
 }
 
 beep_ok() {
-  paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+  aplay /usr/share/sounds/sound-icons/trumpet-12.wav
 }
 
 # Hints.

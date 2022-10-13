@@ -276,6 +276,13 @@ rstrt_e() {
   fi
 }
 
+# JPEG XL currently has to be compiled from source. If you need jxl
+# support in efl, follow the instructions below:
+# https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
+#
+# Then change the option “-Devas-loaders-disabler=jxl” to
+# “-Devas-loaders-disabler=” before running the script.
+#
 build_plain() {
   chk_path
 

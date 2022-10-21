@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This Bash script allows you to easily and safely install Enlightenment, along with
-# other EFL-based applications, on your Ubuntu desktop system.
+# other EFL-based applications, on your K/X/Ubuntu desktop system.
 
 # ELLUMINATE takes care of downloading, configuring and building everything
 # you need to enjoy the very latest version of Enlightenment.

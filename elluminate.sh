@@ -209,7 +209,7 @@ elap_stop() {
 #
 # To restore a backup, use the same command that was executed but with
 # the source and destination reversed:
-# e.g. cp -aR /home/riley/Documents/ebackups/E_1647849202/.e* /home/riley/
+# e.g. cp -aR /home/riley/Documents/ebackups/E_1666428541/.e* /home/riley/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {

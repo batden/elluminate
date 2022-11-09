@@ -105,19 +105,19 @@ PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire envento
 
 # Audible feedback (error, sudo prompt...) on most systems.
 beep_attention() {
-  aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav &>/dev/null
+  aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav 2>/dev/null
 }
 
 beep_question() {
-  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav &>/dev/null
+  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav 2>/dev/null
 }
 
 beep_exit() {
-  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav &>/dev/null
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav 2>/dev/null
 }
 
 beep_ok() {
-  aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav &>/dev/null
+  aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav 2>/dev/null
 }
 
 # Hints.

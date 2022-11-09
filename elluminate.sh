@@ -103,21 +103,21 @@ PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire envento
 # FUNCTIONS
 # ---------
 
-# Audible feedback (error, sudo prompt...). Make sure the sound is turned on and loud enough.
+# Audible feedback (error, sudo prompt...) on most systems.
 beep_attention() {
-  aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav
+  aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav &>/dev/null
 }
 
 beep_question() {
-  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav
+  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav &>/dev/null
 }
 
 beep_exit() {
-  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav
+  aplay --quiet /usr/share/sounds/sound-icons/pipe.wav &>/dev/null
 }
 
 beep_ok() {
-  aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav
+  aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav &>/dev/null
 }
 
 # Hints.

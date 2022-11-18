@@ -413,6 +413,10 @@ rebuild_optim() {
     $REBASEF && git pull
 
     case $I in
+    # If you experience screen stuttering/glitching with Nvidia drivers, try changing
+    # the option “-Ddrm=true” to “-Ddrm=false” before running the script.
+    # See also https://www.enlightenment.org/docs/distros/nvidia-start.md
+    #
     efl)
       sudo chown $USER build/.ninja*
       meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \

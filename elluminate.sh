@@ -25,8 +25,8 @@
 # we highly recommend doing a complete uninstallation and reinstallation of your
 # Enlightenment desktop every three weeks or so for an optimal user experience.
 
-# ELLUMINATE is written and maintained by batden@sfr.fr, feel free to
-# use this script as you see fit.
+# ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
+# feel free to use this script as you see fit.
 
 # Please consider starring our repositories to show your support.
 # Cheers!

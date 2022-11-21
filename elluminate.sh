@@ -605,6 +605,7 @@ set_p_src() {
   sleep 2
 }
 
+# Prerequisites.
 get_preq() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   cd $DLDIR

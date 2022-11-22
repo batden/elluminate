@@ -4,7 +4,8 @@
 # other EFL-based applications, on your K/X/Ubuntu desktop system.
 
 # ELLUMINATE takes care of downloading, configuring and building everything you
-# need to enjoy the latest version of the Enlightenment environment.
+# need to enjoy the latest version of the Enlightenment environment
+# (.deb packages tend to lag far behind).
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.

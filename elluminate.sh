@@ -586,7 +586,7 @@ do_bsh_alias() {
     export LDFLAGS=-L/usr/local/lib
     export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 
-    # This script adds the ~/.local/bin directory to your PATH environment variable if required.
+    # This script adds the ~/.local/bin directory to your PATH environment variable if required at install time.
 EOF
 
     source $HOME/.bash_aliases

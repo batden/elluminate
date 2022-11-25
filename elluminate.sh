@@ -190,7 +190,7 @@ mng_err() {
 }
 
 chk_path() {
-  if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]; then
+  if ! [[ ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
     echo -e '    export PATH=$HOME/.local/bin:$PATH' >>$HOME/.bash_aliases
     source $HOME/.bash_aliases
   fi

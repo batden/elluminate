@@ -3,6 +3,8 @@
 # This Bash script allows you to easily and safely install Enlightenment, along with
 # other EFL-based applications, on your K/X/Ubuntu desktop system.
 
+# Supported Ubuntu versions: 22.04 LTS, 22.10.
+
 # ELLUMINATE takes care of downloading, configuring and building everything you
 # need to enjoy the latest version of the Enlightenment environment
 # (.deb packages tend to lag far behind).

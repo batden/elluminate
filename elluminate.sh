@@ -97,8 +97,8 @@ CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 # “MN” stands for Meson——the Meson build system.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice"
 
-# Uncomment the following to force messages to display in English
-# during the build process (bug reporting).
+# Bug reporting: Uncomment the following (remove the leading # character) to force messages to
+# display in English during the build process.
 #
 # export LC_ALL=C
 

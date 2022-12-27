@@ -571,7 +571,31 @@ do_tests() {
 }
 
 do_bsh_alias() {
-  if [ ! -f $HOME/.bash_aliases ]; then
+  if [ -f $HOME/.bash_aliases ]; then
+    mv -vb $HOME/.bash_aliases $HOME/.bash_aliases_bak
+    echo
+
+    touch $HOME/.bash_aliases
+
+    cat >$HOME/.bash_aliases <<EOF
+    # ----------------
+    # GLOBAL VARIABLES
+    # ----------------
+
+    # Compiler and linker flags added by ELLUMINATE.
+    export CC="ccache gcc"
+    export CXX="ccache g++"
+    export USE_CCACHE=1
+    export CCACHE_COMPRESS=1
+    export CPPFLAGS=-I/usr/local/include
+    export LDFLAGS=-L/usr/local/lib
+    export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
+
+    # This script adds the ~/.local/bin directory to your PATH environment variable if required at install time.
+EOF
+
+    source $HOME/.bash_aliases
+  else
     touch $HOME/.bash_aliases
 
     cat >$HOME/.bash_aliases <<EOF

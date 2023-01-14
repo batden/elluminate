@@ -29,7 +29,7 @@
 # Enlightenment desktop every three weeks or so for an optimal user experience.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
-# feel free to use this script as you see fit.
+# this work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
 # Please consider starring our repositories to show your support.
 # Cheers!

@@ -29,7 +29,8 @@
 # Enlightenment desktop every three weeks or so for an optimal user experience.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr,
-# this work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+# this work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International Lice
+# in memory of Aaron Swartz.
 
 # Please consider starring our repositories to show your support.
 # Cheers!

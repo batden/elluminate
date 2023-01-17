@@ -16,7 +16,7 @@
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs installed from .deb packages or tarballs will inevitably
+# Enlightenment programs installed from DEB packages or TAR archives will inevitably
 # conflict with programs compiled from git repositories——do not mix source code
 # with prebuilt binaries! So, please remove thoroughly any previous binary
 # installation of EFL/Enlightenment/E-apps (track down and delete any

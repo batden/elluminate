@@ -7,7 +7,7 @@
 
 # ELLUMINATE takes care of downloading, configuring and building everything you
 # need to enjoy the latest version of the Enlightenment environment
-# (.deb packages tend to lag far behind).
+# (DEB packages tend to lag far behind).
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.
@@ -160,7 +160,7 @@ bin_deps() {
 
   sudo apt install $DEPS
   if [ $? -ne 0 ]; then
-    printf "\n$BDR%s %s\n" "CONFLICTING OR MISSING .DEB PACKAGES"
+    printf "\n$BDR%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$BDR%s %s\n" "OR DPKG DATABASE IS LOCKED."
     printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
@@ -228,7 +228,7 @@ e_bkp() {
 }
 
 p_bkp() {
-  # Backup list of currently installed .deb packages.
+  # Backup list of currently installed DEB packages.
   if [ ! -f $DOCDIR/pbackups/installed_pkgs.log ]; then
     mkdir -p $DOCDIR/pbackups
 
@@ -237,7 +237,7 @@ p_bkp() {
     rm /tmp/apt-avail
     dpkg --get-selections >$DOCDIR/pbackups/installed_pkgs.log
 
-    # Backup list of manually installed .deb packages.
+    # Backup list of manually installed DEB packages.
     echo $(comm -23 <(apt-mark showmanual |
       sort -u) <(gzip -dc /var/log/installer/initial-status.gz |
         sed -n 's/^Package: //p' | sort -u)) >$DOCDIR/pbackups/manually_installed_pkgs.txt

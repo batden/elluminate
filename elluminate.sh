@@ -30,7 +30,7 @@
 # user experience.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
-# This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International Lice
+# This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 
 # Please consider starring our repositories to show your support.

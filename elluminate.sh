@@ -24,9 +24,10 @@
 
 # Once installed, you can update your shiny new Enlightenment desktop whenever you want to.
 # However, because software gains entropy over time (performance regression, unexpected
-# behavior... and this is especially true when dealing directly with source code),
-# we highly recommend doing a complete uninstallation and reinstallation of your
-# Enlightenment desktop every three weeks or so for an optimal user experience.
+# behavior... and this is especially true when dealing with source code), we highly
+# recommend doing a complete uninstallation and reinstallation of your
+# Enlightenment desktop every three weeks or so to ensure an optimal
+# user experience.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
 # This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International Lice

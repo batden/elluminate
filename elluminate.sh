@@ -18,9 +18,9 @@
 # Heads up!
 # Enlightenment programs installed from DEB packages or TAR archives will inevitably
 # conflict with programs compiled from git repositories——do not mix source code
-# with prebuilt binaries! Therefore, please remove thoroughly any previous binary
-# installation of EFL/Enlightenment/E-apps (track down and delete any
-# leftover files), before running ELLUMINATE.
+# with prebuilt binaries! Therefore, please remove thoroughly any previous
+# binary installation of EFL/Enlightenment/E-apps (track down and delete
+# any leftover files), before running ELLUMINATE.
 
 # Once installed, you can update your shiny new Enlightenment desktop whenever you want to.
 # However, because software gains entropy over time (performance regression, unexpected

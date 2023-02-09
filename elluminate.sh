@@ -634,6 +634,7 @@ set_p_src() {
   mkdir -p "$mypath"/sources
   ESRC="$mypath"/sources
   echo $ESRC >$HOME/.cache/ebuilds/storepath
+  sudo chattr +i $HOME/.cache/ebuilds/storepath
   printf "\n%s\n\n" "You have chosen: $ESRC"
   sleep 2
 }

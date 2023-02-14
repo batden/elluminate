@@ -628,7 +628,8 @@ EOF
 set_p_src() {
   echo
   beep_attention
-  # Do not append a trailing slash (/) to the end of the path prefix.
+  # Do not append a trailing slash (/) to the end of the path prefix,
+  # and double-check the path you entered before validating.
   read -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/riley/Documents or /home/riley/testing): " mypath
   mkdir -p "$mypath"/sources

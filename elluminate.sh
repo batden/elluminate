@@ -3,10 +3,10 @@
 # This Bash script allows you to easily and safely install Enlightenment, along with
 # other EFL-based applications, on your K/X/Ubuntu desktop system.
 
-# Supported Ubuntu versions: 22.04 LTS, 22.10.
+# Supported Ubuntu version: 22.04 LTS (Jammy Jellyfish).
 
 # ELLUMINATE takes care of downloading, configuring and building everything you
-# need to enjoy the latest version of the Enlightenment environment
+# need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages tend to lag far behind).
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
@@ -59,7 +59,7 @@ REBASEF="git config pull.rebase false"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
-DDTL=1.3.0
+DDTL=1.4.1
 
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
@@ -335,6 +335,7 @@ rebuild_plain() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
+  chk_ddcl
   chk_fcst
   elap_start
 
@@ -396,6 +397,7 @@ rebuild_optim() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
+  chk_ddcl
   chk_fcst
   elap_start
 
@@ -474,6 +476,7 @@ rebuild_wld() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
+  chk_ddcl
   chk_fcst
   elap_start
 
@@ -554,7 +557,7 @@ do_tests() {
     exit 1
   fi
 
-  if [ $DISTRO == jammy ] || [ $DISTRO == kinetic ]; then
+  if [ $DISTRO == jammy ]; then
     printf "\n$BDG%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
     sleep 1
   else
@@ -681,6 +684,26 @@ chk_fcst() {
     meson build
     ninja -C build
     $SNIN
+  fi
+}
+
+chk_ddcl() {
+  if [ $DISTRO == jammy ] && [ -d $ESRC/ddcutil-1.3.0 ]; then
+    printf "\n$BLD%s $OFF%s\n" "Updating ddcutil..."
+    sleep 1
+    cd $ESRC/ddcutil-1.3.0
+    sudo make uninstall &>/dev/null
+    cd .. && rm -rf $ESRC/ddcutil-1.3.0
+    cd $DLDIR
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+    tar xzvf v$DDTL.tar.gz -C $ESRC
+    cd $ESRC/ddcutil-$DDTL
+    $AUTGN
+    make
+    $SMIL
+    sudo ldconfig
+    rm -rf $DLDIR/v$DDTL.tar.gz
+    echo
   fi
 }
 

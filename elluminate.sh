@@ -56,6 +56,7 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
+CONFG="./configure --prefix=$PREFIX"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
@@ -96,9 +97,11 @@ CLONEVE="git clone https://git.enlightenment.org/enlightenment/enventor.git"
 CLONEDI="git clone https://git.enlightenment.org/enlightenment/edi.git"
 CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
+CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MN” stands for Meson——the Meson build system.
+# “MN” stands for Meson. “AT” refers to Autotools.
 PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts"
+PROG_AT="eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
@@ -172,7 +175,7 @@ bin_deps() {
 
 ls_dir() {
   COUNT=$(ls -d -- */ | wc -l)
-  if [ $COUNT == 12 ]; then
+  if [ $COUNT == 13 ]; then
     printf "$BDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     sleep 2
   elif [ $COUNT == 0 ]; then
@@ -181,7 +184,7 @@ ls_dir() {
     beep_exit
     exit 1
   else
-    printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 12 PROGRAMS HAVE BEEN DOWNLOADED!"
+    printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
     printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO QUIT."
     beep_attention
     sleep 12
@@ -329,6 +332,15 @@ build_plain() {
     $SNIN
     sudo ldconfig
   done
+
+  for I in $PROG_AT; do
+    cd $ESRC/e26/$I
+    printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
+    $AUTGN
+    make
+    beep_attention
+    $SMIL
+  done
 }
 
 rebuild_plain() {
@@ -388,6 +400,22 @@ rebuild_plain() {
     beep_attention
     $SNIN
     sudo ldconfig
+
+    elap_stop
+  done
+
+  for I in $PROG_AT; do
+    elap_start
+
+    cd $ESRC/e26/$I
+    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
+    git reset --hard &>/dev/null
+    $REBASEF && git pull
+    make clean &>/dev/null
+    $AUTGN
+    make
+    beep_attention
+    $SMIL
 
     elap_stop
   done
@@ -464,6 +492,22 @@ rebuild_optim() {
 
     elap_stop
   done
+
+  for I in $PROG_AT; do
+    elap_start
+
+    cd $ESRC/e26/$I
+    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
+    git reset --hard &>/dev/null
+    $REBASEF && git pull
+    make clean &>/dev/null
+    $CONFG CFLAGS="-O3 -ffast-math -march=native"
+    make
+    beep_attention
+    $SMIL
+
+    elap_stop
+  done
 }
 
 rebuild_wld() {
@@ -536,6 +580,22 @@ rebuild_wld() {
 
     $SNIN
     sudo ldconfig
+
+    elap_stop
+  done
+
+  for I in $PROG_AT; do
+    elap_start
+
+    cd $ESRC/e26/$I
+    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
+    git reset --hard &>/dev/null
+    $REBASEF && git pull
+    make clean &>/dev/null
+    $CONFG CFLAGS="-O3 -ffast-math -march=native"
+    make
+    beep_attention
+    $SMIL
 
     elap_stop
   done
@@ -674,19 +734,6 @@ do_lnk() {
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
 }
 
-chk_fcst() {
-  if [ ! -d $ESRC/e26/enlightenment-module-forecasts ]; then
-    cd $ESRC/e26
-    printf "\n$BLD%s $OFF%s\n" "Adding Forecasts module to the ecosystem..."
-    sleep 1
-    $CLONEFT
-    cd $ESRC/e26/enlightenment-module-forecasts
-    meson build
-    ninja -C build
-    $SNIN
-  fi
-}
-
 chk_ddcl() {
   if [ $DISTRO == jammy ] && [ -d $ESRC/ddcutil-1.3.0 ]; then
     printf "\n$BLD%s $OFF%s\n" "Updating ddcutil..."
@@ -704,6 +751,32 @@ chk_ddcl() {
     sudo ldconfig
     rm -rf $DLDIR/v$DDTL.tar.gz
     echo
+  fi
+}
+
+chk_efte() {
+  if [ ! -d $ESRC/e26/eflete ]; then
+    cd $ESRC/e26
+    printf "\n$BLD%s $OFF%s\n" "Adding Eflete application to the ecosystem..."
+    sleep 1
+    $CLONETE
+    cd $ESRC/e26/eflete
+    $AUTGN
+    make
+    $SMIL
+  fi
+}
+
+chk_fcst() {
+  if [ ! -d $ESRC/e26/enlightenment-module-forecasts ]; then
+    cd $ESRC/e26
+    printf "\n$BLD%s $OFF%s\n" "Adding Forecasts module to the ecosystem..."
+    sleep 1
+    $CLONEFT
+    cd $ESRC/e26/enlightenment-module-forecasts
+    meson build
+    ninja -C build
+    $SNIN
   fi
 }
 
@@ -744,6 +817,8 @@ install_now() {
   $CLONENT
   echo
   $CLONEFT
+  printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
+  $CLONETE
   echo
 
   ls_dir

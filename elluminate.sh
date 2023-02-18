@@ -59,6 +59,7 @@ REBASEF="git config pull.rebase false"
 CONFG="./configure --prefix=$PREFIX"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
+SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
 DDTL=1.4.1
 
@@ -348,6 +349,7 @@ rebuild_plain() {
   bin_deps
   e_tokens
   chk_ddcl
+  chk_efte
   chk_fcst
   elap_start
 
@@ -426,6 +428,7 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
+  chk_efte
   chk_fcst
   elap_start
 
@@ -521,6 +524,7 @@ rebuild_wld() {
   bin_deps
   e_tokens
   chk_ddcl
+  chk_efte
   chk_fcst
   elap_start
 
@@ -713,7 +717,7 @@ get_preq() {
   cd $ESRC/ddcutil-$DDTL
   $AUTGN
   make
-  sudo make install
+  $SMIL
   rm -rf $DLDIR/v$DDTL.tar.gz
   echo
 

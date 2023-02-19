@@ -198,13 +198,6 @@ mng_err() {
   exit 1
 }
 
-chk_path() {
-  if ! [[ ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
-    echo -e '    export PATH=$HOME/.local/bin:$PATH' >>$HOME/.bash_aliases
-    source $HOME/.bash_aliases
-  fi
-}
-
 elap_start() {
   START=$(date +%s)
 }
@@ -296,8 +289,6 @@ rstrt_e() {
 # “-Devas-loaders-disabler=” before running the script.
 #
 build_plain() {
-  chk_path
-
   beep_attention
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig

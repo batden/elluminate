@@ -299,23 +299,23 @@ build_plain() {
 
     case $I in
     efl)
-      meson -Dbuild-tests=false -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
-        -Dbindings= \
+      meson -Dbuildtype=plain -Dbuild-tests=false -Dlua-interpreter=lua \
+        -Devas-loaders-disabler=jxl \
         build
       ninja -C build || mng_err
       ;;
     enlightenment)
-      meson build
+      meson -Dbuildtype=plain build
       ninja -C build || mng_err
       ;;
     edi)
-      meson -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+      meson -Dbuildtype=plain -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib \
         build
       ninja -C build
       ;;
     *)
-      meson build
+      meson -Dbuildtype=plain build
       ninja -C build
       ;;
     esac
@@ -369,23 +369,23 @@ rebuild_plain() {
 
     case $I in
     efl)
-      meson -Dbuild-tests=false -Dlua-interpreter=lua -Devas-loaders-disabler=jxl \
-        -Dbindings= \
+      meson -Dbuildtype=plain -Dbuild-tests=false -Dlua-interpreter=lua \
+        -Devas-loaders-disabler=jxl \
         build
       ninja -C build || mng_err
       ;;
     enlightenment)
-      meson build
+      meson -Dbuildtype=plain build
       ninja -C build || mng_err
       ;;
     edi)
-      meson -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+      meson -Dbuildtype=plain -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib \
         build
       ninja -C build
       ;;
     *)
-      meson build
+      meson -Dbuildtype=plain build
       ninja -C build
       ;;
     esac

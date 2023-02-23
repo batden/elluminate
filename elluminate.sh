@@ -317,7 +317,7 @@ build_plain() {
     *)
       meson -Dbuildtype=plain build
       ninja -C build
-      sudo chown $USER:$USER build/po/*
+      sudo chown -R $USER:$USER build/po/*
       ;;
     esac
 
@@ -388,7 +388,7 @@ rebuild_plain() {
     *)
       meson -Dbuildtype=plain build
       ninja -C build
-      sudo chown $USER:$USER build/po/*
+      sudo chown -R $USER:$USER build/po/*
       ;;
     esac
 

@@ -317,7 +317,6 @@ build_plain() {
     *)
       meson -Dbuildtype=plain build
       ninja -C build
-      sudo chown -R $USER:$USER build/po/*
       ;;
     esac
 
@@ -365,7 +364,7 @@ rebuild_plain() {
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
-    rm -rf build
+    sudo rm -rf build
     echo
 
     case $I in
@@ -387,8 +386,7 @@ rebuild_plain() {
       ;;
     *)
       meson -Dbuildtype=plain build
-      ninja -C build
-      sudo chown -R $USER:$USER build/po/*
+      ninja -C build*
       ;;
     esac
 

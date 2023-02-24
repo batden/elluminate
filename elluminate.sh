@@ -131,7 +131,8 @@ beep_ok() {
 }
 
 # Hints.
-# 1/2: Plain build with well tested default values.
+# 1: Plain build with well tested default values.
+# 2: Fresh rebuild with well tested default values.
 # 3: A feature-rich, decently optimized build; however, occasionally technical glitches do happen...
 # 4: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 #

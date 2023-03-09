@@ -131,18 +131,16 @@ beep_ok() {
 }
 
 # Hints.
-# 1: Plain build with well tested default values (on Xorg).
-# 2: Fresh rebuild with well tested default values (on Xorg).
-# 3: A feature-rich, decently optimized build (on Xorg); recommended for most users.
-# 4: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
+# 1: A no frill, plain build (on Xorg).
+# 2: A feature-rich, decently optimized build (on Xorg); recommended for most users.
+# 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 #
 menu_sel() {
   if [ $INPUT -lt 1 ]; then
     echo
     printf "1  $BDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
-    printf "2  $LWG%s $OFF%s\n\n" "Update and REBUILD the ecosystem"
-    printf "3  $LWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
-    printf "4  $LWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
+    printf "2  $LWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
+    printf "3  $LWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
     sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
@@ -153,9 +151,8 @@ sel_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
     printf "1  $LWG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
-    printf "2  $BDG%s $OFF%s\n\n" "Update and REBUILD the ecosystem"
-    printf "3  $BDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
-    printf "4  $BDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
+    printf "2  $BDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
+    printf "3  $BDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
     sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
@@ -214,7 +211,7 @@ elap_stop() {
 #
 # To restore a backup, use the same command that was executed but with
 # the source and destination reversed:
-# e.g. cp -aR /home/riley/Documents/ebackups/E_1666428541/.e* /home/riley/
+# e.g. cp -aR /home/riley/Documents/ebackups/E_1678262478 .e* /home/riley/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {
@@ -333,85 +330,6 @@ build_plain() {
     make
     beep_attention
     $SMIL
-  done
-}
-
-rebuild_plain() {
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
-  bin_deps
-  e_tokens
-  chk_ddcl
-  chk_efte
-  chk_fcst
-  elap_start
-
-  cd $ESRC/rlottie
-  printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
-  git reset --hard &>/dev/null
-  $REBASEF && git pull
-  rm -rf build
-  meson -Dexample=false -Dbuildtype=plain \
-    build
-  ninja -C build
-  $SNIN
-  sudo ldconfig
-
-  elap_stop
-
-  for I in $PROG_MN; do
-    elap_start
-
-    cd $ESRC/e26/$I
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
-    git reset --hard &>/dev/null
-    $REBASEF && git pull
-    sudo rm -rf build
-    echo
-
-    case $I in
-    efl)
-      meson -Dbuildtype=plain -Dbuild-tests=false -Dlua-interpreter=lua \
-        -Devas-loaders-disabler=jxl \
-        build
-      ninja -C build || mng_err
-      ;;
-    enlightenment)
-      meson -Dbuildtype=plain build
-      ninja -C build || mng_err
-      ;;
-    edi)
-      meson -Dbuildtype=plain -Dlibclang-headerdir=/usr/lib/llvm-11/include \
-        -Dlibclang-libdir=/usr/lib/llvm-11/lib \
-        build
-      ninja -C build
-      ;;
-    *)
-      meson -Dbuildtype=plain build
-      ninja -C build*
-      ;;
-    esac
-
-    beep_attention
-    $SNIN
-    sudo ldconfig
-
-    elap_stop
-  done
-
-  for I in $PROG_AT; do
-    elap_start
-
-    cd $ESRC/e26/$I
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
-    git reset --hard &>/dev/null
-    $REBASEF && git pull
-    make clean &>/dev/null
-    $AUTGN
-    make
-    beep_attention
-    $SMIL
-
-    elap_stop
   done
 }
 
@@ -847,37 +765,6 @@ install_now() {
   exit 0
 }
 
-update_go() {
-  clear
-  printf "\n$BDG%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: PLAIN BUILD *"
-
-  cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
-  chmod +x $HOME/.local/bin/elluminate.sh
-  sleep 1
-
-  rebuild_plain
-
-  sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
-    /usr/share/xsessions/enlightenment.desktop
-
-  if [ -f /usr/share/wayland-sessions/enlightenment.desktop ]; then
-    sudo rm -rf /usr/share/wayland-sessions/enlightenment.desktop
-  fi
-
-  if [ -f /usr/local/share/wayland-sessions/enlightenment.desktop ]; then
-    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
-  fi
-
-  sudo updatedb
-  beep_ok
-  rstrt_e
-  echo
-  cowsay -f www "That's All Folks!"
-  echo
-
-  exit 0
-}
-
 release_go() {
   clear
   printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD *"
@@ -938,7 +825,7 @@ wld_go() {
     echo
     cowsay -f www "That's it. Now type: enlightenment_start"
     echo
-    # If Enlightenment fails to start, relaunch the script and select option 3.
+    # If Enlightenment fails to start, relaunch the script and select option 2.
     # After the build is complete type exit, then go back to the login screen.
   fi
 
@@ -965,11 +852,8 @@ bhd() {
     install_now
   elif [ $INPUT == 2 ]; then
     do_tests
-    update_go
-  elif [ $INPUT == 3 ]; then
-    do_tests
     release_go
-  elif [ $INPUT == 4 ]; then
+  elif [ $INPUT == 3 ]; then
     do_tests
     wld_go
   else

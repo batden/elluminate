@@ -371,8 +371,8 @@ rebuild_optim() {
     #
     efl)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
-        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
+      meson --reconfigure -Dnative-arch-optimization=true -Dharfbuzz=true -Dlua-interpreter=lua \
+        -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
         -Ddrm=true -Dbuild-tests=false -Dwl=false \
         -Dbuildtype=release \
         build

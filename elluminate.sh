@@ -639,8 +639,8 @@ get_preq() {
   cd $ESRC
   git clone https://github.com/Samsung/rlottie.git
   cd $ESRC/rlottie
-  meson -Dexample=false -Dbuildtype=plain \
-    build
+  meson setup build -Dbuildtype=plain \
+    -Dexample=false
   ninja -C build
   $SNIN
   sudo ldconfig
@@ -693,7 +693,7 @@ chk_fcst() {
     sleep 1
     $CLONEFT
     cd $ESRC/e26/enlightenment-module-forecasts
-    meson build
+    meson setup build -Dbuildtype=plain
     ninja -C build
     $SNIN
   fi

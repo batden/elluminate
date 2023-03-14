@@ -489,14 +489,14 @@ rebuild_wld() {
       ;;
     edi)
       sudo chown $USER build/.ninja*
-      meson --reconfigure build -Dbuildtype=release \
+      meson setup --reconfigure build -Dbuildtype=release \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     *)
       sudo chown $USER build/.ninja*
-      meson --reconfigure build -Dbuildtype=release
+      meson setup --reconfigure build -Dbuildtype=release
       ninja -C build
       ;;
     esac

@@ -297,23 +297,24 @@ build_plain() {
 
     case $I in
     efl)
-      meson -Dbuildtype=plain -Dbuild-tests=false -Dlua-interpreter=lua \
-        -Devas-loaders-disabler=jxl \
-        build
+      meson setup build -Dbuildtype=plain \
+        -Dbuild-tests=false \
+        -Dlua-interpreter=lua \
+        -Devas-loaders-disabler=jxl
       ninja -C build || mng_err
       ;;
     enlightenment)
-      meson -Dbuildtype=plain build
+      meson setup build -Dbuildtype=plain
       ninja -C build || mng_err
       ;;
     edi)
-      meson -Dbuildtype=plain -Dlibclang-headerdir=/usr/lib/llvm-11/include \
-        -Dlibclang-libdir=/usr/lib/llvm-11/lib \
-        build
+      meson setup build -Dbuildtype=plain \
+        -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+        -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     *)
-      meson -Dbuildtype=plain build
+      meson setup build -Dbuildtype=plain
       ninja -C build
       ;;
     esac
@@ -348,8 +349,8 @@ rebuild_optim() {
   $REBASEF && git pull
   echo
   sudo chown $USER build/.ninja*
-  meson --reconfigure -Dexample=false -Dbuildtype=release \
-    build
+  meson --reconfigure build -Dbuildtype=release \
+    -Dexample=false
   ninja -C build
   $SNIN
   sudo ldconfig
@@ -371,31 +372,34 @@ rebuild_optim() {
     #
     efl)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dnative-arch-optimization=true -Dharfbuzz=true -Dlua-interpreter=lua \
-        -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
-        -Ddrm=true -Dbuild-tests=false -Dwl=false \
-        -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dnative-arch-optimization=true \
+        -Dharfbuzz=true \
+        -Dlua-interpreter=lua \
+        -Delua=true \
+        -Dbindings=lua,cxx \
+        -Devas-loaders-disabler=jxl \
+        -Ddrm=true \
+        -Dbuild-tests=false \
+        -Dwl=false
       ninja -C build || mng_err
       ;;
     enlightenment)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dwl=false -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dwl=false
       ninja -C build || mng_err
       ;;
     edi)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dlibclang-headerdir=/usr/lib/llvm-11/include \
-        -Dlibclang-libdir=/usr/lib/llvm-11/lib \
-        -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+        -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     *)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release
       ninja -C build
       ;;
     esac
@@ -444,8 +448,8 @@ rebuild_wld() {
   $REBASEF && git pull
   echo
   sudo chown $USER build/.ninja*
-  meson --reconfigure -Dexample=false -Dbuildtype=release \
-    build
+  meson --reconfigure build -Dbuildtype=release \
+    -Dexample=false
   ninja -C build
   $SNIN
   sudo ldconfig
@@ -463,31 +467,36 @@ rebuild_wld() {
     case $I in
     efl)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dnative-arch-optimization=true -Dfb=true -Dharfbuzz=true \
-        -Dlua-interpreter=lua -Delua=true -Dbindings=lua,cxx -Devas-loaders-disabler=jxl \
-        -Ddrm=true -Dwl=true -Dopengl=es-egl -Dbuild-tests=false \
-        -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dnative-arch-optimization=true \
+        -Dfb=true \
+        -Dharfbuzz=true \
+        -Dlua-interpreter=lua \
+        -Delua=true \
+        -Dbindings=lua,cxx \
+        -Devas-loaders-disabler=jxl \
+        -Ddrm=true \
+        -Dwl=true \
+        -Dopengl=es-egl \
+        -Dbuild-tests=false
       ninja -C build || mng_err
       ;;
     enlightenment)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dwl=true -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dwl=true
       ninja -C build || mng_err
       ;;
     edi)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dlibclang-headerdir=/usr/lib/llvm-11/include \
-        -Dlibclang-libdir=/usr/lib/llvm-11/lib \
-        -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release \
+        -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+        -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     *)
       sudo chown $USER build/.ninja*
-      meson --reconfigure -Dbuildtype=release \
-        build
+      meson --reconfigure build -Dbuildtype=release
       ninja -C build
       ;;
     esac

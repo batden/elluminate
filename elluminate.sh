@@ -298,6 +298,7 @@ build_plain() {
     case $I in
     efl)
       meson setup build -Dbuildtype=plain \
+        -Dfb=true \
         -Dbuild-tests=false \
         -Dlua-interpreter=lua \
         -Devas-loaders-disabler=jxl
@@ -374,6 +375,7 @@ rebuild_optim() {
       sudo chown $USER build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dnative-arch-optimization=true \
+        -Dfb=true \
         -Dharfbuzz=true \
         -Dlua-interpreter=lua \
         -Delua=true \

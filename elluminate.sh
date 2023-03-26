@@ -81,9 +81,9 @@ libssl-dev libsystemd-dev libtiff5-dev libtool libudev-dev libudisks2-dev \
 libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
 libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
 libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
-lolcat manpages-dev manpages-posix-dev meson mlocate ninja-build \
-papirus-icon-theme texlive-base unity-greeter-badges valgrind \
-wayland-protocols wmctrl xdotool xserver-xephyr xwayland"
+lolcat manpages-dev manpages-posix-dev meson ninja-build papirus-icon-theme \
+plocate texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
+xdotool xserver-xephyr xwayland"
 
 # Latest development code.
 CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"

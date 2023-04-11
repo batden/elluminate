@@ -340,7 +340,6 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_efte
   chk_fcst
   elap_start
 
@@ -440,7 +439,6 @@ rebuild_wld() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_efte
   chk_fcst
   elap_start
 
@@ -672,19 +670,6 @@ chk_ddcl() {
     sudo ldconfig
     rm -rf $DLDIR/v$DDTL.tar.gz
     echo
-  fi
-}
-
-chk_efte() {
-  if [ ! -d $ESRC/e26/eflete ]; then
-    cd $ESRC/e26
-    printf "\n$BLD%s $OFF%s\n" "Adding Eflete application to the ecosystem..."
-    sleep 1
-    $CLONETE
-    cd $ESRC/e26/eflete
-    $AUTGN
-    make
-    $SMIL
   fi
 }
 

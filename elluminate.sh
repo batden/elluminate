@@ -340,7 +340,6 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_fcst
   elap_start
 
   cd $ESRC/rlottie
@@ -439,7 +438,6 @@ rebuild_wld() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_fcst
   elap_start
 
   cd $ESRC/rlottie
@@ -670,19 +668,6 @@ chk_ddcl() {
     sudo ldconfig
     rm -rf $DLDIR/v$DDTL.tar.gz
     echo
-  fi
-}
-
-chk_fcst() {
-  if [ ! -d $ESRC/e26/enlightenment-module-forecasts ]; then
-    cd $ESRC/e26
-    printf "\n$BLD%s $OFF%s\n" "Adding Forecasts module to the ecosystem..."
-    sleep 1
-    $CLONEFT
-    cd $ESRC/e26/enlightenment-module-forecasts
-    meson setup build -Dbuildtype=plain
-    ninja -C build
-    $SNIN
   fi
 }
 

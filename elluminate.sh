@@ -3,7 +3,7 @@
 # This Bash script allows you to easily and safely install Enlightenment, along with
 # other EFL-based applications, on your K/X/Ubuntu LTS desktop system.
 
-# Supported Ubuntu distribution: Jammy Jellyfish.
+# Supported distribution: Jammy Jellyfish.
 
 # ELLUMINATE takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment

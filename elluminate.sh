@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # This Bash script allows you to easily and safely install Enlightenment, along with
-# other EFL-based applications, on your K/X/Ubuntu LTS desktop system.
+# other applications based on the Enlightenment Foundations Libraries (EFL),
+# on your K/X/Ubuntu LTS desktop system.
 
 # Supported distribution: Jammy Jellyfish.
 

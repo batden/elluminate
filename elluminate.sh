@@ -8,7 +8,8 @@
 
 # ELLUMINATE takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
-# (DEB packages tend to lag far behind).
+# (DEB packages tend to lag far behind). Once installed, you can update
+# your shiny new Enlightenment desktop whenever you want to.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.
@@ -22,13 +23,6 @@
 # with prebuilt binaries! Therefore, please remove thoroughly any previous
 # binary installation of EFL/Enlightenment/E-apps (track down and delete
 # any leftover files), before running ELLUMINATE.
-
-# Once installed, you can update your shiny new Enlightenment desktop whenever you want to.
-# However, because software gains entropy over time (performance regression, unexpected
-# behavior... and this is especially true when dealing with source code), we highly
-# recommend doing a complete uninstallation and reinstallation of your
-# Enlightenment desktop every three weeks or so to ensure an optimal
-# user experience.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
 # This work is licensed under a Creative Commons Attribution-ShareAlike 4.0

@@ -21,8 +21,7 @@
 # Enlightenment programs installed from DEB packages or TAR archives will inevitably
 # clash with programs compiled from git repositories——do not mix source code
 # with prebuilt binaries! Therefore, please remove thoroughly any previous
-# binary installation of EFL/Enlightenment/E-apps (track down and delete
-# any leftover files), before running ELLUMINATE.
+# binary installation of EFL/Enlightenment/E-apps before running ELLUMINATE.
 
 # ELLUMINATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
 # This work is licensed under a Creative Commons Attribution-ShareAlike 4.0

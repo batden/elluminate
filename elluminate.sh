@@ -618,6 +618,8 @@ set_p_src() {
 # Prerequisites.
 get_preq() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  printf "\n\n$BLD%s $OFF%s\n\n" "Installing prerequisites..."
+
   cd $DLDIR
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
 

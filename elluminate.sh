@@ -296,6 +296,7 @@ build_plain() {
         -Dbuild-tests=false \
         -Dlua-interpreter=lua \
         -Devas-loaders-disabler=jxl \
+        -Dglib=true \
         -Decore-imf-loaders-disabler=scim
       ninja -C build || mng_err
       ;;
@@ -374,6 +375,7 @@ rebuild_optim() {
         -Delua=true \
         -Dbindings=lua,cxx \
         -Devas-loaders-disabler=jxl \
+        -Dglib=true \
         -Decore-imf-loaders-disabler=scim \
         -Ddrm=true \
         -Dbuild-tests=false \
@@ -470,6 +472,7 @@ rebuild_wld() {
         -Delua=true \
         -Dbindings=lua,cxx \
         -Devas-loaders-disabler=jxl \
+        -Dglib=true \
         -Decore-imf-loaders-disabler=scim \
         -Ddrm=true \
         -Dwl=true \

@@ -125,8 +125,8 @@ beep_ok() {
 }
 
 # Hints.
-# 1: A no frill, plain build (on Xorg).
-# 2: A feature-rich, decently optimized build (on Xorg); recommended for most users.
+# 1: A no frill, plain build.
+# 2: A feature-rich, decently optimized build; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 #
 menu_sel() {
@@ -676,7 +676,7 @@ chk_ddcl() {
 
 install_now() {
   clear
-  printf "\n$BDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP: PLAIN BUILD *"
+  printf "\n$BDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP: PLAIN BUILD ON XORG *"
   do_bsh_alias
   beep_attention
   p_bkp
@@ -753,7 +753,7 @@ install_now() {
 
 release_go() {
   clear
-  printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD *"
+  printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD ON XORG *"
 
   cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh
@@ -784,7 +784,7 @@ release_go() {
 
 wld_go() {
   clear
-  printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: WAYLAND BUILD *"
+  printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD ON WAYLAND *"
 
   cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh

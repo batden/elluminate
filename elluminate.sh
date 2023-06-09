@@ -9,7 +9,7 @@
 # ELLUMINATE takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages tend to lag far behind). Once installed, you can update
-# your shiny new Enlightenment desktop whenever you want to.
+# your Enlightenment desktop whenever you want to.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.

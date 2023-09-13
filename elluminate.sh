@@ -386,8 +386,7 @@ rebuild_optim() {
       ;;
     eflete)
       meson setup --reconfigure build -Dbuildtype=release \
-        -Denable-audio=true \
-        -Denable-enventor=true
+        -Denable-audio=true
       ;;
     *)
       sudo chown $USER build/.ninja*
@@ -474,8 +473,7 @@ rebuild_wld() {
       ;;
     eflete)
       meson setup --reconfigure build -Dbuildtype=release \
-        -Denable-audio=true \
-        -Denable-enventor=true
+        -Denable-audio=true
       ;;
     *)
       sudo chown $USER build/.ninja*

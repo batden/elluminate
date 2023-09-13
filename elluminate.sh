@@ -50,7 +50,6 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
-CONFG="./configure --prefix=$PREFIX"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
@@ -94,9 +93,8 @@ CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MN” stands for Meson. “AT” refers to Autotools.
-PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts"
-PROG_AT="eflete"
+# “MN” stands for Meson——the Meson build system.
+PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
@@ -319,15 +317,6 @@ build_plain() {
     $SNIN
     sudo ldconfig
   done
-
-  for I in $PROG_AT; do
-    cd $ESRC/e26/$I
-    printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
-    $AUTGN
-    make
-    beep_attention
-    $SMIL
-  done
 }
 
 rebuild_optim() {
@@ -404,22 +393,6 @@ rebuild_optim() {
     beep_attention
     $SNIN
     sudo ldconfig
-
-    elap_stop
-  done
-
-  for I in $PROG_AT; do
-    elap_start
-
-    cd $ESRC/e26/$I
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
-    git reset --hard &>/dev/null
-    $REBASEF && git pull
-    make clean &>/dev/null
-    $CONFG CFLAGS="-O3 -ffast-math -march=native"
-    make
-    beep_attention
-    $SMIL
 
     elap_stop
   done
@@ -502,22 +475,6 @@ rebuild_wld() {
     beep_attention
     $SNIN
     sudo ldconfig
-
-    elap_stop
-  done
-
-  for I in $PROG_AT; do
-    elap_start
-
-    cd $ESRC/e26/$I
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
-    git reset --hard &>/dev/null
-    $REBASEF && git pull
-    make clean &>/dev/null
-    $CONFG CFLAGS="-O3 -ffast-math -march=native"
-    make
-    beep_attention
-    $SMIL
 
     elap_stop
   done

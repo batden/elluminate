@@ -384,6 +384,11 @@ rebuild_optim() {
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
+    eflete)
+      meson setup --reconfigure build -Dbuildtype=release \
+        -Daudio=true \
+        -Deventor=true
+      ;;
     *)
       sudo chown $USER build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release
@@ -466,6 +471,11 @@ rebuild_wld() {
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
+      ;;
+    eflete)
+      meson setup --reconfigure build -Dbuildtype=release \
+        -Daudio=true \
+        -Deventor=true
       ;;
     *)
       sudo chown $USER build/.ninja*

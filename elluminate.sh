@@ -65,7 +65,7 @@ libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig-dev \
 libdrm-dev libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
 libgif-dev libgraphviz-dev libgstreamer1.0-dev \
 libgstreamer-plugins-base1.0-dev libharfbuzz-dev libheif-dev \
-libi2c-dev libibus-1.0-dev libinput-dev libinput-tools libjpeg-dev \
+libi2c-dev libibus-1.0-dev libinput-dev libinput-tools libjansson-dev libjpeg-dev \
 libjson-c-dev libkmod-dev liblua5.2-dev liblz4-dev libmenu-cache-dev \
 libmount-dev libopenjp2-7-dev libosmesa6-dev libpam0g-dev libpoppler-cpp-dev \
 libpoppler-dev libpoppler-private-dev libpulse-dev libraw-dev \

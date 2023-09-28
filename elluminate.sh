@@ -54,7 +54,7 @@ AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
-DDTL=1.4.1
+DDTL=2.0.0
 
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
@@ -628,10 +628,10 @@ do_lnk() {
 }
 
 chk_ddcl() {
-  if [ -d $ESRC/ddcutil-1.3.0 ]; then
+  if [ -d $ESRC/ddcutil-1.4.1 ]; then
     printf "\n$BLD%s $OFF%s\n" "Updating ddcutil..."
     sleep 1
-    cd $ESRC/ddcutil-1.3.0
+    cd $ESRC/ddcutil-1.4.1
     sudo make uninstall &>/dev/null
     cd .. && rm -rf $ESRC/ddcutil-1.3.0
     cd $DLDIR

@@ -285,7 +285,6 @@ rstrt_e() {
 # “-Devas-loaders-disabler=” before running the script.
 #
 build_plain() {
-  beep_attention
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 

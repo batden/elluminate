@@ -38,7 +38,7 @@ BLD="\e[1m"    # Bold text.
 ITA="\e[3m"    # Italic text.
 BDR="\e[1;31m" # Bold red text.
 BDG="\e[1;32m" # Bold green text.
-BDC="\e[1;96m" # Bright cyan text.
+BTC="\e[1;96m" # Bright cyan text.
 BDP="\e[1;35m" # Bold purple text.
 BDY="\e[1;33m" # Bold yellow text.
 LWG="\e[2;32m" # Low intensity green text.
@@ -733,9 +733,9 @@ install_now() {
   sudo updatedb
   beep_ok
 
-  printf "\n\n$BDC%s %s" "Initial setup wizard tips:"
-  printf "\n$BDC%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
-  printf "\n$BDC%s $OFF%s\n\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
+  printf "\n\n$BTC%s %s" "Initial setup wizard tips:"
+  printf "\n$BTC%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
+  printf "\n$BTC%s $OFF%s\n\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
   # Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Desktop, you can safely delete them if it bothers you.
 

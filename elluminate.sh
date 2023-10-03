@@ -674,7 +674,7 @@ chk_eflt() {
 
 install_now() {
   clear
-  printf "\n$BDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP: PLAIN BUILD ON XORG *"
+  printf "\n$BDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG *"
   do_bsh_alias
   beep_attention
   p_bkp
@@ -751,7 +751,7 @@ install_now() {
 
 release_go() {
   clear
-  printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD ON XORG *"
+  printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG *"
 
   cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh
@@ -782,7 +782,7 @@ release_go() {
 
 wld_go() {
   clear
-  printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP: RELEASE BUILD ON WAYLAND *"
+  printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
   cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh

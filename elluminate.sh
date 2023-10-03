@@ -37,8 +37,8 @@
 BLD="\e[1m"    # Bold text.
 ITA="\e[3m"    # Italic text.
 BDR="\e[1;31m" # Bold red text.
-BDC="\e[1;96m" # Bold cyan text.
 BDG="\e[1;32m" # Bold green text.
+BDC="\e[1;96m" # Bright cyan text.
 BDP="\e[1;35m" # Bold purple text.
 BDY="\e[1;33m" # Bold yellow text.
 LWG="\e[2;32m" # Low intensity green text.

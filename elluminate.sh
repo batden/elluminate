@@ -64,19 +64,18 @@ gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
 libasound2-dev libavahi-client-dev libavif-dev libblkid-dev libbluetooth-dev \
 libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig-dev \
 libdrm-dev libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
-libgif-dev libgraphviz-dev libgstreamer1.0-dev \
-libgstreamer-plugins-base1.0-dev libharfbuzz-dev libheif-dev \
-libi2c-dev libibus-1.0-dev libinput-dev libinput-tools libjansson-dev libjpeg-dev \
-libjson-c-dev libkmod-dev liblua5.2-dev liblz4-dev libmenu-cache-dev \
-libmount-dev libopenjp2-7-dev libosmesa6-dev libpam0g-dev libpoppler-cpp-dev \
-libpoppler-dev libpoppler-private-dev libpulse-dev libraw-dev \
+libgif-dev libgraphviz-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
+libharfbuzz-dev libheif-dev libi2c-dev libibus-1.0-dev libinput-dev libinput-tools \
+libjansson-dev libjpeg-dev libjson-c-dev libkmod-dev liblua5.2-dev liblz4-dev \
+libmenu-cache-dev libmount-dev libopenjp2-7-dev libosmesa6-dev libpam0g-dev \
+libpoppler-cpp-dev libpoppler-dev libpoppler-private-dev libpulse-dev libraw-dev \
 librsvg2-dev libsdl1.2-dev libscim-dev libsndfile1-dev libspectre-dev \
 libssl-dev libsystemd-dev libtiff5-dev libtool libudev-dev libudisks2-dev \
 libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
 libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
 libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
 lolcat manpages-dev manpages-posix-dev meson ninja-build papirus-icon-theme \
-plocate texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
+texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
 xdotool xserver-xephyr xwayland"
 
 # Latest development code.
@@ -717,8 +716,6 @@ install_now() {
   ls_dir
   build_plain
 
-  printf "\n%s\n\n" "Finalizing..."
-
   mkdir -p $HOME/.elementary/themes
 
   sudo mkdir -p /etc/enlightenment
@@ -730,7 +727,6 @@ install_now() {
   # Protect this file from accidental deletion.
   sudo chattr +i $HOME/.cache/ebuilds/storepath
 
-  sudo updatedb
   beep_ok
 
   printf "\n\n$BTC%s %s" "INITIAL SETUP WIZARD TIPS:"
@@ -770,7 +766,6 @@ release_go() {
     sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
   fi
 
-  sudo updatedb
   beep_ok
   rstrt_e
   echo
@@ -794,7 +789,6 @@ wld_go() {
   sudo ln -sf /usr/local/share/wayland-sessions/enlightenment.desktop \
     /usr/share/wayland-sessions/enlightenment.desktop
 
-  sudo updatedb
   beep_ok
 
   if [ "$XDG_SESSION_TYPE" == "x11" ] || [ "$XDG_SESSION_TYPE" == "wayland" ]; then

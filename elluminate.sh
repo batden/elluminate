@@ -11,6 +11,9 @@
 # (DEB packages tend to lag far behind). Once installed, you can update
 # your Enlightenment desktop whenever you want to.
 
+# Optional: Additional steps may be taken in order to achieve even better results.
+# Please refer to the comments of the build_plain () function.
+
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.
 
@@ -277,12 +280,14 @@ rstrt_e() {
   fi
 }
 
+# BEFORE RUNNING THE SCRIPT!
+#
 # JPEG XL currently has to be compiled from source. If you need jxl
-# support in efl, follow the instructions below:
+# support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
-# “-Devas-loaders-disabler=” before running the script.
+# “-Devas-loaders-disabler=”
 #
 build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so

@@ -12,7 +12,7 @@
 # your Enlightenment desktop whenever you want to.
 
 # Optional: Additional steps may be taken in order to achieve even better results.
-# Please refer to the comments of the build_plain () function.
+# Please refer to the comments of the build_plain() function.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
 # to look at earlier output at any time.

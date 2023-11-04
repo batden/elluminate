@@ -206,7 +206,7 @@ ls_dir() {
     beep_exit
     exit 1
   else
-    # If the download of efl fails, nothing will compile!
+    # Warning: If the download of efl fails, nothing will compile!
     printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
     printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention

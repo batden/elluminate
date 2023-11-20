@@ -283,12 +283,12 @@ rstrt_e() {
 
 # BEFORE RUNNING THE SCRIPT!
 #
-# JPEG XL currently has to be compiled from source. If you need jxl
+# JPEG XL currently has to be compiled from source. If you really need jxl
 # support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
-# “-Devas-loaders-disabler=”
+# “-Devas-loaders-disabler=” whenever it's applicable.
 #
 build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so

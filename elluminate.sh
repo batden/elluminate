@@ -25,8 +25,8 @@
 # with the ones compiled from git repositories. Therefore, please remove any previous
 # binary installation of EFL/Enlightenment/E-apps before running ELLUMINATE.
 
-# ELLUMINATE is licensed under a Creative Commons Attribution-ShareAlike 4.0
-# International License, in memory of Aaron Swartz.
+# ELLUMINATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/
 
 # Got a GitHub account? Please consider starring our repositories to show your support.

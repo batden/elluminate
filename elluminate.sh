@@ -21,9 +21,9 @@
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs installed from DEB packages or TAR archives will inevitably clash
-# with the ones compiled from git repositories. Therefore, please remove any previous
-# binary installation of EFL/Enlightenment/E-apps before running ELLUMINATE.
+# Enlightenment programs compiled from git source code will inevitably come into conflict
+# with the ones installed from DEB packages. Therefore, remove any previous binary
+# installation of EFL/Enlightenment/E-apps before running ELLUMINATE.
 
 # ELLUMINATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.

@@ -6,7 +6,7 @@
 
 # Supported distribution: Jammy Jellyfish.
 
-# ELLUMINATE takes care of downloading, configuring and building everything you
+# ELLUMINATE.SH takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages tend to lag far behind). Once installed, you can update
 # your Enlightenment desktop whenever you want to.
@@ -23,9 +23,10 @@
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably come into conflict
 # with the ones installed from DEB packages. Therefore, remove any previous binary
-# installation of EFL/Enlightenment/E-apps before running ELLUMINATE.
+# installations of EFL, Enlightenment and related applications before running
+# this script.
 
-# ELLUMINATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# ELLUMINATE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/
 

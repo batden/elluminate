@@ -239,7 +239,6 @@ elap_stop() {
 # cp -aR /home/riley/Documents/ebackups/E_1699512402/.e/ /home/riley/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
-
 e_bkp() {
   TSTAMP=$(date +%s)
   mkdir -p $DOCDIR/ebackups

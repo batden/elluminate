@@ -44,7 +44,8 @@ To run it again later, open a terminal and simply type:
 elluminate.sh
 ```
 
-(Use auto-completion: Just type *ell* and press Tab.)
+> [!TIP]
+> Use auto-completion: Just type *ell* and press Tab.
 
 ## Update local repo
 

@@ -22,7 +22,7 @@ Next, clone the repository:
 git clone https://github.com/batden/elluminate.git .elluminate
 ```
 
-This creates a new hidden folder named **.elluminate** in your home directory.
+This creates a new hidden folder named .elluminate in your home directory.
 
 Copy the elluminate.sh file from the new .elluminate folder to your download folder.
 

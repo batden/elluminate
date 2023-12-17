@@ -821,7 +821,7 @@ wld_go() {
   exit 0
 }
 
-# Lo and behold (bhd)!
+# Lo and behold (“bhd”)!
 #
 # Displays the selection menu...
 #

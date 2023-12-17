@@ -733,7 +733,7 @@ install_now() {
   sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop
 
-  # Protect this file from accidental deletion.
+  # Protects this file from accidental deletion.
   sudo chattr +i $HOME/.cache/ebuilds/storepath
 
   printf "\n%s\n\n" "All done!"

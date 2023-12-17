@@ -16,7 +16,7 @@ Open a terminal window and type in the following:
 sudo apt install git sound-icons
 ```
 
-Next, clone this repository:
+Next, clone the repository:
 
 ```bash
 git clone https://github.com/batden/elluminate.git .elluminate
@@ -32,13 +32,13 @@ Navigate to the download folder and make the script executable:
 chmod +x elluminate.sh
 ```
 
-Then run the following command:
+Then execute the script with:
 
 ```bash
 ./elluminate.sh
 ```
 
-On subsequent runs, open a terminal and simply type:
+To run it again later, open a terminal and simply type:
 
 ```bash
 elluminate.sh
@@ -46,15 +46,11 @@ elluminate.sh
 
 (Use auto-completion: Just type *ell* and press Tab.)
 
-## Update local repository
+## Update local repo
 
 Check for updates at least once a week.
-In order to do this, change to ~/.elluminate/ and run:
+To update the local repository, change to ~/.elluminate/ and run:
 
 ```bash
 git pull
 ```
-
-That's it.
-
-Mind the cows! :cow2: :cow2: :cow2:

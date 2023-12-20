@@ -194,24 +194,40 @@ bin_deps() {
   fi
 }
 
-ls_dir() {
-  COUNT=$(ls -d -- */ | wc -l)
-  if [ $COUNT == 13 ]; then
-    printf "$BDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
+cnt_dir() {
+  COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
+  case $COUNT in
+  13)
+    printf "$BLDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
-  elif [ $COUNT == 0 ]; then
-    printf "\n$BDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
-    printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    ;;
+  0)
+    printf "\n$BLDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
+    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
-  else
-    # Warning: If the download of efl fails, nothing will compile!
-    printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
-    printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
-    beep_attention
-    sleep 12
-  fi
+    ;;
+  *)
+    if [ ! -d efl ] || [ ! -d enlightenment ]; then
+      printf "\n$BLDR%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
+      printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+      beep_exit
+      exit 1
+      # You can try downloading the missing files manually (see CLONEFL or CLONE26), then relaunch
+      # the script and select option 1 again; or relaunch the script at a later time.
+      # In both cases, be sure to enter the same path for the Enlightenment source folders as
+      # you previously used.
+    fi
+
+    if [ $COUNT -lt 13 ]; then
+      printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
+      printf "\n$BLDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
+      beep_attention
+      sleep 12
+    fi
+    ;;
+  esac
 }
 
 mng_err() {
@@ -722,7 +738,7 @@ install_now() {
   $CLONETE
   echo
 
-  ls_dir
+  cnt_dir
   build_plain
 
   mkdir -p $HOME/.elementary/themes

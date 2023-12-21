@@ -97,7 +97,20 @@ CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
 # “MN” stands for Meson——the Meson build system.
-PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
+PROG_MN="
+efl
+terminology
+enlightenment
+ephoto
+rage
+evisum
+express
+ecrire
+enventor
+edi
+entice
+enlightenment-module-forecasts
+eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.

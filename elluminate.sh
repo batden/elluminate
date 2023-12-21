@@ -369,7 +369,6 @@ rebuild_optim() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
-  chk_ddcl
   elap_start
 
   cd $ESRC/rlottie
@@ -460,7 +459,6 @@ rebuild_wld() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
-  chk_ddcl
   elap_start
 
   cd $ESRC/rlottie
@@ -668,27 +666,6 @@ do_lnk() {
   sudo ln -sf /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
   sudo ln -sf /usr/local/etc/enlightenment/system.conf /etc/enlightenment/system.conf
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
-}
-
-chk_ddcl() {
-  if [ -d $ESRC/ddcutil-1.4.1 ]; then
-    printf "\n$BLD%s $OFF%s\n" "Updating ddcutil..."
-    sleep 1
-    sudo apt install libjansson-dev &>/dev/null
-    cd $ESRC/ddcutil-1.4.1
-    sudo make uninstall &>/dev/null
-    cd .. && rm -rf $ESRC/ddcutil-1.4.1
-    cd $DLDIR
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
-    tar xzvf v$DDTL.tar.gz -C $ESRC
-    cd $ESRC/ddcutil-$DDTL
-    $AUTGN
-    make
-    $SMIL
-    sudo ldconfig
-    rm -rf $DLDIR/v$DDTL.tar.gz
-    echo
-  fi
 }
 
 install_now() {

@@ -81,7 +81,7 @@ lolcat manpages-dev manpages-posix-dev meson ninja-build papirus-icon-theme \
 texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
 xdotool xserver-xephyr xwayland"
 
-# Latest development code.
+# Latest source code available.
 CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"
 CLONETY="git clone https://git.enlightenment.org/enlightenment/terminology.git"
 CLONE26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"

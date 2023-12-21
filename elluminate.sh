@@ -639,7 +639,7 @@ set_p_src() {
   sleep 2
 }
 
-# Prerequisites.
+# Fetch and install prerequisites.
 get_preq() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   printf "\n\n$BLD%s $OFF%s\n\n" "Installing prerequisites..."

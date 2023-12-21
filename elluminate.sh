@@ -370,7 +370,6 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_eflt
   elap_start
 
   cd $ESRC/rlottie
@@ -462,7 +461,6 @@ rebuild_wld() {
   bin_deps
   e_tokens
   chk_ddcl
-  chk_eflt
   elap_start
 
   cd $ESRC/rlottie
@@ -689,22 +687,6 @@ chk_ddcl() {
     $SMIL
     sudo ldconfig
     rm -rf $DLDIR/v$DDTL.tar.gz
-    echo
-  fi
-}
-
-chk_eflt() {
-  if [ ! -f $ESRC/e26/eflete/meson.build ]; then
-    printf "\n$BLD%s $OFF%s\n" "Rebuilding Eflete using meson..."
-    sleep 1
-    cd $ESRC/e26/eflete
-    sudo make uninstall &>/dev/null
-    git reset --hard &>/dev/null
-    $REBASEF && git pull
-    meson setup build -Dbuildtype=plain \
-      -Dwerror=false
-    ninja -C build
-    $SNIN
     echo
   fi
 }

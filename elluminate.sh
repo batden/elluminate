@@ -216,15 +216,15 @@ cnt_dir() {
     sleep 2
     ;;
   0)
-    printf "\n$BLDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
-    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$BDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
+    printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
     ;;
   *)
     if [ ! -d efl ] || [ ! -d enlightenment ]; then
-      printf "\n$BLDR%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
-      printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+      printf "\n$BDR%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
+      printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
       beep_exit
       exit 1
       # You can try downloading the missing files manually (see CLONEFL or CLONE26), then relaunch

@@ -211,7 +211,7 @@ cnt_dir() {
   COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
   case $COUNT in
   13)
-    printf "$BLDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
+    printf "$BLG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
     ;;
@@ -234,8 +234,8 @@ cnt_dir() {
     fi
 
     if [ $COUNT -lt 13 ]; then
-      printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
-      printf "\n$BLDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
+      printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
+      printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
       beep_attention
       sleep 12
     fi

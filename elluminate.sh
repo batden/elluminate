@@ -94,6 +94,7 @@ CLONEVE="git clone https://git.enlightenment.org/enlightenment/enventor.git"
 CLONEDI="git clone https://git.enlightenment.org/enlightenment/edi.git"
 CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
+CLONEPN="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
 # “MN” stands for Meson——the Meson build system.
@@ -110,6 +111,7 @@ enventor
 edi
 entice
 enlightenment-module-forecasts
+enlightenment-module-penguins
 eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
@@ -210,7 +212,7 @@ bin_deps() {
 cnt_dir() {
   COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
   case $COUNT in
-  13)
+  14)
     printf "$BLG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
@@ -233,8 +235,8 @@ cnt_dir() {
       # you previously used.
     fi
 
-    if [ $COUNT -lt 13 ]; then
-      printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
+    if [ $COUNT -lt 14 ]; then
+      printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 14 PROGRAMS HAVE BEEN DOWNLOADED!"
       printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
       beep_attention
       sleep 12
@@ -702,6 +704,8 @@ install_now() {
   $CLONENT
   echo
   $CLONEFT
+  echo
+  $CLONEPN
   printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
   $CLONETE
   echo

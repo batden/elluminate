@@ -213,7 +213,7 @@ cnt_dir() {
   COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
   case $COUNT in
   14)
-    printf "$BLG%s $OFF%s\n\n" "All programs have been downloaded successfully."
+    printf "$BDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
     ;;

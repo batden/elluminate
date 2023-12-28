@@ -408,6 +408,7 @@ rebuild_optim() {
         -Dbindings=lua,cxx \
         -Devas-loaders-disabler=jxl \
         -Dglib=true \
+        -Dopengl=full \
         -Ddrm=false \
         -Dbuild-tests=false \
         -Dwl=false
@@ -494,9 +495,9 @@ rebuild_wld() {
         -Dbindings=lua,cxx \
         -Devas-loaders-disabler=jxl \
         -Dglib=true \
+        -Dopengl=es-egl \
         -Ddrm=true \
         -Dwl=true \
-        -Dopengl=es-egl \
         -Dbuild-tests=false
       ninja -C build || mng_err
       ;;

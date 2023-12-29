@@ -632,9 +632,9 @@ set_p_src() {
   read -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
   mkdir -p "$mypath"/sources
-  ESRC="$mypath"/sources
-  echo $ESRC >$HOME/.cache/ebuilds/storepath
-  printf "\n%s\n\n" "You have chosen: $ESRC"
+  SRCDIR="$mypath"/sources
+  echo $SRCDIR >$HOME/.cache/ebuilds/storepath
+  printf "\n%s\n\n" "You have chosen: $SRCDIR"
   sleep 2
 }
 

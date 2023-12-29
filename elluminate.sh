@@ -9,7 +9,7 @@
 # ELLUMINATE.SH takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages tend to lag far behind). Once installed, you can update
-# your Enlightenment desktop whenever you want to.
+# your Enlightenment desktop whenever you like.
 
 # Optional: Additional steps may be taken in order to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
@@ -267,8 +267,8 @@ elap_stop() {
 #
 # To restore a backup, use the same commands that were executed but with
 # the source and destination reversed, similar to this:
-# cp -aR /home/riley/Documents/ebackups/E_1699512402/.elementary/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/E_1699512402/.e/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/E_1703833338/.elementary/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/E_1703833338/.e/ /home/riley/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {

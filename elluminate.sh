@@ -667,7 +667,7 @@ get_preq() {
   echo
 }
 
-do_lnk() {
+do_link() {
   sudo ln -sf /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
   sudo ln -sf /usr/local/etc/enlightenment/system.conf /etc/enlightenment/system.conf
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
@@ -723,7 +723,7 @@ install_now() {
   mkdir -p $HOME/.elementary/themes
 
   sudo mkdir -p /etc/enlightenment
-  do_lnk
+  do_link
 
   sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop

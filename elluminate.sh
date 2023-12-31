@@ -318,7 +318,7 @@ rstrt_e() {
 
 # BEFORE EXECUTING THE SCRIPT...
 #
-# Add JXL support?
+# Add optional JXL support?
 # JPEG XL currently has to be compiled from source. If you really need jxl
 # support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39

@@ -11,7 +11,7 @@
 # (DEB packages tend to lag far behind). Once installed, you can update
 # your Enlightenment desktop whenever you like.
 
-# Optional: Additional steps may be taken in order to achieve optimal results.
+# Facultative: Additional steps may be taken in order to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up

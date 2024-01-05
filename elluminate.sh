@@ -202,8 +202,7 @@ p_bkp() {
 bin_deps() {
   sudo apt update && sudo apt full-upgrade
 
-  sudo apt install $DEPS
-  if [ $? -ne 0 ]; then
+  if ! sudo apt install $DEPS; then
     printf "\n$BDR%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$BDR%s %s\n" "OR DPKG DATABASE IS LOCKED."
     printf "$BDR%s $OFF%s\n\n" "SCRIPT ABORTED."
@@ -564,8 +563,7 @@ do_tests() {
     exit 1
   fi
 
-  git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null
-  if [ $? -ne 0 ]; then
+  if ! git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null; then
     printf "\n$BDR%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
     printf "$BDR%s $OFF%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
     beep_exit

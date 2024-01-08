@@ -45,7 +45,7 @@ elluminate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Just type *ell* and press Tab.
+> Use auto-completion: Type *ell* and press Tab.
 
 ## Update local repo
 

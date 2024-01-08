@@ -49,7 +49,7 @@ elluminate.sh
 
 ## Update local repo
 
-Check for updates at least once a week.
+Check for updates at least once per week.
 To update the local repository, change to ~/.elluminate/ and run:
 
 ```bash

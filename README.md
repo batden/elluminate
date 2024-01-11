@@ -4,7 +4,10 @@ A neat Bash script to build/install/update Enlightenment on Ubuntu 22.04 LTS.
 
 Please take a look at the comments in the script before running it.
 
-*See also [extinguish.sh](https://github.com/batden/extinguish) (companion script).*
+> [!NOTE]
+> It can be useful to keep a record of the pre-existing system status, before proceeding with the installation.
+>
+> Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
 ## Get started
 
@@ -45,13 +48,18 @@ elluminate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Type *ell* and press Tab.
+> Use auto-completion: Type *ell* and press the Tab key.
 
 ## Update local repo
 
-Check for updates at least once per week.
 To update the local repository, change to ~/.elluminate/ and run:
 
 ```bash
 git pull
 ```
+
+## Uninstalling
+
+You can uninstall Enlightenment and related applications from your computer at any time.
+
+See [extinguish.sh](https://github.com/batden/extinguish).

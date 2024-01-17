@@ -555,48 +555,23 @@ do_tests() {
 do_bsh_alias() {
   if [ -f $HOME/.bash_aliases ]; then
     mv -vb $HOME/.bash_aliases $HOME/.bash_aliases_bak
-    echo
-
     touch $HOME/.bash_aliases
-
-    cat >$HOME/.bash_aliases <<EOF
-    # ---------------------
-    # ENVIRONMENT VARIABLES
-    # ---------------------
-    # (These variables can be accessed from any shell sessions.)
-
-    # Compiler and linker flags added by ELLUMINATE.
-    export CC="ccache gcc"
-    export CXX="ccache g++"
-    export USE_CCACHE=1
-    export CCACHE_COMPRESS=1
-    export CPPFLAGS=-I/usr/local/include
-    export LDFLAGS=-L/usr/local/lib
-    export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
-EOF
-
-    source $HOME/.bash_aliases
   else
     touch $HOME/.bash_aliases
+  fi
 
-    cat >$HOME/.bash_aliases <<EOF
-    # ---------------------
-    # ENVIRONMENT VARIABLES
-    # ---------------------
-    # (These variables can be accessed from any shell sessions.)
-
-    # Compiler and linker flags added by ELLUMINATE.
-    export CC="ccache gcc"
-    export CXX="ccache g++"
-    export USE_CCACHE=1
-    export CCACHE_COMPRESS=1
-    export CPPFLAGS=-I/usr/local/include
-    export LDFLAGS=-L/usr/local/lib
-    export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
+  cat >$HOME/.bash_aliases <<EOF
+# Compiler and linker flags added by ELLUMINATE.
+export CC="ccache gcc"
+export CXX="ccache g++"
+export USE_CCACHE=1
+export CCACHE_COMPRESS=1
+export CPPFLAGS=-I/usr/local/include
+export LDFLAGS=-L/usr/local/lib
+export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 EOF
 
-    source $HOME/.bash_aliases
-  fi
+  source $HOME/.bash_aliases
 }
 
 set_p_src() {

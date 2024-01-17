@@ -668,8 +668,6 @@ install_now() {
   cnt_dir
   build_plain
 
-  mkdir -p $HOME/.elementary/themes
-
   sudo mkdir -p /etc/enlightenment
   do_link
 

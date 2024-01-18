@@ -64,7 +64,7 @@ DDTL=2.0.0
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
-gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly imagemagick libaom-dev \
+gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly i2c-tools imagemagick libaom-dev \
 libasound2-dev libavahi-client-dev libavif-dev libblkid-dev libbluetooth-dev \
 libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig-dev \
 libdrm-dev libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \

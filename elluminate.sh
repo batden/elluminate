@@ -602,6 +602,7 @@ get_preq() {
   $AUTGN
   make
   $SMIL
+  sudo ldconfig
   rm -rf $DLDIR/v$DDTL.tar.gz
   echo
 

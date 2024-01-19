@@ -55,7 +55,7 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
-AUTGN="./autogen.sh --prefix=$PREFIX"
+CONFG="./configure --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
@@ -64,8 +64,8 @@ DDTL=2.0.0
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell bear build-essential ccache check cmake cowsay doxygen \
 fonts-noto freeglut3-dev graphviz gstreamer1.0-libav gstreamer1.0-plugins-bad \
-gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly i2c-tools imagemagick libaom-dev \
-libasound2-dev libavahi-client-dev libavif-dev libblkid-dev libbluetooth-dev \
+gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly hwdata i2c-tools imagemagick \
+libaom-dev libasound2-dev libavahi-client-dev libavif-dev libblkid-dev libbluetooth-dev \
 libclang-11-dev libegl1-mesa-dev libexif-dev libfontconfig-dev \
 libdrm-dev libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev \
 libgif-dev libgraphviz-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
@@ -599,7 +599,7 @@ get_preq() {
 
   tar xzvf v$DDTL.tar.gz -C $ESRC
   cd $ESRC/ddcutil-$DDTL
-  $AUTGN
+  $CONFG
   make
   $SMIL
   sudo ldconfig

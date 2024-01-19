@@ -55,7 +55,7 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLR=$HOME/.elluminate
 REBASEF="git config pull.rebase false"
-CONFG="./configure --prefix=$PREFIX"
+AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
@@ -599,7 +599,7 @@ get_preq() {
 
   tar xzvf v$DDTL.tar.gz -C $ESRC
   cd $ESRC/ddcutil-$DDTL
-  $CONFG
+  $AUTGN
   make
   $SMIL
   sudo ldconfig

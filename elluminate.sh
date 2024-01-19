@@ -554,6 +554,7 @@ do_tests() {
 do_bsh_alias() {
   if [ -f $HOME/.bash_aliases ]; then
     mv -vb $HOME/.bash_aliases $HOME/.bash_aliases_bak
+    echo
     touch $HOME/.bash_aliases
   else
     touch $HOME/.bash_aliases

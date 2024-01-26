@@ -50,6 +50,10 @@ elluminate.sh
 > [!TIP]
 > Use auto-completion: Type _ell_ and press the Tab key.
 
+You can uninstall Enlightenment and related applications from your computer at any time.
+
+See [extinguish.sh](https://github.com/batden/extinguish).
+
 ## Update local repo
 
 To update the local repository, change to ~/.elluminate/ and run:
@@ -58,8 +62,6 @@ To update the local repository, change to ~/.elluminate/ and run:
 git pull
 ```
 
-## Uninstalling
+## In the picture
 
-You can uninstall Enlightenment and related applications from your computer at any time.
-
-See [extinguish.sh](https://github.com/batden/extinguish).
+![GitHub Image](/images/enlightened_desktop_wl.jpg)

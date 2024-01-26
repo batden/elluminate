@@ -50,6 +50,8 @@ elluminate.sh
 > [!TIP]
 > Use auto-completion: Type _ell_ and press the Tab key.
 
+That's it.
+
 You can uninstall Enlightenment and related applications from your computer at any time.
 
 See [extinguish.sh](https://github.com/batden/extinguish).

@@ -703,7 +703,7 @@ release_go() {
   clear
   printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  # Check for local repo updates of the script folder first.
+  # Check for available updates of the script folder first.
   cd $SCRFLR && git pull &>/dev/null
   cp -f elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh

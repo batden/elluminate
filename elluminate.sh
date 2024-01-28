@@ -703,7 +703,8 @@ release_go() {
   clear
   printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
+  cd $SCRFLR && git pull &>/dev/null
+  cp -f elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh
   sleep 1
 
@@ -733,7 +734,8 @@ wld_go() {
   clear
   printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  cp -f $SCRFLR/elluminate.sh $HOME/.local/bin
+  cd $SCRFLR && git pull &>/dev/null
+  cp -f elluminate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elluminate.sh
   sleep 1
 

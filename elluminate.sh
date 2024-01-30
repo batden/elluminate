@@ -561,14 +561,19 @@ do_bsh_alias() {
   fi
 
   cat >$HOME/.bash_aliases <<EOF
-# Compiler and linker flags added by ELLUMINATE.
-export CC="ccache gcc"
-export CXX="ccache g++"
-export USE_CCACHE=1
-export CCACHE_COMPRESS=1
-export CPPFLAGS=-I/usr/local/include
-export LDFLAGS=-L/usr/local/lib
-export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
+    # ---------------------
+    # ENVIRONMENT VARIABLES
+    # ---------------------
+    # (These variables can be accessed from any shell sessions.)
+
+    # Compiler and linker flags added by ELLUMINATE.
+    export CC="ccache gcc"
+    export CXX="ccache g++"
+    export USE_CCACHE=1
+    export CCACHE_COMPRESS=1
+    export CPPFLAGS=-I/usr/local/include
+    export LDFLAGS=-L/usr/local/lib
+    export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 EOF
 
   source $HOME/.bash_aliases

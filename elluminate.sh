@@ -26,6 +26,10 @@
 # installations of EFL, Enlightenment and related applications before running
 # this script.
 
+# We recommend doing a complete uninstallation of your Enlightenment desktop if you plan
+# to upgrade your system to the newer LTS version of the distribution, in order to
+# ensure a smooth reinstallation of the environment afterwards.
+
 # ELLUMINATE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by-sa/4.0/

@@ -613,6 +613,9 @@ get_preq() {
   printf "\n\n$BLD%s $OFF%s\n\n" "Installing prerequisites..."
 
   cd $DLDIR
+
+  #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
+  #
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
 
   tar xzvf v$DDTL.tar.gz -C $ESRC

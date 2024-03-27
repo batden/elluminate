@@ -66,4 +66,4 @@ git pull
 
 ## In the picture
 
-![GitHub Image](/images/enlightened_desktop_wl.jpg)
+![GitHub Image](/images/enlightened_desktop.jpg)

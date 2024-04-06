@@ -183,8 +183,6 @@ sel_menu() {
 
 # Check binary dependencies.
 bin_deps() {
-  sudo apt update && sudo apt full-upgrade
-
   if ! sudo apt install $DEPS; then
     printf "\n$BDR%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$BDR%s %s\n" "OR DPKG DATABASE IS LOCKED."

@@ -249,17 +249,20 @@ elap_stop() {
 #
 # To restore a backup, use the same commands that were executed but with
 # the source and destination reversed, similar to this:
-# cp -aR /home/riley/Documents/ebackups/E_1703833338/.elementary/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/E_1703833338/.e/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/E_713437727/.elementary/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/E_713437727/.e/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/ETERM_1713437727/config /home/riley/.config/terminology/
+# cp -aR /home/riley/Documents/ebackups/ETERM_1713437727/themes /home/riley/.config/terminology/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {
   TSTAMP=$(date +%s)
   mkdir -p $DOCDIR/ebackups
 
-  mkdir $DOCDIR/ebackups/E_$TSTAMP &&
+  mkdir $DOCDIR/ebackups/E_$TSTAMP && mkdir $DOCDIR/ebackups/ETERM_$TSTAMP &&
     cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
-    cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP
+    cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
+    cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
   sleep 2
 }
 
@@ -267,11 +270,11 @@ e_tokens() {
   echo $(date +%s) >>$HOME/.cache/ebuilds/etokens
 
   TOKEN=$(wc -l <$HOME/.cache/ebuilds/etokens)
-  if [ "$TOKEN" -gt 2 ]; then
+  if [ "$TOKEN" -gt 3 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
-    read -t 12 -p "Do you want to back up your Enlightenment settings now? [y/N] " answer
+    read -t 12 -p "Do you want to back up your Enlightenment and Terminology settings now? [y/N] " answer
     case $answer in
     [yY])
       e_bkp

@@ -257,19 +257,28 @@ elap_stop() {
 #
 e_bkp() {
   TSTAMP=$(date +%s)
-  mkdir -p $DOCDIR/ebackups
 
-  mkdir $DOCDIR/ebackups/E_$TSTAMP && mkdir $DOCDIR/ebackups/ETERM_$TSTAMP &&
-    cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
-    cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
-    cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
-  sleep 2
+  if [ -d $DOCDIR/ebackups ]; then
+    rm -rf $DOCDIR/ebackups
+    mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
+      cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
+      cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
+      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
+    sleep 2
+  else
+    mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
+      cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
+      cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
+      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
+    sleep 2
+  fi
 }
 
 e_tokens() {
+  TOKEN=$(wc -l <$HOME/.cache/ebuilds/etokens)
+
   echo $(date +%s) >>$HOME/.cache/ebuilds/etokens
 
-  TOKEN=$(wc -l <$HOME/.cache/ebuilds/etokens)
   if [ "$TOKEN" -gt 3 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).

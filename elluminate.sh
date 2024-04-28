@@ -571,7 +571,7 @@ do_tests() {
   fi
 
   if ! test -d "$HOME/.cache/ebuilds"; then
-    mkdir -p "$HOME/.cache/ebuilds"
+    mkdir -p "$HOME/.cache/ebuilds/etokens"
   fi
 }
 

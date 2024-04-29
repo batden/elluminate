@@ -58,7 +58,7 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 
 ## Update local repo
 
-It is good practice to check for updates to the local repository before executing the script.
+It is good practice to check for updates to the local repository before using the script.
 
 To do so, change to ~/.elluminate/ and run:
 

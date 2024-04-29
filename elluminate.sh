@@ -367,7 +367,6 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
-  chk_epl
   elap_start
 
   cd $ESRC/rlottie
@@ -456,7 +455,6 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
-  chk_epl
   elap_start
 
   cd $ESRC/rlottie
@@ -654,19 +652,6 @@ do_link() {
   sudo ln -sf /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
   sudo ln -sf /usr/local/etc/enlightenment/system.conf /etc/enlightenment/system.conf
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
-}
-
-chk_epl() {
-  if [ ! -d $ESRC/e26/enlightenment-module-places ]; then
-    printf "\n\n$BLD%s $OFF%s\n\n" "Installing Places module..."
-    sleep 1
-    cd $ESRC/e26/
-    $CLONEPL
-    cd $ESRC/e26/enlightenment-module-places
-    meson setup build -Dbuildtype=plain
-    ninja -C build
-    $SNIN
-  fi
 }
 
 install_now() {

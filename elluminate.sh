@@ -83,8 +83,8 @@ libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
 libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
 libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
 lolcat manpages-dev manpages-posix-dev meson ninja-build papirus-icon-theme \
-texlive-base unity-greeter-badges valgrind wayland-protocols wmctrl \
-xdotool xserver-xephyr xwayland"
+texlive-base texlive-fonts-utils unity-greeter-badges valgrind \
+wayland-protocols wmctrl xdotool xserver-xephyr xwayland"
 
 # Latest source code available.
 CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"
@@ -407,7 +407,8 @@ rebuild_optim() {
         -Dopengl=full \
         -Ddrm=false \
         -Dwl=false \
-        -Dbuild-tests=false
+        -Dbuild-tests=false \
+        -Ddocs=true
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -495,7 +496,8 @@ rebuild_wld() {
         -Dopengl=es-egl \
         -Ddrm=true \
         -Dwl=true \
-        -Dbuild-tests=false
+        -Dbuild-tests=false \
+        -Ddocs=true
       ninja -C build || mng_err
       ;;
     enlightenment)

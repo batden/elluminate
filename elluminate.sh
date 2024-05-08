@@ -709,7 +709,7 @@ install_now() {
   # to open the HTML documentation in your browser.
   #
   printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
-  cd $ESRCDIR/enlighten/efl/build/doc
+  cd $ESRCDIR/e26/efl/build/doc
   doxygen
 
   sudo mkdir -p /etc/enlightenment

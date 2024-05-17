@@ -30,9 +30,9 @@
 # to upgrade your system to the newer LTS version of the distribution, in order to
 # ensure a smooth reinstallation of the environment afterward.
 
-# ELLUMINATE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# ELLUMINATE.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
-# See https://creativecommons.org/licenses/by-sa/4.0/
+# See https://creativecommons.org/licenses/by/4.0/
 
 # Got a GitHub account? Please consider starring our repositories to show your support.
 # Thank you!

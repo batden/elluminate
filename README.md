@@ -56,16 +56,6 @@ You can uninstall Enlightenment and related applications from your computer at a
 
 See [extinguish.sh](https://github.com/batden/extinguish).
 
-## Update local repo
-
-It is good practice to check for updates to the local repository before using the script.
-
-To do so, change to ~/.elluminate/ and run:
-
-```bash
-git pull
-```
-
 ## In the picture
 
 ![GitHub Image](/images/enlightened_desktop.jpg)

@@ -121,8 +121,8 @@ enlightenment-module-penguins
 enlightenment-module-places
 eflete"
 
-# Bug reporting: Uncomment the following (remove the leading # character) to force messages to
-# display in English during the build process.
+# Bug reporting: Before using this script, uncomment the following (remove the leading # character)
+# to force messages to display in English during the build process.
 # export LC_ALL=C
 
 # ---------
@@ -600,8 +600,8 @@ do_bsh_alias() {
     export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 
     # Optional keyring service workaround for Enlightenment.
-    # You also need to autostart some additional services at startup for this to work.
-    # See the repository's wiki for more info.
+    # (You also need to autostart some additional services at startup for this to work:
+    # See the repository's wiki for more info.)
     # Uncomment the following if you know what you are doing.
     #if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
       #export SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh

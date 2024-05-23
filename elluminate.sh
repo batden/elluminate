@@ -598,14 +598,6 @@ do_bsh_alias() {
     export CPPFLAGS=-I/usr/local/include
     export LDFLAGS=-L/usr/local/lib
     export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
-
-    # Keyring service workaround for Enlightenment.
-    # You also need to autostart some additional services at startup for this to work:
-    # See the repository's wiki for more info.
-    #
-    if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-      export SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh
-    fi
 EOF
 
   source $HOME/.bash_aliases

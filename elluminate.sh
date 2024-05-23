@@ -123,7 +123,6 @@ eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
-#
 # export LC_ALL=C
 
 # ---------

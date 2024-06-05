@@ -818,7 +818,7 @@ wld_go() {
 
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
-    printf "\n$BLD%s $OFF%s\n\n" "Installing pv command..."
+    printf "\n$BLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
     sudo apt install -y pv
   fi
 }

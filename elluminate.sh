@@ -262,13 +262,13 @@ e_bkp() {
     mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
       cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
       cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
+      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP &>/dev/null
     sleep 2
   else
     mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
       cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
       cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP
+      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP &>/dev/null
     sleep 2
   fi
 }

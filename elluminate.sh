@@ -941,13 +941,13 @@ lo() {
 
 # and get the user's choice.
 bhd() {
-  if [ $INPUT == 1 ]; then
+  if [ "$INPUT" == 1 ]; then
     do_tests
     install_now
-  elif [ $INPUT == 2 ]; then
+  elif [ "$INPUT" == 2 ]; then
     do_tests
     release_go
-  elif [ $INPUT == 3 ]; then
+  elif [ "$INPUT" == 3 ]; then
     do_tests
     wld_go
   else

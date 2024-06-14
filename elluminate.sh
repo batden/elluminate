@@ -454,7 +454,7 @@ rebuild_optim() {
   e_tokens
   elap_start
 
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/rlottie"
   printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
@@ -473,7 +473,7 @@ rebuild_optim() {
   for I in $PROG_MN; do
     elap_start
 
-    #shellcheck disable=SC2164
+    # shellcheck disable=SC2164
     cd "$ESRC/e26/$I"
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
@@ -545,7 +545,7 @@ rebuild_wld() {
   e_tokens
   elap_start
 
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/rlottie"
   printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
@@ -564,7 +564,7 @@ rebuild_wld() {
   for I in $PROG_MN; do
     elap_start
 
-    #shellcheck disable=SC2164
+    # shellcheck disable=SC2164
     cd "$ESRC/e26/$I"
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
@@ -697,7 +697,7 @@ do_bsh_alias() {
     fi
 EOF
 
-  #shellcheck disable=SC1091
+  # shellcheck disable=SC1091
   source "$HOME/.bash_aliases"
 }
 
@@ -722,7 +722,7 @@ get_preq() {
   ESRC=$(cat "$HOME/.cache/ebuilds/storepath")
 
   printf "\n\n$BLD%s $OFF%s\n\n" "Installing prerequisites..."
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$DLDIR"
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
@@ -730,7 +730,7 @@ get_preq() {
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
 
   tar xzvf v$DDTL.tar.gz -C "$ESRC"
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/ddcutil-$DDTL"
   $AUTGN
   make
@@ -739,10 +739,10 @@ get_preq() {
   rm -rf "$DLDIR/v$DDTL.tar.gz"
   echo
 
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC"
   git clone https://github.com/Samsung/rlottie.git
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/rlottie"
   meson setup build -Dbuildtype=plain \
     -Dexample=false
@@ -767,10 +767,10 @@ install_now() {
   set_p_src
   get_preq
 
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$HOME"
   mkdir -p "$ESRC/e26"
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/e26"
 
   printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
@@ -812,7 +812,7 @@ install_now() {
   # to open the HTML documentation in your browser.
   #
   printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$ESRC/e26/efl/build/doc"
   doxygen
 
@@ -850,7 +850,7 @@ release_go() {
   printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
   # Check for available updates of the script folder first.
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$SCRFLR" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
@@ -882,7 +882,7 @@ wld_go() {
   clear
   printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  #shellcheck disable=SC2164
+  # shellcheck disable=SC2164
   cd "$SCRFLR" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"

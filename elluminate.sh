@@ -405,7 +405,7 @@ build_plain() {
   sudo ldconfig
 
   for I in $PROG_MN; do
-    #shellcheck disable=SC2164
+    # shellcheck disable=SC2164
     cd "$ESRC/e26/$I"
     printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
 

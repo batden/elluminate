@@ -245,8 +245,8 @@ menu_sel() {
   if [ "$INPUT" -lt 1 ]; then
     echo
     printf "1  $BDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now" | pv -qL 20
-    printf "2  $LWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode" | pv -qL 20
-    printf "3  $LWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 20
+    printf "2  $LWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode" | pv -qL 30
+    printf "3  $LWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 30
 
     sleep 1 && printf "$ITA%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read -r INPUT
@@ -256,7 +256,7 @@ menu_sel() {
 sel_menu() {
   if [ "$INPUT" -lt 1 ]; then
     echo
-    printf "1  $LWG%s $OFF%s\n\n" "Install the Enlightenment ecosystem now" | pv -qL 20
+    printf "1  $LWG%s $OFF%s\n\n" "Install the Enlightenment ecosystem now" | pv -qL 30
     printf "2  $BDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode" | pv -qL 20
     printf "3  $BDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 20
 

@@ -44,7 +44,7 @@
 # ---------------
 # (These variables are not available to be used outside of this script.)
 
-BLD="\e[1m"    # Bold text.
+BOLD="\e[1m"   # Bold text.
 ITALIC="\e[3m" # Italic text.
 OFF="\e[0m"    # Turn off ANSI colors and formatting.
 
@@ -409,7 +409,7 @@ build_plain() {
 
   for I in $PROG_MN; do
     cd "$ESRC/e26/$I"
-    printf "\n$BLD%s $OFF%s\n\n" "Building $I..."
+    printf "\n$BOLD%s $OFF%s\n\n" "Building $I..."
 
     case $I in
     efl)
@@ -457,7 +457,7 @@ rebuild_optim() {
   elap_start
 
   cd "$ESRC/rlottie"
-  printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
+  printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
   echo
@@ -475,7 +475,7 @@ rebuild_optim() {
     elap_start
 
     cd "$ESRC/e26/$I"
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
+    printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
 
@@ -546,7 +546,7 @@ rebuild_wld() {
   elap_start
 
   cd "$ESRC/rlottie"
-  printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
+  printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
   echo
@@ -564,7 +564,7 @@ rebuild_wld() {
     elap_start
 
     cd "$ESRC/e26/$I"
-    printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
+    printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
 
@@ -628,7 +628,7 @@ do_tests() {
     fi
   fi
 
-  printf "\n\n$BLD%s $OFF%s\n" "System check..."
+  printf "\n\n$BOLD%s $OFF%s\n" "System check..."
 
   if systemd-detect-virt -q --container; then
     printf "\n$RED_BRIGHT%s %s\n" "ELLUMINATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
@@ -718,7 +718,7 @@ set_p_src() {
 get_preq() {
   ESRC=$(cat "$HOME/.cache/ebuilds/storepath")
 
-  printf "\n\n$BLD%s $OFF%s\n\n" "Installing prerequisites..."
+  printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
   cd "$DLDIR"
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
@@ -764,7 +764,7 @@ install_now() {
   mkdir -p "$ESRC/e26"
   cd "$ESRC/e26"
 
-  printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
+  printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
   $CLONEFL
   echo
   $CLONETY
@@ -792,7 +792,7 @@ install_now() {
   $CLONEPN
   echo
   $CLONEPL
-  printf "\n\n$BLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
+  printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
   $CLONETE
   echo
 
@@ -905,7 +905,7 @@ wld_go() {
 
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
-    printf "\n$BLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
+    printf "\n$BOLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
     sudo apt install -y pv
   fi
 }
@@ -918,7 +918,7 @@ lo() {
   trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   INPUT=0
-  printf "\n$BLD%s $OFF%s\n" "Please enter the number of your choice:"
+  printf "\n$BOLD%s $OFF%s\n" "Please enter the number of your choice:"
 
   if [ ! -x /usr/local/bin/enlightenment_start ]; then
     menu_sel

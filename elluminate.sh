@@ -238,7 +238,7 @@ beep_ok() {
 }
 
 # Hints.
-# 1: A no frill, plain build.
+# 1: A no-frills, plain build.
 # 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with Nvidia drivers.

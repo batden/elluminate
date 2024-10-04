@@ -335,10 +335,10 @@ elap_stop() {
 #
 # To restore a backup, use the same commands that were executed but with
 # the source and destination reversed, similar to this:
-# cp -aR /home/riley/Documents/ebackups/E_1727251865/.elementary/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/E_1727251865/.e/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1727251865/terminology/config/ /home/riley/.config/terminology/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1727251865/terminology/themes/ /home/riley/.config/terminology/
+# cp -aR /home/riley/Documents/ebackups/E_1727334510/.elementary/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/E_1727334510/.e/ /home/riley/
+# cp -aR /home/riley/Documents/ebackups/ETERM_1727334510/terminology/config/ /home/riley/.config/terminology/
+# cp -aR /home/riley/Documents/ebackups/ETERM_1727334510/terminology/themes/ /home/riley/.config/terminology/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {

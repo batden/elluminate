@@ -72,8 +72,7 @@ DISTRO=$(lsb_release -sc)
 DDTL=2.0.0
 
 # Build dependencies, recommended and script-related packages.
-DEPS=(acpid
-  arc-theme
+DEPS=(arc-theme
   aspell
   bear
   build-essential

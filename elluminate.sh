@@ -34,7 +34,7 @@
 # Also note that ELLUMINATE.SH is not compatible with non-standard package managers like Nix.
 
 # We recommend doing a complete uninstallation of your Enlightenment desktop if you plan
-# to upgrade your system to the newer LTS version of the distribution, in order to
+# to upgrade your system to the newer LTS version of the distribution in order to
 # ensure a smooth reinstallation of the environment afterward.
 
 # ELLUMINATE.SH is licensed under a Creative Commons Attribution 4.0 International License,

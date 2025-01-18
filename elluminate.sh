@@ -3,7 +3,7 @@
 
 # This script allows you to easily and safely install Enlightenment, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
-# in your Ubuntu, Kubuntu or Xubuntu LTS desktop system.
+# in your Ubuntu, Kubuntu, or Xubuntu LTS desktop system.
 
 # Supported distribution: Jammy Jellyfish.
 

@@ -58,4 +58,4 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 
 ## In the picture
 
-![GitHub Image](/images/enlightened_desktop.jpg)
+![GitHub Image](/images/enlightenment_desktop.jpg)

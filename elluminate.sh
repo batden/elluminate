@@ -12,6 +12,10 @@
 # (DEB packages, if they exist, tend to lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
+# In order not to force our existing users to reinstall everything from scratch,
+# the (legacy) directory name “e26” is kept as it was before the transition
+# to “e27” (Enlightenment 0.27).
+
 # Facultative: Additional steps may be taken in order to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 

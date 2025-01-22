@@ -875,7 +875,8 @@ release_go() {
 wld_go() {
   clear
   printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
-
+  
+  # Check for available updates of the script folder first.
   cd "$SCRFLR" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"

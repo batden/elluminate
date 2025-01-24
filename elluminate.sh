@@ -437,11 +437,6 @@ build_plain() {
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
-    eflete)
-      meson setup build -Dbuildtype=plain \
-        -Dwerror=false
-      ninja -C build
-      ;;
     *)
       meson setup build -Dbuildtype=plain
       ninja -C build
@@ -514,12 +509,6 @@ rebuild_optim() {
       meson setup --reconfigure build -Dbuildtype=release \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
-      ninja -C build
-      ;;
-    eflete)
-      sudo chown "$USER" build/.ninja*
-      meson setup --reconfigure build -Dbuildtype=release \
-        -Denable-audio=true -Dwerror=false
       ninja -C build
       ;;
     *)
@@ -603,12 +592,6 @@ rebuild_wld() {
       meson setup --reconfigure build -Dbuildtype=release \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
-      ninja -C build
-      ;;
-    eflete)
-      sudo chown "$USER" build/.ninja*
-      meson setup --reconfigure build -Dbuildtype=release \
-        -Denable-audio=true -Dwerror=false
       ninja -C build
       ;;
     *)
@@ -875,7 +858,7 @@ release_go() {
 wld_go() {
   clear
   printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
-  
+
   # Check for available updates of the script folder first.
   cd "$SCRFLR" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"

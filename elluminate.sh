@@ -46,7 +46,7 @@
 # Thank you!
 
 # --------------
-# User Variables
+# USER VARIABLES
 # --------------
 # (These variables are not available to be used outside of this script.)
 

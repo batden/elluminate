@@ -45,15 +45,12 @@
 # If you find this script useful, please consider starring our repositories to show your support.
 # Thank you!
 
-# ---------------
-# USER VARIABLES
-# ---------------
+# --------------
+# User Variables
+# --------------
 # (These variables are not available to be used outside of this script.)
 
-BOLD="\e[1m"   # Bold text.
-ITALIC="\e[3m" # Italic text.
-OFF="\e[0m"    # Turn off ANSI colors and formatting.
-
+# Colors and formatting.
 GREEN_BRIGHT="\e[1;38;5;118m"
 MAGENTA_BRIGHT="\e[1;38;5;201m"
 ORANGE_BRIGHT="\e[1;38;5;208m"
@@ -63,7 +60,11 @@ RED_BRIGHT="\e[1;38;5;1m"
 GREEN_DIM="\e[2;38;5;118m"
 MAGENTA_DIM="\e[2;38;5;201m"
 ORANGE_DIM="\e[2;38;5;208m"
+BOLD="\e[1m"
+ITALIC="\e[3m"
+OFF="\e[0m"
 
+# Path definitions and aliases.
 PREFIX=/usr/local
 DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
@@ -75,7 +76,7 @@ SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
 DDTL=2.0.0
 
-# Build dependencies, recommended and script-related packages.
+# Build dependencies, plus recommended and script-related packages.
 DEPS=(arc-theme
   aspell
   bear
@@ -178,7 +179,7 @@ DEPS=(arc-theme
   xserver-xephyr
   xwayland)
 
-# Latest source code available.
+# Source repositories of programs: Latest source code available.
 CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"
 CLONETY="git clone https://git.enlightenment.org/enlightenment/terminology.git"
 CLONE26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
@@ -212,10 +213,6 @@ enlightenment-module-forecasts
 enlightenment-module-penguins
 enlightenment-module-places
 eflete"
-
-# Bug reporting: Before using this script, uncomment the following (remove the leading # character)
-# to force messages to display in English during the build process.
-# export LC_ALL=C
 
 # ---------
 # FUNCTIONS
@@ -292,11 +289,12 @@ cnt_dir() {
     printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
-    # You can try downloading the missing file(s) manually (see CLONEFL or CLONE26), then relaunch
-    # the script and select option 1 again; or relaunch the script at a later time.
-    # In both cases, be sure to enter the same path for the Enlightenment source
-    # folders as you previously used.
   fi
+  #
+  # Tip: You can try downloading the missing file(s) manually (see CLONEFL or CLONE26), then
+  # relaunch the script and select option 1 again; or relaunch the script at a later time.
+  # In both cases, be sure to enter the same path for the Enlightenment source folders
+  # as you previously used.
 
   case $COUNT in
   15)
@@ -335,17 +333,6 @@ elap_stop() {
   eval "echo $(date -ud "@$DELTA" +'%H hr %M min %S sec')"
 }
 
-# Timestamp: See the date man page to convert epoch to human-readable date
-# or visit https://www.epochconverter.com/
-#
-# To restore a backup, use the same commands that were executed but with
-# the source and destination reversed, similar to this:
-# cp -aR /home/riley/Documents/ebackups/E_1737447643/.elementary/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/E_1737447643/.e/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/config/ /home/riley/.config/terminology/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/themes/ /home/riley/.config/terminology/
-# (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
-#
 e_bkp() {
   TSTAMP=$(date +%s)
 
@@ -363,6 +350,17 @@ e_bkp() {
       cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
     sleep 2
   fi
+  #
+  # Timestamp: See the date man page to convert epoch to human-readable date
+  # or visit https://www.epochconverter.com/
+  #
+  # To restore a backup, use the same commands that were executed but with
+  # the source and destination reversed, similar to this:
+  # cp -aR /home/riley/Documents/ebackups/E_1737447643/.elementary/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/E_1737447643/.e/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/config/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/themes/ /home/riley/.config/terminology/
+  # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 }
 
 e_tokens() {
@@ -398,11 +396,10 @@ rstrt_e() {
   fi
 }
 
-# BEFORE EXECUTING THE SCRIPT...
-#
-# Add optional JXL support?
-# JPEG XL currently has to be compiled from source. If you really need jxl
-# support in efl, please follow the instructions below:
+# Add optional JXL support before executing the script?
+# JPEG XL currently has to be compiled from source.
+# If you really need jxl support in efl, please
+# follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
@@ -901,8 +898,7 @@ chk_pv() {
 
 # Lo and behold (“bhd”)!
 #
-# Display the selection menu...
-#
+# First, display the selection menu...
 lo() {
   trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
@@ -916,7 +912,7 @@ lo() {
   fi
 }
 
-# and get the user's choice.
+# And get the user's choice.
 bhd() {
   if [ "$INPUT" == 1 ]; then
     do_tests

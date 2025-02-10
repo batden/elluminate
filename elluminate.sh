@@ -912,7 +912,7 @@ lo() {
   fi
 }
 
-# And get the user's choice.
+# Then get the user's choice.
 bhd() {
   if [ "$INPUT" == 1 ]; then
     do_tests

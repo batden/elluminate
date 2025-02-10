@@ -196,7 +196,7 @@ CLONEPN="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 CLONEPL="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MN” stands for Meson——the Meson build system.
+# “MN” stands for Meson build system.
 PROG_MN="
 efl
 terminology

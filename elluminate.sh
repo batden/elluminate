@@ -41,8 +41,8 @@
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
-# Got a GitHub account?
-# If you find this script useful, please consider starring our repositories to show your support.
+# If you find this script useful, please consider starring our repositories or
+# donating with PayPal (see README.md) to show your support.
 # Thank you!
 
 # --------------

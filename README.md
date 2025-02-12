@@ -60,7 +60,7 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 
 ![GitHub Image](/images/enlightenment_desktop.jpg)
 
-Please help us continue promoting this fantastic desktop environment today.
-Over the years, writing bash scripts, translations, documentation, and bug reports has been a huge endeavour.
+_Please help us continue promoting this fantastic desktop environment.
+Over the years, writing bash scripts, translations, documentation, and bug reports has been a substantial endeavour._
 
 [Donate with PayPal](https://www.paypal.com/donate/?hosted_button_id=QGXWYZWH5QP5E) :trophy:

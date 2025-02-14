@@ -751,6 +751,7 @@ chk_ddcl() {
     cd "$ESRC"/ddcutil-$DDTL
     $AUTGN
     make
+    beep_attention
     $SMIL
     sudo ldconfig
     rm -rf "$DLDIR"/v$DDTL.tar.gz

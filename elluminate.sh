@@ -74,7 +74,7 @@ AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
-DDTL=2.0.0
+DDTL=2.1.4
 
 # Build dependencies, plus recommended and script-related packages.
 DEPS=(arc-theme
@@ -451,6 +451,7 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
+  chk_ddcl
   elap_start
 
   cd "$ESRC/rlottie"
@@ -534,6 +535,7 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
+  chk_ddcl
   elap_start
 
   cd "$ESRC/rlottie"
@@ -734,6 +736,26 @@ do_link() {
   sudo ln -sf /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
   sudo ln -sf /usr/local/etc/enlightenment/system.conf /etc/enlightenment/system.conf
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
+}
+
+chk_ddcl() {
+  if [ -d "$ESRC"/ddcutil-2.0.0 ]; then
+    printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
+    sleep 1
+    cd "$ESRC"/ddcutil-2.0.0
+    sudo make uninstall &>/dev/null
+    cd .. && rm -rf "$ESRC"/ddcutil-2.0.0
+    cd "$DLDIR"
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+    tar xzvf v$DDTL.tar.gz -C "$ESRC"
+    cd "$ESRC"/ddcutil-$DDTL
+    $AUTGN
+    make
+    $SMIL
+    sudo ldconfig
+    rm -rf "$DLDIR"/v$DDTL.tar.gz
+    echo
+  fi
 }
 
 install_now() {

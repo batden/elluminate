@@ -738,6 +738,13 @@ do_link() {
   sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
 }
 
+chk_pv() {
+  if [ ! -x /usr/bin/pv ]; then
+    printf "\n$BOLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
+    sudo apt install -y pv
+  fi
+}
+
 chk_ddcl() {
   if [ -d "$ESRC"/ddcutil-2.0.0 ]; then
     printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
@@ -911,13 +918,6 @@ wld_go() {
   fi
 
   exit 0
-}
-
-chk_pv() {
-  if [ ! -x /usr/bin/pv ]; then
-    printf "\n$BOLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
-    sudo apt install -y pv
-  fi
 }
 
 # Lo and behold (“bhd”)!

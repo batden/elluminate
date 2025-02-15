@@ -41,7 +41,7 @@
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
-# If you find this script useful, please consider starring our repositories or
+# If you find our scripts useful, please consider starring our repositories or
 # donating with PayPal (see README.md) to show your support.
 # Thank you!
 

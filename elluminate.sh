@@ -376,13 +376,13 @@ e_tokens() {
     case $answer in
     y | Y)
       e_bkp
-      printf "\n$ITALIC%s $OFF%s\n\n" "(done... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(Done... OK)"
       ;;
     n | N)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(no backup made... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(No backup made... OK)"
       ;;
     *)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(no backup made... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(No backup made... OK)"
       ;;
     esac
   fi

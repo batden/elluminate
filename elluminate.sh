@@ -452,7 +452,7 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
-  ddcl_check
+  ddcl_chk
   elap_start
 
   cd "$ESRC/rlottie"
@@ -537,7 +537,7 @@ rebuild_wld() {
   bin_deps
   e_tokens
   chk_ddcl
-  ddcl_check
+  ddcl_chk
   elap_start
 
   cd "$ESRC/rlottie"
@@ -768,7 +768,7 @@ chk_ddcl() {
   fi
 }
 
-ddcl_check() {
+ddcl_chk() {
   if [ -d "$ESRC"/ddcutil-2.1.4 ]; then
     printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
     sleep 1

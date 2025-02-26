@@ -696,6 +696,15 @@ set_p_src() {
   #
   read -r -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
+
+  echo
+  read -r -p "Create directory $mypath/sources? [Y/n] " confirm
+
+  if [[ $confirm =~ ^[Nn]$ ]]; then
+    beep_exit
+    exit 1
+  fi
+
   mkdir -p "$mypath"/sources
   SRCDIR="$mypath"/sources
   echo "$SRCDIR" >"$HOME/.cache/ebuilds/storepath"

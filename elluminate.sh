@@ -709,7 +709,7 @@ set_p_src() {
   SRCDIR="$mypath"/sources
   echo "$SRCDIR" >"$HOME/.cache/ebuilds/storepath"
   printf "\n%s\n\n" "You have chosen: $SRCDIR"
-  sleep 2
+  sleep 1
 }
 
 # Fetch and install prerequisites.

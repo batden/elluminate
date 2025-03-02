@@ -51,33 +51,33 @@
 # (These variables are not available to be used outside of this script.)
 
 # Colors and formatting.
-GREEN_BRIGHT="\e[1;38;5;118m"
-MAGENTA_BRIGHT="\e[1;38;5;201m"
-ORANGE_BRIGHT="\e[1;38;5;208m"
-YELLOW_BRIGHT="\e[1;38;5;226m"
-BLUE_BRIGHT="\e[1;38;5;74m"
-RED_BRIGHT="\e[1;38;5;1m"
-GREEN_DIM="\e[2;38;5;118m"
-MAGENTA_DIM="\e[2;38;5;201m"
-ORANGE_DIM="\e[2;38;5;208m"
-BOLD="\e[1m"
-ITALIC="\e[3m"
-OFF="\e[0m"
+green_bright="\e[1;38;5;118m"
+magenta_bright="\e[1;38;5;201m"
+orange_bright="\e[1;38;5;208m"
+yellow_bright="\e[1;38;5;226m"
+blue_bright="\e[1;38;5;74m"
+red_bright="\e[1;38;5;1m"
+green_dim="\e[2;38;5;118m"
+magenta_dim="\e[2;38;5;201m"
+orange_dim="\e[2;38;5;208m"
+bold="\e[1m"
+italic="\e[3m"
+off="\e[0m"
 
 # Path definitions and aliases.
 PREFIX=/usr/local
-DLDIR=$(xdg-user-dir DOWNLOAD)
-DOCDIR=$(xdg-user-dir DOCUMENTS)
-SCRFLR=$HOME/.elluminate
-REBASEF="git config pull.rebase false"
-AUTGN="./autogen.sh --prefix=$PREFIX"
-SNIN="sudo ninja -C build install"
-SMIL="sudo make install"
-DISTRO=$(lsb_release -sc)
-DDTL=2.2.0
+dldir=$(xdg-user-dir DOWNLOAD)
+docdir=$(xdg-user-dir DOCUMENTS)
+scrflr=$HOME/.elluminate
+rebasef="git config pull.rebase false"
+autgn="./autogen.sh --prefix=$PREFIX"
+snin="sudo ninja -C build install"
+smil="sudo make install"
+distro=$(lsb_release -sc)
+ddtl=2.2.0
 
 # Build dependencies, plus recommended and script-related packages.
-DEPS=(arc-theme
+deps=(arc-theme
   aspell
   bear
   build-essential
@@ -180,24 +180,24 @@ DEPS=(arc-theme
   xwayland)
 
 # Source repositories of programs: Latest source code available.
-CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"
-CLONETY="git clone https://git.enlightenment.org/enlightenment/terminology.git"
-CLONE26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
-CLONEPH="git clone https://git.enlightenment.org/enlightenment/ephoto.git"
-CLONERG="git clone https://git.enlightenment.org/enlightenment/rage.git"
-CLONEVI="git clone https://git.enlightenment.org/enlightenment/evisum.git"
-CLONEXP="git clone https://git.enlightenment.org/enlightenment/express.git"
-CLONECR="git clone https://git.enlightenment.org/enlightenment/ecrire.git"
-CLONEVE="git clone https://git.enlightenment.org/enlightenment/enventor.git"
-CLONEDI="git clone https://git.enlightenment.org/enlightenment/edi.git"
-CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
-CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
-CLONEPN="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git"
-CLONEPL="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
-CLONETE="git clone https://github.com/dimmus/eflete.git"
+clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
+clonety="git clone https://git.enlightenment.org/enlightenment/terminology.git"
+clone26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
+cloneph="git clone https://git.enlightenment.org/enlightenment/ephoto.git"
+clonerg="git clone https://git.enlightenment.org/enlightenment/rage.git"
+clonevi="git clone https://git.enlightenment.org/enlightenment/evisum.git"
+clonexp="git clone https://git.enlightenment.org/enlightenment/express.git"
+clonecr="git clone https://git.enlightenment.org/enlightenment/ecrire.git"
+cloneve="git clone https://git.enlightenment.org/enlightenment/enventor.git"
+clonedi="git clone https://git.enlightenment.org/enlightenment/edi.git"
+clonent="git clone https://git.enlightenment.org/vtorri/entice.git"
+cloneft="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
+clonepn="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git"
+clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
+clonete="git clone https://github.com/dimmus/eflete.git"
 
 # “MN” stands for Meson build system.
-PROG_MN="
+prog_mn="
 efl
 terminology
 enlightenment
@@ -246,35 +246,35 @@ beep_ok() {
 # Avoid the third option with Nvidia drivers.
 #
 menu_sel() {
-  if [ "$INPUT" -lt 1 ]; then
+  if [ "$input" -lt 1 ]; then
     echo
-    printf "1  $GREEN_BRIGHT%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now" | pv -qL 20
-    printf "2  $MAGENTA_DIM%s $OFF%s\n\n" "(Update and rebuild the ecosystem in release mode)" | pv -qL 30
-    printf "3  $ORANGE_DIM%s $OFF%s\n\n" "(Update and rebuild the ecosystem with Wayland support)" | pv -qL 30
+    printf "1  $green_bright%s $off%s\n\n" "INSTALL the Enlightenment ecosystem now" | pv -qL 20
+    printf "2  $magenta_dim%s $off%s\n\n" "(Update and rebuild the ecosystem in release mode)" | pv -qL 30
+    printf "3  $orange_dim%s $off%s\n\n" "(Update and rebuild the ecosystem with Wayland support)" | pv -qL 30
 
-    sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
-    read -r INPUT
+    sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
+    read -r input
   fi
 }
 
 sel_menu() {
-  if [ "$INPUT" -lt 1 ]; then
+  if [ "$input" -lt 1 ]; then
     echo
-    printf "1  $GREEN_DIM%s $OFF%s\n\n" "(Install the Enlightenment ecosystem now)" | pv -qL 30
-    printf "2  $MAGENTA_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode" | pv -qL 20
-    printf "3  $ORANGE_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 24
+    printf "1  $green_dim%s $off%s\n\n" "(Install the Enlightenment ecosystem now)" | pv -qL 30
+    printf "2  $magenta_bright%s $off%s\n\n" "Update and rebuild the ecosystem in RELEASE mode" | pv -qL 20
+    printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 24
 
-    sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
-    read -r INPUT
+    sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
+    read -r input
   fi
 }
 
 # Check binary dependencies.
 bin_deps() {
-  if ! sudo apt install "${DEPS[@]}"; then
-    printf "\n$RED_BRIGHT%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
-    printf "$RED_BRIGHT%s %s\n" "OR DPKG DATABASE IS LOCKED."
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
+  if ! sudo apt install "${deps[@]}"; then
+    printf "\n$red_bright%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
+    printf "$red_bright%s %s\n" "OR DPKG DATABASE IS LOCKED."
+    printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
   fi
@@ -282,35 +282,35 @@ bin_deps() {
 
 # Check source dependencies.
 cnt_dir() {
-  COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
+  count=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
 
   if [ ! -d efl ] || [ ! -d enlightenment ]; then
-    printf "\n$RED_BRIGHT%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$red_bright%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
+    printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
   fi
   #
-  # Tip: You can try downloading the missing file(s) manually (see CLONEFL or CLONE26), then
+  # Tip: You can try downloading the missing file(s) manually (see clonefl or clone26), then
   # relaunch the script and select option 1 again; or relaunch the script at a later time.
   # In both cases, be sure to enter the same path for the Enlightenment source folders
   # as you previously used.
 
-  case $COUNT in
+  case $count in
   15)
-    printf "$GREEN_BRIGHT%s $OFF%s\n\n" "All programs have been downloaded successfully."
+    printf "$green_bright%s $off%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
     ;;
   0)
-    printf "\n$RED_BRIGHT%s %s\n" "OOPS! SOMETHING WENT WRONG."
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$red_bright%s %s\n" "OOPS! SOMETHING WENT WRONG."
+    printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
     ;;
   *)
-    printf "\n$YELLOW_BRIGHT%s %s\n" "WARNING: ONLY $COUNT OF 15 PROGRAMS HAVE BEEN DOWNLOADED!"
-    printf "\n$YELLOW_BRIGHT%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
+    printf "\n$yellow_bright%s %s\n" "WARNING: ONLY $count OF 15 PROGRAMS HAVE BEEN DOWNLOADED!"
+    printf "\n$yellow_bright%s $off%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention
     sleep 12
     ;;
@@ -318,7 +318,7 @@ cnt_dir() {
 }
 
 mng_err() {
-  printf "\n$RED_BRIGHT%s $OFF%s\n\n" "BUILD ERROR——TRY AGAIN LATER."
+  printf "\n$red_bright%s $off%s\n\n" "BUILD ERROR——TRY AGAIN LATER."
   beep_exit
   exit 1
 }
@@ -328,26 +328,26 @@ elap_start() {
 }
 
 elap_stop() {
-  DELTA=$(($(date +%s) - START))
-  printf "\n$ITALIC%s $OFF%s\n" "Compilation and linking time: "
-  eval "echo $(date -ud "@$DELTA" +'%H hr %M min %S sec')"
+  delta=$(($(date +%s) - START))
+  printf "\n$italic%s $off%s\n" "Compilation and linking time: "
+  eval "echo $(date -ud "@$delta" +'%H hr %M min %S sec')"
 }
 
 e_bkp() {
-  TSTAMP=$(date +%s)
+  tstamp=$(date +%s)
 
-  if [ -d "$DOCDIR/ebackups" ]; then
-    rm -rf "$DOCDIR/ebackups"
-    mkdir -p "$DOCDIR/ebackups/E_$TSTAMP" && mkdir -p "$DOCDIR/ebackups/ETERM_$TSTAMP" &&
-      cp -aR "$HOME/.elementary" "$DOCDIR/ebackups/E_$TSTAMP" &&
-      cp -aR "$HOME/.e" "$DOCDIR/ebackups/E_$TSTAMP" &&
-      cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
+  if [ -d "$docdir/ebackups" ]; then
+    rm -rf "$docdir/ebackups"
+    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
+      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
+      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
+      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
     sleep 2
   else
-    mkdir -p "$DOCDIR/ebackups/E_$TSTAMP" && mkdir -p "$DOCDIR/ebackups/ETERM_$TSTAMP" &&
-      cp -aR "$HOME/.elementary" "$DOCDIR/ebackups/E_$TSTAMP" &&
-      cp -aR "$HOME/.e" "$DOCDIR/ebackups/E_$TSTAMP" &&
-      cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
+    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
+      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
+      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
+      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
     sleep 2
   fi
   #
@@ -356,19 +356,19 @@ e_bkp() {
   #
   # To restore a backup, use the same commands that were executed but with
   # the source and destination reversed, similar to this:
-  # cp -aR /home/riley/Documents/ebackups/E_1739631880/.elementary/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/E_1739631880/.e/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/ETERM_1739631880/terminology/config/ /home/riley/.config/terminology/
-  # cp -aR /home/riley/Documents/ebackups/ETERM_1739631880/terminology/themes/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/e_1739631880/.elementary/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/e_1739631880/.e/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1739631880/terminology/config/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1739631880/terminology/themes/ /home/riley/.config/terminology/
   # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 }
 
 e_tokens() {
   date +%s >>"$HOME/.cache/ebuilds/etokens"
 
-  TOKEN=$(wc -l <"$HOME/.cache/ebuilds/etokens")
+  token=$(wc -l <"$HOME/.cache/ebuilds/etokens")
 
-  if [ "$TOKEN" -gt 3 ]; then
+  if [ "$token" -gt 3 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
@@ -376,13 +376,13 @@ e_tokens() {
     case $answer in
     y | Y)
       e_bkp
-      printf "\n$ITALIC%s $OFF%s\n\n" "(Done... OK)"
+      printf "\n$italic%s $off%s\n\n" "(Done... OK)"
       ;;
     n | N)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(No backup made... OK)"
+      printf "\n$italic%s $off%s\n\n" "(No backup made... OK)"
       ;;
     *)
-      printf "\n$ITALIC%s $OFF%s\n\n" "(No backup made... OK)"
+      printf "\n$italic%s $off%s\n\n" "(No backup made... OK)"
       ;;
     esac
   fi
@@ -410,9 +410,9 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for I in $PROG_MN; do
-    cd "$ESRC/e26/$I"
-    printf "\n$BOLD%s $OFF%s\n\n" "Building $I..."
+  for I in $prog_mn; do
+    cd "$esrc/e26/$I"
+    printf "\n$bold%s $off%s\n\n" "Building $I..."
 
     case $I in
     efl)
@@ -442,13 +442,13 @@ build_plain() {
     esac
 
     beep_attention
-    $SNIN
+    $snin
     sudo ldconfig
   done
 }
 
 rebuild_optim() {
-  ESRC=$(cat "$HOME/.cache/ebuilds/storepath")
+  esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
   bin_deps
   e_tokens
@@ -456,28 +456,28 @@ rebuild_optim() {
   ddcl_chk
   elap_start
 
-  cd "$ESRC/rlottie"
-  printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
+  cd "$esrc/rlottie"
+  printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
-  $REBASEF && git pull
+  $rebasef && git pull
   echo
   sudo chown "$USER" build/.ninja*
   meson setup --reconfigure build -Dbuildtype=release \
     -Dexample=false
   ninja -C build
   beep_attention
-  $SNIN
+  $snin
   sudo ldconfig
 
   elap_stop
 
-  for I in $PROG_MN; do
+  for I in $prog_mn; do
     elap_start
 
-    cd "$ESRC/e26/$I"
-    printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
+    cd "$esrc/e26/$I"
+    printf "\n$bold%s $off%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
-    $REBASEF && git pull
+    $rebasef && git pull
 
     case $I in
     efl)
@@ -519,7 +519,7 @@ rebuild_optim() {
     esac
 
     beep_attention
-    $SNIN
+    $snin
     sudo ldconfig
 
     elap_stop
@@ -527,10 +527,10 @@ rebuild_optim() {
 }
 
 rebuild_wld() {
-  ESRC=$(cat "$HOME/.cache/ebuilds/storepath")
+  esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "\n$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "\n$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -541,28 +541,28 @@ rebuild_wld() {
   ddcl_chk
   elap_start
 
-  cd "$ESRC/rlottie"
-  printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
+  cd "$esrc/rlottie"
+  printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
-  $REBASEF && git pull
+  $rebasef && git pull
   echo
   sudo chown "$USER" build/.ninja*
   meson setup --reconfigure build -Dbuildtype=release \
     -Dexample=false
   ninja -C build
   beep_attention
-  $SNIN
+  $snin
   sudo ldconfig
 
   elap_stop
 
-  for I in $PROG_MN; do
+  for I in $prog_mn; do
     elap_start
 
-    cd "$ESRC/e26/$I"
-    printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
+    cd "$esrc/e26/$I"
+    printf "\n$bold%s $off%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
-    $REBASEF && git pull
+    $rebasef && git pull
 
     case $I in
     efl)
@@ -604,7 +604,7 @@ rebuild_wld() {
     esac
 
     beep_attention
-    $SNIN
+    $snin
     sudo ldconfig
 
     elap_stop
@@ -618,27 +618,27 @@ do_tests() {
     fi
   fi
 
-  printf "\n\n$BOLD%s $OFF%s\n" "System check..."
+  printf "\n\n$bold%s $off%s\n" "System check..."
 
   if systemd-detect-virt -q --container; then
-    printf "\n$RED_BRIGHT%s %s\n" "ELLUMINATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$red_bright%s %s\n" "ELLUMINATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
+    printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
   fi
 
-  if [ "$DISTRO" == jammy ]; then
-    printf "\n$GREEN_BRIGHT%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
+  if [ "$distro" == jammy ]; then
+    printf "\n$green_bright%s $off%s\n\n" "Ubuntu ${distro^}... OK"
     sleep 1
   else
-    printf "\n$RED_BRIGHT%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
+    printf "\n$red_bright%s $off%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
     beep_exit
     exit 1
   fi
 
   if ! git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null; then
-    printf "\n$RED_BRIGHT%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
-    printf "$RED_BRIGHT%s $OFF%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
+    printf "\n$red_bright%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
+    printf "$red_bright%s $off%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
     beep_exit
     exit 1
   fi
@@ -706,39 +706,39 @@ set_p_src() {
   fi
 
   mkdir -p "$mypath"/sources
-  SRCDIR="$mypath"/sources
-  echo "$SRCDIR" >"$HOME/.cache/ebuilds/storepath"
-  printf "\n%s\n\n" "You have chosen: $SRCDIR"
+  srcdir="$mypath"/sources
+  echo "$srcdir" >"$HOME/.cache/ebuilds/storepath"
+  printf "\n%s\n\n" "You have chosen: $srcdir"
   sleep 1
 }
 
 # Fetch and install prerequisites.
 get_preq() {
-  ESRC=$(cat "$HOME/.cache/ebuilds/storepath")
+  esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
-  printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
-  cd "$DLDIR"
+  printf "\n\n$bold%s $off%s\n\n" "Installing prerequisites..."
+  cd "$dldir"
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
   #
-  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
 
-  tar xzvf v$DDTL.tar.gz -C "$ESRC"
-  cd "$ESRC/ddcutil-$DDTL"
-  $AUTGN
+  tar xzvf v$ddtl.tar.gz -C "$esrc"
+  cd "$esrc/ddcutil-$ddtl"
+  $autgn
   make
-  $SMIL
+  $smil
   sudo ldconfig
-  rm -rf "$DLDIR/v$DDTL.tar.gz"
+  rm -rf "$dldir/v$ddtl.tar.gz"
   echo
 
-  cd "$ESRC"
+  cd "$esrc"
   git clone https://github.com/Samsung/rlottie.git
-  cd "$ESRC/rlottie"
+  cd "$esrc/rlottie"
   meson setup build -Dbuildtype=plain \
     -Dexample=false
   ninja -C build
-  $SNIN
+  $snin
   sudo ldconfig
   echo
 }
@@ -751,56 +751,56 @@ do_link() {
 
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
-    printf "\n$BOLD%s $OFF%s\n\n" "Installing pv command for menu animation..."
+    printf "\n$bold%s $off%s\n\n" "Installing pv command for menu animation..."
     sudo apt install -y pv
   fi
 }
 
 chk_ddcl() {
-  if [ -d "$ESRC"/ddcutil-2.0.0 ]; then
-    printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
+  if [ -d "$esrc"/ddcutil-2.0.0 ]; then
+    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
     sleep 1
-    cd "$ESRC"/ddcutil-2.0.0
+    cd "$esrc"/ddcutil-2.0.0
     sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$ESRC"/ddcutil-2.0.0
-    cd "$DLDIR"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
-    tar xzvf v$DDTL.tar.gz -C "$ESRC"
-    cd "$ESRC"/ddcutil-$DDTL
-    $AUTGN
+    cd .. && rm -rf "$esrc"/ddcutil-2.0.0
+    cd "$dldir"
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
+    tar xzvf v$ddtl.tar.gz -C "$esrc"
+    cd "$esrc"/ddcutil-$ddtl
+    $autgn
     make
     beep_attention
-    $SMIL
+    $smil
     sudo ldconfig
-    rm -rf "$DLDIR"/v$DDTL.tar.gz
+    rm -rf "$dldir"/v$ddtl.tar.gz
     echo
   fi
 }
 
 ddcl_chk() {
-  if [ -d "$ESRC"/ddcutil-2.1.4 ]; then
-    printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
+  if [ -d "$esrc"/ddcutil-2.1.4 ]; then
+    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
     sleep 1
-    cd "$ESRC"/ddcutil-2.1.4
+    cd "$esrc"/ddcutil-2.1.4
     sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$ESRC"/ddcutil-2.1.4
-    cd "$DLDIR"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
-    tar xzvf v$DDTL.tar.gz -C "$ESRC"
-    cd "$ESRC"/ddcutil-$DDTL
-    $AUTGN
+    cd .. && rm -rf "$esrc"/ddcutil-2.1.4
+    cd "$dldir"
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
+    tar xzvf v$ddtl.tar.gz -C "$esrc"
+    cd "$esrc"/ddcutil-$ddtl
+    $autgn
     make
     beep_attention
-    $SMIL
+    $smil
     sudo ldconfig
-    rm -rf "$DLDIR"/v$DDTL.tar.gz
+    rm -rf "$dldir"/v$ddtl.tar.gz
     echo
   fi
 }
 
 install_now() {
   clear
-  printf "\n$GREEN_BRIGHT%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
+  printf "\n$green_bright%s $off%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
   do_bsh_alias
   beep_attention
   bin_deps
@@ -808,39 +808,39 @@ install_now() {
   get_preq
 
   cd "$HOME"
-  mkdir -p "$ESRC/e26"
-  cd "$ESRC/e26"
+  mkdir -p "$esrc/e26"
+  cd "$esrc/e26"
 
-  printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
-  $CLONEFL
+  printf "\n\n$bold%s $off%s\n\n" "Fetching source code from the Enlightenment git repositories..."
+  $clonefl
   echo
-  $CLONETY
+  $clonety
   echo
-  $CLONE26
+  $clone26
   echo
-  $CLONEPH
+  $cloneph
   echo
-  $CLONERG
+  $clonerg
   echo
-  $CLONEVI
+  $clonevi
   echo
-  $CLONEXP
+  $clonexp
   echo
-  $CLONECR
+  $clonecr
   echo
-  $CLONEVE
+  $cloneve
   echo
-  $CLONEDI
+  $clonedi
   echo
-  $CLONENT
+  $clonent
   echo
-  $CLONEFT
+  $cloneft
   echo
-  $CLONEPN
+  $clonepn
   echo
-  $CLONEPL
-  printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
-  $CLONETE
+  $clonepl
+  printf "\n\n$bold%s $off%s\n\n" "Fetching source code from Dimmus' git repository..."
+  $clonete
   echo
 
   cnt_dir
@@ -849,9 +849,9 @@ install_now() {
   # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on e26/efl/build/html/index.html
   # to open the HTML documentation in your browser.
   #
-  printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
+  printf "\n\n$bold%s $off%s\n\n" "Generating the documentation for EFL..."
   sleep 1
-  cd "$ESRC/e26/efl/build/doc"
+  cd "$esrc/e26/efl/build/doc"
   doxygen
 
   sudo mkdir -p /etc/enlightenment
@@ -866,9 +866,9 @@ install_now() {
   printf "\n%s\n\n" "All done!"
   beep_ok
 
-  printf "\n\n$BLUE_BRIGHT%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$BLUE_BRIGHT%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
-  printf "\n$BLUE_BRIGHT%s $OFF%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
+  printf "\n\n$blue_bright%s %s" "INITIAL SETUP WIZARD TIPS:"
+  printf "\n$blue_bright%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
+  printf "\n$blue_bright%s $off%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Desktop, you can safely delete them if it bothers you.
@@ -878,7 +878,7 @@ install_now() {
   That's All Folks!" | lolcat -a
   echo
 
-  cp -f "$DLDIR/elluminate.sh" "$HOME/.local/bin"
+  cp -f "$dldir/elluminate.sh" "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
 
   exit 0
@@ -886,10 +886,10 @@ install_now() {
 
 release_go() {
   clear
-  printf "\n$MAGENTA_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
+  printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
   # Check for available updates of the script folder first.
-  cd "$SCRFLR" && git pull &>/dev/null
+  cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
   sleep 1
@@ -918,10 +918,10 @@ release_go() {
 
 wld_go() {
   clear
-  printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
+  printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
   # Check for available updates of the script folder first.
-  cd "$SCRFLR" && git pull &>/dev/null
+  cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
   sleep 1
@@ -957,10 +957,10 @@ wld_go() {
 #
 # First, display the selection menu...
 lo() {
-  trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
-  INPUT=0
-  printf "\n$BOLD%s $OFF%s\n" "Please enter the number of your choice:"
+  input=0
+  printf "\n$bold%s $off%s\n" "Please enter the number of your choice:"
 
   if [ ! -x /usr/local/bin/enlightenment_start ]; then
     menu_sel
@@ -971,13 +971,13 @@ lo() {
 
 # Then get the user's choice.
 bhd() {
-  if [ "$INPUT" == 1 ]; then
+  if [ "$input" == 1 ]; then
     do_tests
     install_now
-  elif [ "$INPUT" == 2 ]; then
+  elif [ "$input" == 2 ]; then
     do_tests
     release_go
-  elif [ "$INPUT" == 3 ]; then
+  elif [ "$input" == 3 ]; then
     do_tests
     wld_go
   else

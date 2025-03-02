@@ -196,7 +196,7 @@ clonepn="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
 clonete="git clone https://github.com/dimmus/eflete.git"
 
-# “MN” stands for Meson build system.
+# “mn” stands for Meson build system.
 prog_mn="
 efl
 terminology
@@ -324,11 +324,11 @@ mng_err() {
 }
 
 elap_start() {
-  START=$(date +%s)
+  start=$(date +%s)
 }
 
 elap_stop() {
-  delta=$(($(date +%s) - START))
+  delta=$(($(date +%s) - start))
   printf "\n$italic%s $off%s\n" "Compilation and linking time: "
   eval "echo $(date -ud "@$delta" +'%H hr %M min %S sec')"
 }

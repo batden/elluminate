@@ -697,6 +697,12 @@ set_p_src() {
   read -r -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
 
+  if [[ ! "$mypath" =~ ^/home/$LOGNAME.* ]]; then
+    printf "\n$red_bright%s $off%s\n" "PATH MUST BE WITHIN YOUR HOME DIRECTORY (/home/$LOGNAME)."
+    beep_exit
+    exit 1
+  fi
+
   echo
   read -r -p "Create directory $mypath/sources? [Y/n] " confirm
 

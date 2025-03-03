@@ -698,7 +698,7 @@ set_p_src() {
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
 
   if [[ ! "$mypath" =~ ^/home/$LOGNAME.* ]]; then
-    printf "\n$red_bright%s $off%s\n" "PATH MUST BE WITHIN YOUR HOME DIRECTORY (/home/$LOGNAME)."
+    printf "\n$red_bright%s $off%s\n\n" "PATH MUST BE WITHIN YOUR HOME DIRECTORY (/home/$LOGNAME)."
     beep_exit
     exit 1
   fi

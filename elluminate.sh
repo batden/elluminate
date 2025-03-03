@@ -410,11 +410,11 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for I in $prog_mn; do
-    cd "$esrc/e26/$I"
-    printf "\n$bold%s $off%s\n\n" "Building $I..."
+  for i in $prog_mn; do
+    cd "$esrc/e26/$i"
+    printf "\n$bold%s $off%s\n\n" "Building $i..."
 
-    case $I in
+    case $i in
     efl)
       meson setup build -Dbuildtype=plain \
         -Dfb=true \
@@ -471,15 +471,15 @@ rebuild_optim() {
 
   elap_stop
 
-  for I in $prog_mn; do
+  for i in $prog_mn; do
     elap_start
 
-    cd "$esrc/e26/$I"
-    printf "\n$bold%s $off%s\n\n" "Updating $I..."
+    cd "$esrc/e26/$i"
+    printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    case $I in
+    case $i in
     efl)
       sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
@@ -556,15 +556,15 @@ rebuild_wld() {
 
   elap_stop
 
-  for I in $prog_mn; do
+  for i in $prog_mn; do
     elap_start
 
-    cd "$esrc/e26/$I"
-    printf "\n$bold%s $off%s\n\n" "Updating $I..."
+    cd "$esrc/e26/$i"
+    printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    case $I in
+    case $i in
     efl)
       sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \

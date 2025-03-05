@@ -77,7 +77,8 @@ distro=$(lsb_release -sc)
 ddtl=2.2.0
 
 # Build dependencies, plus recommended and script-related packages.
-deps=(arc-theme
+deps=(
+  arc-theme
   aspell
   bear
   build-essential
@@ -177,7 +178,8 @@ deps=(arc-theme
   wmctrl
   xdotool
   xserver-xephyr
-  xwayland)
+  xwayland
+)
 
 # Source repositories of programs: Latest source code available.
 clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
@@ -197,22 +199,23 @@ clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonete="git clone https://github.com/dimmus/eflete.git"
 
 # “mn” stands for Meson build system.
-prog_mn="
-efl
-terminology
-enlightenment
-ephoto
-rage
-evisum
-express
-ecrire
-enventor
-edi
-entice
-enlightenment-module-forecasts
-enlightenment-module-penguins
-enlightenment-module-places
-eflete"
+prog_mn=(
+  efl
+  terminology
+  enlightenment
+  ephoto
+  rage
+  evisum
+  express
+  ecrire
+  enventor
+  edi
+  entice
+  enlightenment-module-forecasts
+  enlightenment-module-penguins
+  enlightenment-module-places
+  eflete
+)
 
 # ---------
 # FUNCTIONS
@@ -410,7 +413,7 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for i in $prog_mn; do
+  for i in "${prog_mn[@]}"; do
     cd "$esrc/e26/$i"
     printf "\n$bold%s $off%s\n\n" "Building $i..."
 
@@ -471,7 +474,7 @@ rebuild_optim() {
 
   elap_stop
 
-  for i in $prog_mn; do
+  for i in "${prog_mn[@]}"; do
     elap_start
 
     cd "$esrc/e26/$i"
@@ -556,7 +559,7 @@ rebuild_wld() {
 
   elap_stop
 
-  for i in $prog_mn; do
+  for i in "${prog_mn[@]}"; do
     elap_start
 
     cd "$esrc/e26/$i"

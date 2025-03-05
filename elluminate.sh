@@ -760,7 +760,7 @@ do_link() {
 
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
-    printf "\n$bold%s $off%s\n\n" "Installing pv command for menu animation..."
+    printf "\n$bold%s $off%s\n\n" "Installing the pv command for menu animation..."
     sudo apt install -y pv
   fi
 }

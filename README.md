@@ -11,7 +11,7 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-Before using lluminate, you may need to install the git and sound-icons packages on your system if they aren't already there.
+Before using elluminate, you may need to install the git and sound-icons packages on your system if they aren't already there.
 
 Open a terminal window and type in the following:
 

@@ -966,7 +966,7 @@ wld_go() {
 #
 # First, display the selection menu...
 lo() {
-  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
   usr_input=0
   printf "\n$bold%s $off%s\n" "Please enter the number of your choice:"

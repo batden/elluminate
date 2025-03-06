@@ -2,7 +2,7 @@
 
 A neat Bash script to build/install/update Enlightenment on Ubuntu 22.04 LTS.
 
-Please take a look at the comments in the script before running it.
+Please see the script comments for hints and additional information.
 
 > [!NOTE]
 > It may be useful to keep a record of the pre-existing system status before proceeding with the installation.

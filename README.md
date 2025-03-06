@@ -5,11 +5,11 @@ A neat Bash script to build/install/update Enlightenment on Ubuntu 22.04 LTS.
 Please take a look at the comments in the script before running it.
 
 > [!NOTE]
-> It may be useful to keep a record of the pre-existing system status, before proceeding with the installation.
+> It may be useful to keep a record of the pre-existing system status before proceeding with the installation.
 >
 > Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
-## Get started
+## Getting started
 
 Before using elluminate, you may need to install the git and sound-icons packages on your system if they aren't already there.
 
@@ -35,7 +35,7 @@ Navigate to the download folder and make the script executable:
 chmod +x elluminate.sh
 ```
 
-Then execute the script with:
+Then, execute the script with:
 
 ```bash
 ./elluminate.sh

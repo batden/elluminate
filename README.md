@@ -9,7 +9,7 @@ Please take a look at the comments in the script before running it.
 >
 > Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
-## Get started
+## Getting started
 
 Before using elluminate, you may need to install the git and sound-icons packages on your system if they aren't already there.
 

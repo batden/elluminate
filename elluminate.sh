@@ -74,7 +74,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
-ddtl=2.2.0
+ddctl=2.2.0
 
 # Build dependencies, plus recommended and script-related packages.
 deps=(
@@ -730,15 +730,15 @@ get_preq() {
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
   #
-  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
+  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
 
-  tar xzvf v$ddtl.tar.gz -C "$esrc"
-  cd "$esrc/ddcutil-$ddtl"
+  tar xzvf v$ddctl.tar.gz -C "$esrc"
+  cd "$esrc/ddcutil-$ddctl"
   $autgn
   make
   $smil
   sudo ldconfig
-  rm -rf "$dldir/v$ddtl.tar.gz"
+  rm -rf "$dldir/v$ddctl.tar.gz"
   echo
 
   cd "$esrc"
@@ -773,15 +773,15 @@ chk_ddcl() {
     sudo make uninstall &>/dev/null
     cd .. && rm -rf "$esrc"/ddcutil-2.0.0
     cd "$dldir"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
-    tar xzvf v$ddtl.tar.gz -C "$esrc"
-    cd "$esrc"/ddcutil-$ddtl
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
+    tar xzvf v$ddctl.tar.gz -C "$esrc"
+    cd "$esrc"/ddcutil-$ddctl
     $autgn
     make
     beep_attention
     $smil
     sudo ldconfig
-    rm -rf "$dldir"/v$ddtl.tar.gz
+    rm -rf "$dldir"/v$ddctl.tar.gz
     echo
   fi
 }
@@ -794,15 +794,15 @@ ddcl_chk() {
     sudo make uninstall &>/dev/null
     cd .. && rm -rf "$esrc"/ddcutil-2.1.4
     cd "$dldir"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddtl.tar.gz
-    tar xzvf v$ddtl.tar.gz -C "$esrc"
-    cd "$esrc"/ddcutil-$ddtl
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
+    tar xzvf v$ddctl.tar.gz -C "$esrc"
+    cd "$esrc"/ddcutil-$ddctl
     $autgn
     make
     beep_attention
     $smil
     sudo ldconfig
-    rm -rf "$dldir"/v$ddtl.tar.gz
+    rm -rf "$dldir"/v$ddctl.tar.gz
     echo
   fi
 }

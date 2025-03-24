@@ -89,6 +89,7 @@ deps=(
   doxygen
   fonts-noto
   freeglut3-dev
+  git
   graphviz
   gstreamer1.0-libav
   gstreamer1.0-plugins-bad
@@ -877,7 +878,7 @@ install_now() {
   beep_ok
 
   printf "\n\n$blue_bright%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$blue_bright%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
+  printf "\n$blue_bright%s %s" '“Enable update checking” —— You can disable this feature as it is not helpful for this type of installation.'
   printf "\n$blue_bright%s $off%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)

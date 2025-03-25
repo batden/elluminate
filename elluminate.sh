@@ -377,6 +377,7 @@ e_tokens() {
     printf "\n$blue_bright%s %s" "Thank you $LOGNAME, for your trust and fidelity!"
     printf "\n$blue_bright%s $off%s\n\n" "Looks like you're on the right track..."
     sl | lolcat
+    sleep 2
   elif [ "$token" -gt 3 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).

@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1091 disable=SC2164
+# shellcheck disable=SC1091 disable=SC2164 disable=SC2126
 
 # This script allows you to easily and safely install Enlightenment, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
@@ -171,6 +171,7 @@ deps=(
   ninja-build
   papirus-icon-theme
   pv
+  sl
   texlive-base
   texlive-font-utils
   unity-greeter-badges
@@ -370,9 +371,13 @@ e_bkp() {
 e_tokens() {
   date +%s >>"$HOME/.cache/ebuilds/etokens"
 
-  token=$(wc -l <"$HOME/.cache/ebuilds/etokens")
+  token=$(grep -v "^$" "$HOME/.cache/ebuilds/etokens" | wc -l)
 
-  if [ "$token" -gt 3 ]; then
+  if [ "$token" -eq 10 ]; then
+    printf "\n$blue_bright%s %s" "Thank you $LOGNAME, for your trust and fidelity!"
+    printf "\n$blue_bright%s $off%s\n\n" "Looks like you're on the right track..."
+    sl | lolcat
+  elif [ "$token" -gt 3 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
@@ -699,7 +704,7 @@ set_p_src() {
   # Do not append a trailing slash (/) to the end of the path prefix.
   #
   read -r -p "Please enter a path for the Enlightenment source folders \
-  (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
+  (e.g. /home/LOGNAME$/Documents or /home/$LOGNAME/testing): " mypath
 
   if [[ ! "$mypath" =~ ^/home/$LOGNAME.* ]]; then
     printf "\n$red_bright%s $off%s\n\n" "PATH MUST BE WITHIN YOUR HOME DIRECTORY (/home/$LOGNAME)."
@@ -763,6 +768,13 @@ chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the pv command for menu animation..."
     sudo apt install -y pv
+  fi
+}
+
+chk_sl() {
+  if [ ! -x /usr/bin/sl ]; then
+    printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
+    sudo apt install -y sl
   fi
 }
 
@@ -998,5 +1010,6 @@ bhd() {
 }
 
 chk_pv
+chk_sl
 lo
 bhd

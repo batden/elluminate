@@ -772,7 +772,7 @@ chk_pv() {
 }
 
 chk_sl() {
-  if [ ! -x /usr/bin/sl ]; then
+  if [ ! -x /usr/games/sl ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
     sudo apt install -y sl
   fi

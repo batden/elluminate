@@ -7,8 +7,8 @@
 
 # Supported distribution: Jammy Jellyfish.
 
-# ELLUMINATE.SH takes care of downloading, configuring, and building everything you
-# need to enjoy the very latest version of the Enlightenment environment
+# ELLUMINATE.SH takes care of downloading, configuring, and building everything
+# you need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages, if they exist, tend to lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
@@ -34,7 +34,7 @@
 # Also note that ELLUMINATE.SH is not compatible with non-standard package managers like Nix.
 
 # We recommend that you perform a complete uninstall of your Enlightenment desktop if you plan
-# to upgrade your system to the newer LTS version of the distribution
+# to upgrade your system to the newer LTS version of the distribution,
 # to ensure a smooth reinstallation of the environment afterwards.
 
 # ELLUMINATE.SH is licensed under a Creative Commons Attribution 4.0 International License,

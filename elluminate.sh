@@ -296,10 +296,10 @@ cnt_dir() {
     exit 1
   fi
   #
-  # Tip: You can try downloading the missing file(s) manually (see clonefl or clone26), then
-  # relaunch the script and select option 1 again; or relaunch the script at a later time.
+  # Tip: You can try to download the missing file(s) manually (see clonefl or clone26), then
+  # rerun the script and select option 1 again; or relaunch the script at a later time.
   # In both cases, be sure to enter the same path for the Enlightenment source folders
-  # as you previously used.
+  # as you used before.
 
   case $count in
   15)

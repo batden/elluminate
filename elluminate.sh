@@ -1,13 +1,13 @@
 #!/bin/bash
 # shellcheck disable=SC1091 disable=SC2164 disable=SC2126
 
-# This script allows you to easily and safely install Enlightenment, along with
+# This script allows you to install Enlightenment handily and securely, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
 # in your Ubuntu, Kubuntu, or Xubuntu LTS desktop system.
 
 # Supported distribution: Jammy Jellyfish.
 
-# ELLUMINATE.SH takes care of downloading, configuring and building everything you
+# ELLUMINATE.SH takes care of downloading, configuring, and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages, if they exist, tend to lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
@@ -16,26 +16,26 @@
 # the (legacy) directory name “e26” is kept as it was before the transition
 # to “e27” (Enlightenment 0.27).
 
-# Facultative: Additional steps may be taken in order to achieve optimal results.
+# Facultative: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
-# to look at earlier output at any time.
+# to look at the earlier output at any time.
 
 # See README.md for instructions on how to use this script.
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably come into conflict
-# with the ones installed from DEB packages. Therefore, remove any previous binary
-# installations of EFL, Enlightenment and related applications before running
+# with those installed from DEB packages. Therefore, remove all previous binary
+# installations of EFL, Enlightenment, and related applications before running
 # this script.
 
 # Also note that ELLUMINATE.SH is not compatible with non-standard package managers like Nix.
 
-# We recommend doing a complete uninstallation of your Enlightenment desktop if you plan
-# to upgrade your system to the newer LTS version of the distribution in order to
-# ensure a smooth reinstallation of the environment afterward.
+# We recommend that you perform a complete uninstall of your Enlightenment desktop if you plan
+# to upgrade your system to the newer LTS version of the distribution
+# to ensure a smooth reinstallation of the environment afterwards.
 
 # ELLUMINATE.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
@@ -359,7 +359,7 @@ e_bkp() {
   # Timestamp: See the date man page to convert epoch to human-readable date
   # or visit https://www.epochconverter.com/
   #
-  # To restore a backup, use the same commands that were executed but with
+  # To restore a backup, use the same commands that were executed, but with
   # the source and destination reversed, similar to this:
   # cp -aR /home/riley/Documents/ebackups/e_1739631880/.elementary/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/e_1739631880/.e/ /home/riley/
@@ -409,8 +409,8 @@ rstrt_e() {
 
 # Add optional JXL support before executing the script?
 # JPEG XL currently has to be compiled from source.
-# If you really need jxl support in efl, please
-# follow the instructions below:
+# If you need jxl support in efl, please follow
+# the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
@@ -675,7 +675,7 @@ do_bsh_alias() {
     # ---------------------
     # ENVIRONMENT VARIABLES
     # ---------------------
-    # (These variables can be accessed from any shell sessions.)
+    # (These variables can be accessed from any shell session.)
 
     # Compiler and linker flags added by ELLUMINATE.
     export CC="ccache gcc"
@@ -898,7 +898,7 @@ install_now() {
   # to your Desktop, you can safely delete them if it bothers you.
 
   echo
-  cowsay "Now log out of your existing session then select Enlightenment on the login screen... \
+  cowsay "Now log out of your existing session, then select Enlightenment on the login screen... \
   That's All Folks!" | lolcat -a
   echo
 
@@ -971,7 +971,7 @@ wld_go() {
     cowsay -f www "That's it. Now type: enlightenment_start"
     echo
     # If Enlightenment fails to start, relaunch the script and select option 2.
-    # After the build is complete type exit, then go back to the login screen.
+    # After the build is complete, type exit, then go back to the login screen.
   fi
 
   exit 0

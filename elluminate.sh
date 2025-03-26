@@ -728,7 +728,7 @@ set_p_src() {
   sleep 1
 }
 
-# Fetch and install prerequisites.
+# This will fetch and install the prerequisites.
 get_preq() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -884,7 +884,7 @@ install_now() {
   sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop
 
-  # Protect this file from accidental deletion.
+  # This will protect the file from accidental deletion.
   sudo chattr +i "$HOME/.cache/ebuilds/storepath"
 
   printf "\n%s\n\n" "All done!"
@@ -912,7 +912,7 @@ release_go() {
   clear
   printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  # Check for available updates of the script folder first.
+  # Checks for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
@@ -944,7 +944,7 @@ wld_go() {
   clear
   printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  # Check for available updates of the script folder first.
+  # Checks for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"

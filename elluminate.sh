@@ -16,7 +16,7 @@
 # the (legacy) directory name “e26” is kept as it was before the transition
 # to “e27” (Enlightenment 0.27).
 
-# Facultative: Additional steps may be taken to achieve optimal results.
+# Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up

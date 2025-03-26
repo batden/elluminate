@@ -735,7 +735,7 @@ get_preq() {
   printf "\n\n$bold%s $off%s\n\n" "Installing prerequisites..."
   cd "$dldir"
 
-  #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
+  # See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
   #
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
 

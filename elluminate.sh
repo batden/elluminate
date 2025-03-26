@@ -183,7 +183,7 @@ deps=(
   xwayland
 )
 
-# Source repositories of programs: Latest source code available.
+# Source repositories of programs. Latest source code available:
 clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
 clonety="git clone https://git.enlightenment.org/enlightenment/terminology.git"
 clone26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"

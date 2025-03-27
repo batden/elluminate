@@ -89,7 +89,6 @@ deps=(
   doxygen
   fonts-noto
   freeglut3-dev
-  git
   graphviz
   gstreamer1.0-libav
   gstreamer1.0-plugins-bad
@@ -170,8 +169,6 @@ deps=(
   meson
   ninja-build
   papirus-icon-theme
-  pv
-  sl
   texlive-base
   texlive-font-utils
   unity-greeter-badges

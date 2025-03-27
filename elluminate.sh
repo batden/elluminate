@@ -462,7 +462,6 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
-  chk_ddcl
   ddcl_chk
   elap_start
 
@@ -547,7 +546,6 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
-  chk_ddcl
   ddcl_chk
   elap_start
 
@@ -776,27 +774,6 @@ chk_sl() {
   if [ ! -x /usr/games/sl ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
     sudo apt install -y sl
-  fi
-}
-
-chk_ddcl() {
-  if [ -d "$esrc"/ddcutil-2.0.0 ]; then
-    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
-    sleep 1
-    cd "$esrc"/ddcutil-2.0.0
-    sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$esrc"/ddcutil-2.0.0
-    cd "$dldir"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
-    tar xzvf v$ddctl.tar.gz -C "$esrc"
-    cd "$esrc"/ddcutil-$ddctl
-    $autgn
-    make
-    beep_attention
-    $smil
-    sudo ldconfig
-    rm -rf "$dldir"/v$ddctl.tar.gz
-    echo
   fi
 }
 

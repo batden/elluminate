@@ -358,10 +358,10 @@ e_bkp() {
   #
   # To restore a backup, use the same commands that were executed, but with
   # the source and destination reversed, similar to this:
-  # cp -aR /home/riley/Documents/ebackups/e_1739631880/.elementary/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/e_1739631880/.e/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/eterm_1739631880/terminology/config/ /home/riley/.config/terminology/
-  # cp -aR /home/riley/Documents/ebackups/eterm_1739631880/terminology/themes/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/e_1743247879/.elementary/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/e_1743247879/.e/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/config/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/themes/ /home/riley/.config/terminology/
   # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 }
 

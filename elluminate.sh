@@ -352,7 +352,7 @@ e_bkp() {
   # cp -aR /home/riley/Documents/ebackups/e_1743247879/.e/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/config/ /home/riley/.config/terminology/
   # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/themes/ /home/riley/.config/terminology/
-  # (Press Ctrl+Alt+End to restart Enlightenment if you are logged in.)
+  # (Press Ctrl+Alt+End to restart Enlightenment if you are currently logged in.)
 }
 
 e_tokens() {

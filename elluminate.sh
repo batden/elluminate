@@ -459,7 +459,6 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
-  ddcl_chk
   elap_start
 
   cd "$esrc/rlottie"
@@ -543,7 +542,6 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
-  ddcl_chk
   elap_start
 
   cd "$esrc/rlottie"
@@ -771,27 +769,6 @@ chk_sl() {
   if [ ! -x /usr/games/sl ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
     sudo apt install -y sl
-  fi
-}
-
-ddcl_chk() {
-  if [ -d "$esrc"/ddcutil-2.1.4 ]; then
-    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
-    sleep 1
-    cd "$esrc"/ddcutil-2.1.4
-    sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$esrc"/ddcutil-2.1.4
-    cd "$dldir"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
-    tar xzvf v$ddctl.tar.gz -C "$esrc"
-    cd "$esrc"/ddcutil-$ddctl
-    $autgn
-    make
-    beep_attention
-    $smil
-    sudo ldconfig
-    rm -rf "$dldir"/v$ddctl.tar.gz
-    echo
   fi
 }
 

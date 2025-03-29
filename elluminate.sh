@@ -241,34 +241,28 @@ beep_ok() {
   aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav 2>/dev/null
 }
 
-# Hints.
+# Menu hints and prompts.
 # 1: A no-frills, plain build.
 # 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with Nvidia drivers.
 #
-menu_sel() {
-  if [ "$usr_input" -lt 1 ]; then
-    echo
+menu_selec() {
+  is_einstl=$1
+
+  echo
+  if [ "$is_einstl" == false ]; then
     printf "1  $green_bright%s $off%s\n\n" "INSTALL the Enlightenment ecosystem now" | pv -qL 20
     printf "2  $magenta_dim%s $off%s\n\n" "(Update and rebuild the ecosystem in release mode)" | pv -qL 30
     printf "3  $orange_dim%s $off%s\n\n" "(Update and rebuild the ecosystem with Wayland support)" | pv -qL 30
-
-    sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
-    read -r usr_input
-  fi
-}
-
-sel_menu() {
-  if [ "$usr_input" -lt 1 ]; then
-    echo
+  else
     printf "1  $green_dim%s $off%s\n\n" "(Install the Enlightenment ecosystem now)" | pv -qL 30
     printf "2  $magenta_bright%s $off%s\n\n" "Update and rebuild the ecosystem in RELEASE mode" | pv -qL 20
     printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 24
-
-    sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
-    read -r usr_input
   fi
+
+  sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
+  read -r usr_input
 }
 
 # Check binary dependencies.
@@ -373,6 +367,7 @@ e_tokens() {
   if [ "$token" -eq 10 ]; then
     printf "\n$blue_bright%s %s" "Thank you $LOGNAME, for your trust and fidelity!"
     printf "\n$blue_bright%s $off%s\n\n" "Looks like you're on the right track..."
+    sleep 2
     sl | lolcat
     sleep 2
   elif [ "$token" -gt 3 ]; then
@@ -931,6 +926,7 @@ wld_go() {
 # Lo and behold (“bhd”)!
 #
 # First, display the selection menu...
+#
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
@@ -938,9 +934,9 @@ lo() {
   printf "\n$bold%s $off%s\n" "Please enter the number of your choice:"
 
   if [ ! -x /usr/local/bin/enlightenment_start ]; then
-    menu_sel
+    menu_selec false
   else
-    sel_menu
+    menu_selec true
   fi
 }
 

@@ -334,16 +334,12 @@ e_bkp() {
 
   if [ -d "$docdir/ebackups" ]; then
     rm -rf "$docdir/ebackups"
-    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
-      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
-    sleep 2
-  else
-    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
-      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
+
+    mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
+
+    cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" &>/dev/null
+    cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
+
     sleep 2
   fi
   #
@@ -370,7 +366,7 @@ e_tokens() {
     sleep 2
     sl | lolcat
     sleep 2
-  elif [ "$token" -gt 3 ]; then
+  elif [ "$token" -gt 4 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question

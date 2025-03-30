@@ -326,7 +326,6 @@ e_bkp() {
     rm -rf "$docdir/ebackups"
 
     mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
-
     cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" &>/dev/null
     cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
 
@@ -616,11 +615,11 @@ do_tests() {
     exit 1
   fi
 
-  if ! test -d "$HOME/.local/bin"; then
+  if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p "$HOME/.local/bin"
   fi
 
-  if ! test -d "$HOME/.cache/ebuilds"; then
+  if [[ ! -d "$HOME/.cache/ebuilds" ]]; then
     mkdir -p "$HOME/.cache/ebuilds"
   fi
 }

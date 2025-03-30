@@ -335,8 +335,8 @@ e_bkp() {
   # Timestamp: See the date man page to convert epoch to a human-readable date
   # or visit https://www.epochconverter.com/
   #
-  # To restore a backup, use the same commands that were run, but with
-  # the source and destination reversed, similar to this, in a terminal:
+  # To restore a backup, use the same commands that were run, but with the source
+  # and destination reversed, similar to this, in a terminal:
   # cp -aR /home/riley/Documents/ebackups/e_1743247879/.elementary/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/e_1743247879/.e/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/config/ /home/riley/.config/terminology/

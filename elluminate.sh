@@ -319,16 +319,6 @@ mng_err() {
   exit 1
 }
 
-elap_start() {
-  start=$(date +%s)
-}
-
-elap_stop() {
-  delta=$(($(date +%s) - start))
-  printf "\n$italic%s $off%s\n" "Compilation and linking time: "
-  eval "echo $(date -ud "@$delta" +'%H hr %M min %S sec')"
-}
-
 e_bkp() {
   tstamp=$(date +%s)
 
@@ -451,7 +441,6 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
-  elap_start
 
   cd "$esrc/rlottie"
   printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
@@ -466,10 +455,7 @@ rebuild_optim() {
   $snin
   sudo ldconfig
 
-  elap_stop
-
   for i in "${prog_mn[@]}"; do
-    elap_start
 
     cd "$esrc/e26/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
@@ -518,8 +504,6 @@ rebuild_optim() {
     beep_attention
     $snin
     sudo ldconfig
-
-    elap_stop
   done
 }
 
@@ -534,7 +518,6 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
-  elap_start
 
   cd "$esrc/rlottie"
   printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
@@ -549,10 +532,7 @@ rebuild_wld() {
   $snin
   sudo ldconfig
 
-  elap_stop
-
   for i in "${prog_mn[@]}"; do
-    elap_start
 
     cd "$esrc/e26/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
@@ -601,8 +581,6 @@ rebuild_wld() {
     beep_attention
     $snin
     sudo ldconfig
-
-    elap_stop
   done
 }
 

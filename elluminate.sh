@@ -26,7 +26,7 @@
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs compiled from git source code will inevitably come into conflict
+# Enlightenment programs compiled from git source code will inevitably conflict
 # with those installed from DEB packages. Therefore, remove all previous binary
 # installations of EFL, Enlightenment, and related applications before running
 # this script.

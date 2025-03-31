@@ -722,8 +722,11 @@ get_preq() {
 }
 
 mv_sysfiles() {
+  sudo mkdir -p /etc/enlightenment
   sudo mv -f /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
   sudo mv -f /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
+  sudo mv -f /usr/local/share/xsessions/enlightenment.desktop \
+    /usr/share/xsessions/enlightenment.desktop
 }
 
 chk_pv() {
@@ -797,11 +800,7 @@ install_now() {
   cd "$esrc/e26/efl/build/doc"
   doxygen
 
-  sudo mkdir -p /etc/enlightenment
   mv_sysfiles
-
-  sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
-    /usr/share/xsessions/enlightenment.desktop
 
   # This will protect the file from accidental deletion.
   sudo chattr +i "$HOME/.cache/ebuilds/storepath"

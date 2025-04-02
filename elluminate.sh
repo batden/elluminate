@@ -346,9 +346,9 @@ e_bkp() {
 }
 
 e_tokens() {
-  date +%s >>"$HOME/.cache/ebuilds/etokens"
-
-  token=$(grep -v "^$" "$HOME/.cache/ebuilds/etokens" | wc -l)
+  printf '%(%s)T\n' -1 >>"$HOME/.cache/ebuilds/etokens"
+  mapfile -t lines <"$HOME/.cache/ebuilds/etokens"
+  token=${#lines[@]}
 
   if [ "$token" -eq 10 ]; then
     printf "\n$blue_bright%s %s" "Thank you $LOGNAME, for your trust and fidelity!"

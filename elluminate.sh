@@ -667,7 +667,7 @@ set_p_src() {
   # Do not append a trailing slash (/) to the end of the path prefix.
   #
   read -r -p "Please enter a path for the Enlightenment source folders \
-  (e.g. /home/LOGNAME$/Documents or /home/$LOGNAME/testing): " mypath
+  (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
 
   if [[ ! "$mypath" =~ ^/home/$LOGNAME.* ]]; then
     printf "\n$red_bright%s $off%s\n\n" "PATH MUST BE WITHIN YOUR HOME DIRECTORY (/home/$LOGNAME)."

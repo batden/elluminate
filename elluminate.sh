@@ -870,7 +870,7 @@ wld_go() {
   rebuild_wld
 
   sudo mkdir -p /usr/share/wayland-sessions
-  sudo mv -f /usr/local/share/wayland-xsessions/enlightenment-wayland.desktop \
+  sudo mv -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop \
     /usr/share/wayland-sessions/enlightenment-wayland.desktop
 
   beep_ok

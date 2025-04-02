@@ -790,6 +790,7 @@ install_now() {
 
   cnt_dir
   build_plain
+  mv_sysfiles
 
   # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on e26/efl/build/html/index.html
   # to open the HTML documentation in your browser.
@@ -799,8 +800,6 @@ install_now() {
   sleep 1
   cd "$esrc/e26/efl/build/doc"
   doxygen
-
-  mv_sysfiles
 
   # This will protect the file from accidental deletion.
   sudo chattr +i "$HOME/.cache/ebuilds/storepath"

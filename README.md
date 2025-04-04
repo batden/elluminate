@@ -58,7 +58,7 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 
 ## In the picture
 
-![GitHub Image](/images/enlightenment_french.jpg)
+![GitHub Image](/images/enlightenment.jpg)
 
 _Please help us continue to promote this fantastic desktop environment.
 Over the years, writing bash scripts, translations, documentation, and bug reports has been a substantial endeavor._

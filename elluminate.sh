@@ -793,7 +793,7 @@ install_now() {
   mv_sysfiles
 
   if [ -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop ]; then
-    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
+    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment-wayland.desktop
   fi
 
   if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then

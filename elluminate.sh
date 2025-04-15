@@ -608,7 +608,7 @@ do_tests() {
     exit 1
   fi
 
-  if ! git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null; then
+  if ! git ls-remote https://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null; then
     printf "\n$red_bright%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
     printf "$red_bright%s $off%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
     beep_exit

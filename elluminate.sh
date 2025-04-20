@@ -395,7 +395,6 @@ rstrt_e() {
 # “-Devas-loaders-disabler=” (no value at the end)
 # whenever it's applicable.
 #
-
 build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig

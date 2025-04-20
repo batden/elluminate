@@ -392,8 +392,10 @@ rstrt_e() {
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
-# “-Devas-loaders-disabler=” whenever it's applicable.
+# “-Devas-loaders-disabler=” (no value at the end)
+# whenever it's applicable.
 #
+
 build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig

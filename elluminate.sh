@@ -265,6 +265,18 @@ menu_selec() {
   read -r usr_input
 }
 
+# Check free disk space.
+disk_spc() {
+  free_space=$(df -BG "$HOME" | awk 'NR==2 {print $4}' | sed 's/G//')
+
+  if [ "$free_space" -lt 3 ]; then
+    printf "\n$red_bright%s %s\n" "INSUFFICIENT DISK SPACE. AT LEAST 3 GB REQUIRED."
+    printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
+    beep_exit
+    exit 1
+  fi
+}
+
 # Check binary dependencies.
 bin_deps() {
   if ! sudo apt install "${deps[@]}"; then
@@ -923,6 +935,7 @@ lo() {
 # Then get the user's choice.
 bhd() {
   if [ "$usr_input" == 1 ]; then
+    disk_spc
     do_tests
     install_now
   elif [ "$usr_input" == 2 ]; then

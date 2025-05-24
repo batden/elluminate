@@ -678,7 +678,6 @@ set_p_src() {
   beep_attention
 
   # Do not append a trailing slash (/) to the end of the path prefix.
-  #
   read -r -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
 
@@ -850,7 +849,7 @@ release_go() {
   clear
   printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  # Checks for available updates of the script folder first.
+  # Check for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
@@ -882,7 +881,7 @@ wld_go() {
   clear
   printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  # Checks for available updates of the script folder first.
+  # Check for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"

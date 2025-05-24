@@ -31,7 +31,7 @@
 # installations of EFL, Enlightenment, and related applications before running
 # this script.
 
-# Also note that ELLUMINATE.SH is not compatible with non-standard package managers like Nix.
+# Also note that ELLUMINATE.SH is not compatible with non-standard package managers such as Nix.
 
 # We recommend that you perform a complete uninstall of your Enlightenment desktop if you plan
 # to upgrade your system to the newer LTS version of the distribution,

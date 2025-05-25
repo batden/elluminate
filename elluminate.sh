@@ -1,15 +1,15 @@
 #!/bin/bash
 # shellcheck disable=SC1091 disable=SC2164 disable=SC2126
 
-# This script allows you to install Enlightenment handily and securely, along with
-# other applications based on the Enlightenment Foundation Libraries (EFL),
-# in your Ubuntu, Kubuntu, or Xubuntu LTS desktop system.
+# This script makes it easy to install or update Enlightenment and other applications
+# based on the Enlightenment Foundation Libraries (EFL) on your Ubuntu, Kubuntu,
+# or Xubuntu LTS desktop system.
 
 # Supported distribution: Jammy Jellyfish.
 
 # ELLUMINATE.SH takes care of downloading, configuring, and building everything
 # you need to enjoy the very latest version of the Enlightenment environment
-# (DEB packages, if they exist, tend to lag far behind). Once installed,
+# (DEB packages ——if they exist—— often lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
 # In order not to force our existing users to reinstall everything from scratch,
@@ -19,17 +19,17 @@
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
-# Tip: Set your terminal scrollback to unlimited so that you can scroll up
-# to look at the earlier output at any time.
+# Tip: Set your terminal scrollback to unlimited, so that you can always scroll up
+# to see the previous output.
 
 # See README.md for instructions on how to use this script.
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably conflict
-# with those installed from DEB packages. Therefore, remove all previous binary
-# installations of EFL, Enlightenment, and related applications before running
-# this script.
+# with those installed from DEB packages. Therefore, remove all previous
+# binary installations of EFL, Enlightenment, and related applications
+# before running this script.
 
 # Also note that ELLUMINATE.SH is not compatible with non-standard package managers such as Nix.
 
@@ -42,7 +42,7 @@
 # See https://creativecommons.org/licenses/by/4.0/
 
 # If you find our scripts useful, please consider starring our repositories or
-# donating with PayPal (see README.md) to show your support.
+# donating via PayPal (see README.md) to show your support.
 # Thank you!
 
 # --------------
@@ -76,7 +76,7 @@ smil="sudo make install"
 distro=$(lsb_release -sc)
 ddctl=2.2.0
 
-# Build dependencies, plus recommended and script-related packages.
+# Build dependencies, as well as recommended and script-related packages.
 deps=(
   arc-theme
   aspell
@@ -197,7 +197,7 @@ clonepn="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
 clonete="git clone https://github.com/dimmus/eflete.git"
 
-# “mn” stands for Meson build system.
+# Programs to be built using the Meson build system (“mn”).
 prog_mn=(
   efl
   terminology
@@ -637,6 +637,7 @@ do_tests() {
   fi
 }
 
+# Create a bash_aliases file with customized settings.
 do_bsh_alias() {
   if [ -f "$HOME/.bash_aliases" ]; then
     mv -vb "$HOME/.bash_aliases" "$HOME/.bash_aliases_bak"

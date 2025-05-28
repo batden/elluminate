@@ -41,7 +41,7 @@ Then, execute the script with:
 ./elluminate.sh
 ```
 
-To run it again later, open a terminal and simply type:
+The next time you run the script, simply open a terminal and type:
 
 ```bash
 elluminate.sh

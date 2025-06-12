@@ -357,6 +357,7 @@ e_bkp() {
   # Then close the terminal and press Ctrl+Alt+End to restart Enlightenment if you are logged in.
 }
 
+# Oversee user interaction tokens.
 e_tokens() {
   printf '%(%s)T\n' -1 >>"$HOME/.cache/ebuilds/etokens"
   mapfile -t lines <"$HOME/.cache/ebuilds/etokens"

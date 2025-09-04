@@ -42,15 +42,9 @@
 # See https://creativecommons.org/licenses/by/4.0/
 
 # If you find our scripts useful, please consider starring our repositories or
-# donating via PayPal (see README.md) to show your support.
-# Thank you!
+# donating via PayPal (see README.md) to show your support. Thank you!
 
-# --------------
-# USER VARIABLES
-# --------------
-# (These variables are not available to be used outside of this script.)
-
-# Colors and formatting.
+# --- Color and formatting ---
 green_bright="\e[1;38;5;118m"
 magenta_bright="\e[1;38;5;201m"
 orange_bright="\e[1;38;5;208m"
@@ -64,7 +58,7 @@ bold="\e[1m"
 italic="\e[3m"
 off="\e[0m"
 
-# Path definitions and aliases.
+# --- Paths and aliases ---
 PREFIX=/usr/local
 dldir=$(xdg-user-dir DOWNLOAD)
 docdir=$(xdg-user-dir DOCUMENTS)
@@ -76,7 +70,7 @@ smil="sudo make install"
 distro=$(lsb_release -sc)
 ddctl=2.2.0
 
-# Build dependencies, as well as recommended and script-related packages.
+# --- Build dependencies, recommended and script-related packages ---
 deps=(
   arc-theme
   aspell
@@ -180,7 +174,7 @@ deps=(
   xwayland
 )
 
-# Source repositories of Enlightenment programs. Latest source code available:
+# --- Source repositories of Enlightenment programs ---
 clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
 clonety="git clone https://git.enlightenment.org/enlightenment/terminology.git"
 clone26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
@@ -197,7 +191,7 @@ clonepn="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
 clonete="git clone https://github.com/dimmus/eflete.git"
 
-# Programs to be built using the Meson build system (“mn”).
+# --- Programs to be built using the Meson build system ---
 prog_mn=(
   efl
   terminology
@@ -216,11 +210,7 @@ prog_mn=(
   eflete
 )
 
-# ---------
-# FUNCTIONS
-# ---------
-
-# Audible feedback (event, sudo prompt...) on most systems.
+# --- Audible feedback on most systems ---
 beep_attention() {
   aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav 2>/dev/null
 }
@@ -241,12 +231,11 @@ beep_question() {
   aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav 2>/dev/null
 }
 
-# Menu hints and prompts.
+# --- Menu hints and prompts ---
 # 1: A no-frills, plain build.
 # 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with Nvidia drivers.
-#
 menu_selec() {
   is_einstl=$1
 
@@ -265,7 +254,7 @@ menu_selec() {
   read -r usr_input
 }
 
-# Check free disk space.
+# --- Disk space check ---
 disk_spc() {
   free_space=$(df -BG "$HOME" | awk 'NR==2 {print $4}' | sed 's/G//')
 
@@ -277,7 +266,7 @@ disk_spc() {
   fi
 }
 
-# Check binary dependencies.
+# --- Binary dependencies check ---
 bin_deps() {
   if ! sudo apt install "${deps[@]}"; then
     printf "\n$red_bright%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
@@ -288,7 +277,7 @@ bin_deps() {
   fi
 }
 
-# Check source dependencies.
+# --- Source dependencies check ---
 cnt_dir() {
   count=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
 
@@ -298,11 +287,9 @@ cnt_dir() {
     beep_exit
     exit 1
   fi
-  #
-  # Tip: You can try to download the missing file(s) manually (see clonefl or clone26), then
-  # rerun the script and select option 1 again; or relaunch the script at a later time.
-  # In both cases, be sure to enter the same path for the Enlightenment source folders
-  # as you used before.
+  # Tip: You can try to download the missing file(s) manually (see clonefl or clone26),
+  # then rerun the script and select option 1 again; or relaunch the script at a later time.
+  # In both cases, be sure to enter the same path for the Enlightenment source folders as you used before.
 
   case $count in
   15)
@@ -325,12 +312,14 @@ cnt_dir() {
   esac
 }
 
+# --- Error handler ---
 mng_err() {
   printf "\n$red_bright%s $off%s\n\n" "BUILD ERROR——TRY AGAIN LATER."
   beep_exit
   exit 1
 }
 
+# --- Backup Enlightenment and Terminology settings ---
 e_bkp() {
   tstamp=$(date +%s)
 
@@ -343,21 +332,18 @@ e_bkp() {
 
     sleep 2
   fi
-  #
   # Timestamp: See the date man page to convert epoch to a human-readable date
   # or visit https://www.epochconverter.com/
-  #
   # To restore a backup, use the same commands that were run, but with the source
   # and destination reversed, similar to this, in a terminal:
   # cp -aR /home/riley/Documents/ebackups/e_1747988712/.elementary/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/e_1747988712/.e/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/eterm_1747988712/terminology/config/ /home/riley/.config/terminology/
   # cp -aR /home/riley/Documents/ebackups/eterm_1747988712/terminology/themes/ /home/riley/.config/terminology/
-  #
   # Then close the terminal and press Ctrl+Alt+End to restart Enlightenment if you are logged in.
 }
 
-# Oversee user interaction tokens.
+# --- User interaction tokens ---
 e_tokens() {
   printf '%(%s)T\n' -1 >>"$HOME/.cache/ebuilds/etokens"
   mapfile -t lines <"$HOME/.cache/ebuilds/etokens"
@@ -389,6 +375,7 @@ e_tokens() {
   fi
 }
 
+# --- Restart Enlightenment session ---
 rstrt_e() {
   if [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     enlightenment_remote -restart
@@ -398,17 +385,15 @@ rstrt_e() {
   fi
 }
 
+# --- Build plain mode ---
+build_plain() {
 # Add optional JXL support before executing the script?
 # JPEG XL currently has to be compiled from source.
-# If you need jxl support in efl, please follow
-# the instructions below:
+# If you need jxl support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
-#
-# Then change the option “-Devas-loaders-disabler=jxl” to
-# “-Devas-loaders-disabler=” (no value at the end)
+# Then change the option “-Devas-loaders-disabler=jxl” to “-Devas-loaders-disabler=” (no value at the end)
 # whenever it's applicable.
-#
-build_plain() {
+
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
@@ -449,6 +434,7 @@ build_plain() {
   done
 }
 
+# --- Optimized rebuild (Xorg) ---
 rebuild_optim() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -520,6 +506,7 @@ rebuild_optim() {
   done
 }
 
+# --- Optimized rebuild (Wayland) ---
 rebuild_wld() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -597,6 +584,7 @@ rebuild_wld() {
   done
 }
 
+# --- System checks ---
 do_tests() {
   if [ -x /usr/bin/wmctrl ]; then
     if [ "$XDG_SESSION_TYPE" == "x11" ]; then
@@ -604,7 +592,7 @@ do_tests() {
     fi
   fi
 
-  printf "\n\n$bold%s $off%s\n" "System check..."
+  printf "\n\n$bold%s $off%s\n" "System checks..."
 
   if systemd-detect-virt -q --container; then
     printf "\n$red_bright%s %s\n" "ELLUMINATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
@@ -638,7 +626,7 @@ do_tests() {
   fi
 }
 
-# Create a bash_aliases file with customized settings.
+# --- Create bash_aliases file ---
 do_bsh_alias() {
   if [ -f "$HOME/.bash_aliases" ]; then
     mv -vb "$HOME/.bash_aliases" "$HOME/.bash_aliases_bak"
@@ -649,11 +637,6 @@ do_bsh_alias() {
   fi
 
   cat >"$HOME/.bash_aliases" <<EOF
-    # ---------------------
-    # ENVIRONMENT VARIABLES
-    # ---------------------
-    # (These variables can be accessed from any shell session.)
-
     # Compiler and linker flags added by ELLUMINATE.
     export CC="ccache gcc"
     export CXX="ccache g++"
@@ -675,6 +658,7 @@ EOF
   source "$HOME/.bash_aliases"
 }
 
+# --- Set path for Enlightenment source folders ---
 set_p_src() {
   echo
   beep_attention
@@ -704,7 +688,7 @@ set_p_src() {
   sleep 1
 }
 
-# This will fetch and install the prerequisites.
+# --- Fetch and install prerequisites ---
 get_preq() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -712,7 +696,6 @@ get_preq() {
   cd "$dldir"
 
   # See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
-  #
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
 
   tar xzvf v$ddctl.tar.gz -C "$esrc"
@@ -735,6 +718,7 @@ get_preq() {
   echo
 }
 
+# --- Ensure that Enlightenment system files are correctly installed ---
 mv_sysfiles() {
   sudo mkdir -p /etc/enlightenment
   sudo mv -f /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
@@ -817,7 +801,6 @@ install_now() {
   # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on e26/efl/build/html/index.html
   # to open the HTML documentation in your browser.
   # This takes a while to build, but it's a one-time thing.
-  #
   printf "\n\n$bold%s $off%s\n\n" "Generating the documentation for EFL..."
   sleep 1
   cd "$esrc/e26/efl/build/doc"
@@ -916,7 +899,7 @@ wld_go() {
   exit 0
 }
 
-# First, display the selection menu...
+# --- First, display the selection menu... ---
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
@@ -930,7 +913,7 @@ lo() {
   fi
 }
 
-# Then get the user's choice.
+# --- Then get the user's choice ---
 and_behold() {
   if [ "$usr_input" == 1 ]; then
     disk_spc
@@ -948,6 +931,7 @@ and_behold() {
   fi
 }
 
+# --- Main entry point ---
 main() {
   chk_pv
   chk_sl

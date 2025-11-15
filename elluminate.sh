@@ -68,7 +68,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
-ddctl=2.2.0
+ddctl=2.3.3
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(
@@ -440,6 +440,7 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
+  chk_ddctl
 
   cd "$esrc/rlottie"
   printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
@@ -518,6 +519,7 @@ rebuild_wld() {
 
   bin_deps
   e_tokens
+  chk_ddctl
 
   cd "$esrc/rlottie"
   printf "\n$bold%s $off%s\n\n" "Updating rlottie..."
@@ -738,6 +740,25 @@ chk_sl() {
   if [ ! -x /usr/games/sl ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
     sudo apt install -y sl
+  fi
+}
+
+chk_ddctl() {
+  if [ -d "$esrc/ddcutil-2.2.0" ]; then
+    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
+    cd "$esrc/ddcutil-2.2.0"
+    sudo make uninstall &>/dev/null
+    cd .. && rm -rf "$esrc/ddcutil-2.2.0"
+    cd "$dldir"
+    wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
+    tar xzvf "v$ddctl.tar.gz" -C "$esrc"
+    cd "$esrc/ddcutil-$ddctl"
+    $autgn
+    make
+    $smil
+    sudo ldconfig
+    rm -rf "$dldir/v$ddctl.tar.gz"
+    echo
   fi
 }
 

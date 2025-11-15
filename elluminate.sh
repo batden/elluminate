@@ -68,7 +68,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
-ddctl=2.3.3
+ddctl=2.2.3
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(

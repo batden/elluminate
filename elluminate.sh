@@ -323,6 +323,7 @@ e_bkp() {
     rm -rf "$docdir/ebackups"
 
     mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
+
     cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" &>/dev/null
     cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
 

@@ -61,8 +61,3 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 ## In the Picture
 
 ![GitHub Image](/images/enlightenment.jpg)
-
-_Please help us continue to promote this fantastic desktop environment.
-Over the years, writing bash scripts, translations, documentation, and bug reports has been a considerable effort._
-
-[Donate with PayPal](/home/batden/Downloads/pp.png)](<https://www.paypal.com/donate/?hosted_button_id=QGXWYZWH5QP5E)[>!

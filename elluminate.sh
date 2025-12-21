@@ -319,8 +319,7 @@ mng_err() {
 e_bkp() {
   tstamp=$(date +%s)
 
-    mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
-
+    mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp" 2>/dev/null || true
     cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" 2>/dev/null || true
     cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" 2>/dev/null || true
 

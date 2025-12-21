@@ -41,8 +41,8 @@
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
 
-# If you find our scripts useful, please consider starring our repositories or
-# donating via PayPal (see README.md) to show your support. Thank you!
+# If you find our scripts useful, please consider starring our repositories.
+# Thank you!
 
 # --- Color and formatting ---
 green_bright="\e[1;38;5;118m"

@@ -319,16 +319,12 @@ mng_err() {
 e_bkp() {
   tstamp=$(date +%s)
 
-  if [ -d "$docdir/ebackups" ]; then
-    rm -rf "$docdir/ebackups"
-
     mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
 
-    cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" &>/dev/null
-    cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
+    cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" 2>/dev/null || true
+    cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" 2>/dev/null || true
 
     sleep 2
-  fi
   # Timestamp: See the date man page to convert epoch to a human-readable date
   # or visit https://www.epochconverter.com/
   # To restore a backup, use the same commands that were run, but with the source

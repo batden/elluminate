@@ -8,25 +8,25 @@
 # Supported distribution: Jammy Jellyfish.
 
 # ELLUMINATE.SH takes care of downloading, configuring, and building everything
-# you need to enjoy the very latest version of the Enlightenment environment
-# (DEB packages——if they exist——often lag far behind). Once installed,
+# you need to enjoy the latest version of the Enlightenment environment.
+# DEB packages, if available, often lag far behind. Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
 # In order not to force our existing users to reinstall everything from scratch,
-# the (legacy) directory name “e26” is kept as it was before the transition
+# the legacy directory name “e26” is kept as it was before the transition
 # to “e27” (Enlightenment 0.27).
 
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
-# Tip: Set your terminal scrollback to unlimited, so that you can always scroll up
+# Tip: Set your terminal's scrollback to unlimited, so that you can always scroll up
 # to see the previous output.
 
 # See README.md for instructions on how to use this script.
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs compiled from git source code will inevitably conflict
+# Enlightenment programs compiled from Git source code will inevitably conflict
 # with those installed from DEB packages. Therefore, remove all previous
 # binary installations of EFL, Enlightenment, and related applications
 # before running this script.

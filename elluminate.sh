@@ -736,8 +736,6 @@ chk_sl() {
 }
 
 chk_ddctl() {
-  # If an older ddcutil source dir exists, uninstall it and install the
-  # requested version stored in $ddctl.
   if [ -d "$esrc/ddcutil-2.2.0" ] || [ -d "$esrc/ddcutil-2.2.3" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
 

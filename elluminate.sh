@@ -64,7 +64,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
-ddctl=2.2.3
+ddctl=2.2.4
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(
@@ -736,11 +736,20 @@ chk_sl() {
 }
 
 chk_ddctl() {
-  if [ -d "$esrc/ddcutil-2.2.0" ]; then
+  # If an older ddcutil source dir exists, uninstall it and install the
+  # requested version stored in $ddctl.
+  if [ -d "$esrc/ddcutil-2.2.0" ] || [ -d "$esrc/ddcutil-2.2.3" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
-    cd "$esrc/ddcutil-2.2.0"
-    sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$esrc/ddcutil-2.2.0"
+
+    if [ -d "$esrc/ddcutil-2.2.0" ]; then
+      olddir="$esrc/ddcutil-2.2.0"
+    else
+      olddir="$esrc/ddcutil-2.2.3"
+    fi
+
+    cd "$olddir"
+    sudo make uninstall &>/dev/null || true
+    cd .. && rm -rf "$olddir"
     cd "$dldir"
     wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
     tar xzvf "v$ddctl.tar.gz" -C "$esrc"

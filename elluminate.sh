@@ -7,14 +7,15 @@
 
 # Supported distribution: Jammy Jellyfish.
 
-# ELLUMINATE.SH takes care of downloading, configuring, and building everything
-# you need to enjoy the latest version of the Enlightenment environment from Git.
-# DEB packages, if available, often lag far behind.
-# Once installed, you can update your Enlightenment desktop whenever you like.
+# ELLUMINATE.SH handles downloading, configuring, and building everything necessary
+# to enjoy the latest version of the Enlightenment environment from Git.
+# DEB packages, if available, are often far behind.
+# Once installed, you can update your Enlightenment desktop at any time.
 
-# In order not to force our existing users to reinstall everything from scratch,
-# the legacy directory name “e26” is kept as it was before the transition
-# to “e27” (Enlightenment 0.27).
+# To avoid forcing existing users to reinstall everything from scratch,
+# the legacy directory name "e26" remains the same as before
+# the transition to "e27" (Enlightenment 0.27).
+# Note that this will change in future releases.
 
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.

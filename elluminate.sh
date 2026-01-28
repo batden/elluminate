@@ -65,7 +65,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
-ddctl=2.2.4
+ddctl=2.2.5
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(
@@ -737,13 +737,13 @@ chk_sl() {
 }
 
 chk_ddctl() {
-  if [ -d "$esrc/ddcutil-2.2.0" ] || [ -d "$esrc/ddcutil-2.2.3" ]; then
+  if [ -d "$esrc/ddcutil-2.2.3" ] || [ -d "$esrc/ddcutil-2.2.4" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
 
-    if [ -d "$esrc/ddcutil-2.2.0" ]; then
-      olddir="$esrc/ddcutil-2.2.0"
-    else
+    if [ -d "$esrc/ddcutil-2.2.3" ]; then
       olddir="$esrc/ddcutil-2.2.3"
+    elif [ -d "$esrc/ddcutil-2.2.4" ]; then
+      olddir="$esrc/ddcutil-2.2.4"
     fi
 
     cd "$olddir"

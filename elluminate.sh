@@ -232,7 +232,7 @@ beep_question() {
 # 1: A no-frills, plain build.
 # 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
-# Avoid the third option with Nvidia drivers.
+# Avoid the third option with NVIDIA drivers.
 menu_selec() {
   is_einstl=$1
 
@@ -821,7 +821,7 @@ install_now() {
 
   # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on e26/efl/build/html/index.html
   # to open the HTML documentation in your browser.
-  # This takes a while to build, but it's a one-time thing.
+  # This takes awhile to build, but it's a one-time thing.
   printf "\n\n$bold%s $off%s\n\n" "Generating the documentation for EFL..."
   sleep 1
   cd "$esrc/e26/efl/build/doc"

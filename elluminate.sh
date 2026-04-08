@@ -15,7 +15,7 @@
 # To avoid forcing existing users to reinstall everything from scratch,
 # the legacy directory name "e26" remains the same as before
 # the transition to "e27" (Enlightenment 0.27).
-# Note that this will change in future releases.
+# Note that this may change in future releases.
 
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.

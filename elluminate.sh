@@ -136,7 +136,7 @@ deps=(
   libspectre-dev
   libssl-dev
   libsystemd-dev
-  libtiff5-dev
+  libtiff-dev
   libtool
   libudev-dev
   libudisks2-dev

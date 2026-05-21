@@ -1,7 +1,8 @@
 # elluminate
 
 This is a premium Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.
-Refer to the script comments for tips and more information.
+
+Please refer to the script comments for tips and more information.
 
 > [!NOTE]
 > It may be useful to keep a record of the pre-existing system status before proceeding with the installation.

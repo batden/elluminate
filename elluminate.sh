@@ -831,12 +831,9 @@ install_now() {
   # This will protect the file from accidental deletion.
   sudo chattr +i "$HOME/.cache/ebuilds/storepath"
 
-  printf "\n%s\n\n" "All done!"
+  printf "\n%s\n\n\n" "All done!"
   beep_ok
-
-  printf "\n\n$blue_bright%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$blue_bright%s %s" '“Enable update checking” — You can disable this feature as it is not helpful for this type of installation.'
-  printf "\n$blue_bright%s $off%s\n\n" '“Network management support” — Connman is not required. You can ignore the message that appears.'
+  echo
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Desktop, you can safely delete them if it bothers you.

@@ -833,12 +833,10 @@ install_now() {
 
   printf "\n%s\n\n\n" "All done!"
   beep_ok
-  echo
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Desktop, you can safely delete them if it bothers you.
 
-  echo
   cowsay "Now log out of your existing session, then select Enlightenment on the login screen... \
   That's All Folks!" | lolcat -a
   echo

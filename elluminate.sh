@@ -842,7 +842,6 @@ install_now() {
   echo
 
   cp -f "$dldir/elluminate.sh" "$HOME/.local/bin"
-  chmod +x "$HOME/.local/bin/elluminate.sh"
 
   exit 0
 }

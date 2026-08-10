@@ -5,7 +5,7 @@
 > Our existing users will have to uninstall their current Enlightenment environment if the deprecated
 > directory name is still present._
 > 
-> _Please use version V17.4 of the EXTINGUISH script before reinstalling the environment._
+> _Please use version [V17.4](https://github.com/batden/extinguish/releases/tag/V17.4) of the EXTINGUISH script before reinstalling the environment._
 > 
 > _Sorry for the inconvenience._
 

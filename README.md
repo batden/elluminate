@@ -9,7 +9,7 @@
 > 
 > _Sorry for the inconvenience._
 
-This is a premium Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.
+**This is a premium Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.**
 
 Please refer to the script comments for more information.
 

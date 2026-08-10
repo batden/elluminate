@@ -3,11 +3,11 @@
 > [!IMPORTANT]
 > _The legacy directory "e26", which was used until now for the source folders, has been renamed "enlighten".
 > Our existing users will have to uninstall their current Enlightenment environment if the deprecated
-> directory name is still present.
+> directory name is still present._
 > 
-> Please use version V17.4 of the EXTINGUISH script before reinstalling the environment.
+> _Please use version V17.4 of the EXTINGUISH script before reinstalling the environment._
 > 
-> Sorry for the inconvenience._
+> _Sorry for the inconvenience._
 
 This is a premium Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.
 

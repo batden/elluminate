@@ -326,10 +326,10 @@ e_bkp() {
   # or visit https://www.epochconverter.com/
   # To restore a backup, use the same commands that were run, but with the source
   # and destination reversed, similar to this, in a terminal:
-  # cp -aR /home/riley/Documents/ebackups/e_1779614967/.elementary/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/e_1779614967/.e/ /home/riley/
-  # cp -aR /home/riley/Documents/ebackups/eterm_1779614967/terminology/config/ /home/riley/.config/terminology/
-  # cp -aR /home/riley/Documents/ebackups/eterm_1779614967/terminology/themes/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/e_1786359644/.elementary/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/e_1786359644/.e/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1786359644/terminology/config/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/eterm_1786359644/terminology/themes/ /home/riley/.config/terminology/
   # Then close the terminal and press Ctrl+Alt+End to restart Enlightenment if you are logged in.
 }
 

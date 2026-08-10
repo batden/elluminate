@@ -12,11 +12,6 @@
 # if available, are often outdated.
 # After installation, you can update your Enlightenment desktop at any time.
 
-# To avoid forcing existing users to reinstall everything from scratch,
-# the legacy directory name "e26" remains the same as before
-# the transition to "e27" (Enlightenment 0.27).
-# However, this will no longer be the case when e28 is released.
-
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
@@ -175,7 +170,7 @@ deps=(
 # --- Source repositories of Enlightenment programs ---
 clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
 clonety="git clone https://git.enlightenment.org/enlightenment/terminology.git"
-clone26="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
+clonenl="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
 cloneph="git clone https://git.enlightenment.org/enlightenment/ephoto.git"
 clonerg="git clone https://git.enlightenment.org/enlightenment/rage.git"
 clonevi="git clone https://git.enlightenment.org/enlightenment/evisum.git"
@@ -285,9 +280,10 @@ cnt_dir() {
     beep_exit
     exit 1
   fi
-  # Tip: You can try to download the missing file(s) manually (see clonefl or clone26),
-  # then rerun the script and select option 1 again; or relaunch the script at a later time.
-  # In both cases, be sure to enter the same path for the Enlightenment source folders as you used before.
+  # Tip: You can try to download the missing file(s) manually (see clonefl or clonenl), then
+  # rerun the script and select option 1 again; or relaunch the script at a later time.
+  # In both cases, be sure to enter the same path for the Enlightenment source folders
+  # as you used before.
 
   case $count in
   15)
@@ -392,7 +388,7 @@ build_plain() {
   sudo ldconfig
 
   for i in "${prog_mn[@]}"; do
-    cd "$esrc/e26/$i"
+    cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Building $i..."
 
     case $i in
@@ -451,7 +447,7 @@ rebuild_optim() {
 
   for i in "${prog_mn[@]}"; do
 
-    cd "$esrc/e26/$i"
+    cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
@@ -530,7 +526,7 @@ rebuild_wld() {
 
   for i in "${prog_mn[@]}"; do
 
-    cd "$esrc/e26/$i"
+    cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
@@ -773,15 +769,15 @@ install_now() {
   get_preq
 
   cd "$HOME"
-  mkdir -p "$esrc/e26"
-  cd "$esrc/e26"
+  mkdir -p "$esrc/enlighten"
+  cd "$esrc/enlighten"
 
   printf "\n\n$bold%s $off%s\n\n" "Fetching source code from the Enlightenment git repositories..."
   $clonefl
   echo
   $clonety
   echo
-  $clone26
+  $clonenl
   echo
   $cloneph
   echo
@@ -820,12 +816,12 @@ install_now() {
     sudo rm -rf /usr/share/wayland-sessions/enlightenment-wayland.desktop
   fi
 
-  # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on e26/efl/build/html/index.html
+  # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on enlighten/efl/build/html/index.html
   # to open the HTML documentation in your browser.
   # This takes awhile to build, but it's a one-time thing.
   printf "\n\n$bold%s $off%s\n\n" "Generating the documentation for EFL..."
   sleep 1
-  cd "$esrc/e26/efl/build/doc"
+  cd "$esrc/enlighten/efl/build/doc"
   doxygen
 
   # This will protect the file from accidental deletion.

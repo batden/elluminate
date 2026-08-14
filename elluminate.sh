@@ -7,7 +7,7 @@
 
 # Supported distribution: Jammy Jellyfish.
 
-# ILLUMINATE.SH handles the downloading, configuration, and building of everything necessary
+# ELLUMINATE.SH handles the downloading, configuration, and building of everything necessary
 # to enjoy the latest version of the Enlightenment environment from Git. DEB packages,
 # if available, are often outdated.
 # After installation, you can update your Enlightenment desktop at any time.

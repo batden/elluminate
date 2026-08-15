@@ -399,7 +399,7 @@ build_plain() {
         -Dlua-interpreter=lua \
         -Devas-loaders-disabler=jxl \
         -Dglib=true \
-        -Ddocs=true
+        -Ddocs=false
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -468,7 +468,7 @@ rebuild_optim() {
         -Ddrm=false \
         -Dwl=false \
         -Dbuild-tests=false \
-        -Ddocs=true
+        -Ddocs=false
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -547,7 +547,7 @@ rebuild_wld() {
         -Ddrm=true \
         -Dwl=true \
         -Dbuild-tests=false \
-        -Ddocs=true
+        -Ddocs=false
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -815,14 +815,6 @@ install_now() {
   if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then
     sudo rm -rf /usr/share/wayland-sessions/enlightenment-wayland.desktop
   fi
-
-  # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on enlighten/efl/build/html/index.html
-  # to open the HTML documentation in your browser.
-  # This takes awhile to build, but it's a one-time thing.
-  printf "\n\n$bold%s $off%s\n\n" "Generating the documentation for EFL..."
-  sleep 1
-  cd "$esrc/enlighten/efl/build/doc"
-  doxygen
 
   # This will protect the file from accidental deletion.
   sudo chattr +i "$HOME/.cache/ebuilds/storepath"

@@ -60,6 +60,7 @@ autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
+mson=1.10.1-1ubuntu2_all
 ddctl=2.2.7
 
 # --- Build dependencies, recommended and script-related packages ---
@@ -153,9 +154,9 @@ deps=(
   lolcat
   manpages-dev
   manpages-posix-dev
-  meson
   ninja-build
   papirus-icon-theme
+  python3-setuptools
   texlive-base
   texlive-font-utils
   unity-greeter-badges
@@ -733,6 +734,26 @@ chk_sl() {
   fi
 }
 
+ chk_mn() {
+  installed_meson_version=$(dpkg-query -W -f='${Version}' meson 2>/dev/null || true)
+
+  if [ ! -x /usr/bin/meson ]; then
+    printf "\n$bold%s $off%s\n\n" "Installing the recommended version of the meson package..."
+    cd "$dldir"
+    wget https://launchpadlibrarian.net/850294555/meson_$mson.deb
+    sudo apt install ./meson_$mson.deb
+    rm meson_$mson.deb
+    cd "$HOME"
+  elif [ "$installed_meson_version" != "1.10.1-1ubuntu2" ]; then
+    printf "\n$bold%s $off%s\n\n" "Updating Meson to the recommended version..."
+    cd "$dldir"
+    wget https://launchpadlibrarian.net/850294555/meson_$mson.deb
+    sudo apt install ./meson_$mson.deb
+    rm meson_$mson.deb
+    cd "$HOME"
+  fi
+}
+
 chk_ddctl() {
   if [ -d "$esrc/ddcutil-2.2.5" ] || [ -d "$esrc/ddcutil-2.2.6" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
@@ -939,6 +960,7 @@ and_behold() {
 main() {
   chk_pv
   chk_sl
+  chk_mn
   lo
   and_behold
 }

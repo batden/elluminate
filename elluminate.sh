@@ -732,7 +732,7 @@ chk_sl() {
   fi
 }
 
- chk_mn() {
+chk_mn() {
   installed_meson_version=$(dpkg-query -W -f='${Version}' meson 2>/dev/null || true)
 
   if [ ! -x /usr/bin/meson ]; then

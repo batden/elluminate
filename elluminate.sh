@@ -154,9 +154,7 @@ deps=(
   lolcat
   manpages-dev
   manpages-posix-dev
-  ninja-build
   papirus-icon-theme
-  python3-setuptools
   texlive-base
   texlive-font-utils
   unity-greeter-badges

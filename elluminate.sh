@@ -739,16 +739,20 @@ chk_sl() {
 
   if [ ! -x /usr/bin/meson ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the recommended version of the meson package..."
+    sleep 1
+    sudo apt install -y python3-setuptools
     cd "$dldir"
     wget https://launchpadlibrarian.net/850294555/meson_$mson.deb
-    sudo apt install ./meson_$mson.deb
+    sudo dpkg -i meson_$mson.deb
     rm meson_$mson.deb
     cd "$HOME"
   elif [ "$installed_meson_version" != "1.10.1-1ubuntu2" ]; then
     printf "\n$bold%s $off%s\n\n" "Updating Meson to the recommended version..."
+    sleep 1
+    sudo apt install -y python3-setuptools
     cd "$dldir"
     wget https://launchpadlibrarian.net/850294555/meson_$mson.deb
-    sudo apt install ./meson_$mson.deb
+    sudo dpkg -i meson_$mson.deb
     rm meson_$mson.deb
     cd "$HOME"
   fi

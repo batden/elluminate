@@ -239,7 +239,7 @@ menu_selec() {
   else
     printf "1  $green_dim%s $off%s\n\n" "(Install the Enlightenment ecosystem now)" | pv -qL 30
     printf "2  $magenta_bright%s $off%s\n\n" "Update and rebuild the ecosystem on Xorg" | pv -qL 20
-    printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 24
+    printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 24
   fi
 
   sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
@@ -374,7 +374,7 @@ rstrt_e() {
   fi
 }
 
-# --- Build plain mode ---
+# --- Install build (Xorg) ---
 build_plain() {
 # Add optional JXL support before executing the script?
 # JPEG XL currently has to be compiled from source.
@@ -423,7 +423,7 @@ build_plain() {
   done
 }
 
-# --- Optimized rebuild (Xorg) ---
+# --- Update build (Xorg) ---
 rebuild_optim() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -496,7 +496,7 @@ rebuild_optim() {
   done
 }
 
-# --- Optimized rebuild (Wayland) ---
+# --- Update build (Wayland) ---
 rebuild_wld() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
@@ -784,7 +784,7 @@ chk_ddctl() {
 
 install_now() {
   clear
-  printf "\n$green_bright%s $off%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
+  printf "\n$green_bright%s $off%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT *"
   do_bsh_alias
   beep_attention
   bin_deps
@@ -859,7 +859,7 @@ install_now() {
 
 release_go() {
   clear
-  printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
+  printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT - XORG *"
 
   # Check for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null
@@ -891,7 +891,7 @@ release_go() {
 
 wld_go() {
   clear
-  printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
+  printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT - WAYLAND *"
 
   # Check for available updates of the script folder first.
   cd "$scrflr" && git pull &>/dev/null

@@ -224,8 +224,8 @@ beep_question() {
 }
 
 # --- Menu hints and prompts ---
-# 1: A no-frills, plain build.
-# 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
+# 1: A plain, no-frills Xorg build.
+# 2: This is a feature-rich, decently optimized build on Xorg, which is recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with NVIDIA drivers.
 menu_selec() {
@@ -454,7 +454,7 @@ rebuild_optim() {
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
-      meson setup --reconfigure build -Dbuildtype=release \
+      meson setup --reconfigure build -Dbuildtype=plain \
         -Dnative-arch-optimization=true \
         -Dfb=true \
         -Dharfbuzz=true \
@@ -533,7 +533,7 @@ rebuild_wld() {
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
-      meson setup --reconfigure build -Dbuildtype=release \
+      meson setup --reconfigure build -Dbuildtype=plain \
         -Dnative-arch-optimization=true \
         -Dfb=true \
         -Dharfbuzz=true \

@@ -721,6 +721,7 @@ mv_sysfiles() {
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the pv command for menu animation..."
+    sleep 1
     sudo apt install -y pv
   fi
 }
@@ -728,6 +729,7 @@ chk_pv() {
 chk_sl() {
   if [ ! -x /usr/games/sl ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
+    sleep 1
     sudo apt install -y sl
   fi
 }

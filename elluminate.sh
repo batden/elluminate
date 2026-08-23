@@ -628,7 +628,7 @@ do_bsh_alias() {
   fi
 
   cat >"$HOME/.bash_aliases" <<EOF
-    # Compiler and linker flags added by ELLUMINATE.
+    # Compiler and linker flags added by ELLUMINATE.SH
     export CC="ccache gcc"
     export CXX="ccache g++"
     export USE_CCACHE=1

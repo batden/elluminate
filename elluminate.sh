@@ -233,13 +233,21 @@ menu_selec() {
 
   echo
   if [ "$is_einstl" == false ]; then
-    printf "1  $green_bright%s $off%s\n\n" "Install the Enlightenment ecosystem" | pv -qL 20
-    printf "2  $magenta_dim%s $off%s\n\n" "(Update and rebuild the ecosystem on Xorg)" | pv -qL 30
-    printf "3  $orange_dim%s $off%s\n\n" "(Update and rebuild the ecosystem with Wayland support)" | pv -qL 30
+    printf "1  $green_bright%s $off%s\n\n" \
+      "Install the Enlightenment ecosystem" | pv -qL 20
+    printf "2  $magenta_dim%s $off%s\n\n" \
+      "(Update and rebuild the ecosystem on Xorg)" | pv -qL 30
+    printf "3  $orange_dim%s $off%s\n\n" \
+      "(Update and rebuild the ecosystem with Wayland support)" \
+      | pv -qL 30
   else
-    printf "1  $green_dim%s $off%s\n\n" "(Install the Enlightenment ecosystem)" | pv -qL 30
-    printf "2  $magenta_bright%s $off%s\n\n" "Update and rebuild the ecosystem on Xorg" | pv -qL 20
-    printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 24
+    printf "1  $green_dim%s $off%s\n\n" \
+      "(Install the Enlightenment ecosystem)" | pv -qL 30
+    printf "2  $magenta_bright%s $off%s\n\n" \
+      "Update and rebuild the ecosystem on Xorg" | pv -qL 20
+    printf "3  $orange_bright%s $off%s\n\n" \
+      "Update and rebuild the ecosystem with Wayland support" \
+      | pv -qL 24
   fi
 
   sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."
@@ -348,7 +356,7 @@ e_tokens() {
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
-    read -r -t 12 -p "Do you want to back up your Enlightenment and Terminology settings now? [y/N] " answer
+    read -r -t 12 -p "Back up Enlightenment and Terminology settings? [y/N] " answer
     case $answer in
     y | Y)
       e_bkp
@@ -501,7 +509,8 @@ rebuild_wld() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "\n$red_bright%s $off%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "\n$red_bright%s $off%s\n\n" \
+      "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -596,7 +605,7 @@ do_tests() {
     printf "\n$green_bright%s $off%s\n\n" "Ubuntu ${distro^}... OK"
     sleep 1
   else
-    printf "\n$red_bright%s $off%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
+    printf "\n$red_bright%s $off%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -ds) ]."
     beep_exit
     exit 1
   fi

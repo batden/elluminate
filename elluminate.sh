@@ -617,6 +617,17 @@ do_tests() {
     exit 1
   fi
 
+  if [[ -f "$HOME/.cache/ebuilds/storepath" ]]; then
+    esrc=$(cat "$HOME/.cache/ebuilds/storepath")
+    if [[ -d "$esrc/e26" ]]; then
+      printf "\n$red_bright%s %s\n" "LEGACY BUILD FOLDER DETECTED: $esrc/e26"
+      printf "$red_bright%s %s\n" "PLEASE REFER TO THE README.MD FILE FOR INSTRUCTIONS."
+      printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
+      beep_exit
+      exit 1
+    fi
+  fi
+
   if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p "$HOME/.local/bin"
   fi

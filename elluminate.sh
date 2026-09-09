@@ -756,7 +756,7 @@ chk_sl() {
 }
 
 chk_mn() {
-  installed_meson_version=$(dpkg-query -W -f='${Version}' meson 2>/dev/null || true)
+  installed_mn_ver=$(dpkg-query -W -f='${Version}' meson 2>/dev/null || true)
 
   if [ ! -x /usr/bin/meson ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the recommended version of the meson package..."
@@ -767,7 +767,7 @@ chk_mn() {
     sudo dpkg -i meson_$mson.deb
     rm meson_$mson.deb
     cd "$HOME"
-  elif [ "$installed_meson_version" != "1.10.1-1ubuntu2" ]; then
+  elif [ "$installed_mn_ver" != "1.10.1-1ubuntu2" ]; then
     printf "\n$bold%s $off%s\n\n" "Updating Meson to the recommended version..."
     sleep 1
     sudo apt install -y python3-setuptools ninja-build

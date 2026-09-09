@@ -185,7 +185,7 @@ clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonete="git clone https://github.com/dimmus/eflete.git"
 
 # --- Programs to be built using the Meson build system ---
-prog_mn=(
+prog_mbs=(
   efl
   terminology
   enlightenment
@@ -395,7 +395,7 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for i in "${prog_mn[@]}"; do
+  for i in "${prog_mbs[@]}"; do
     cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Building $i..."
 
@@ -453,7 +453,7 @@ rebuild_optim() {
   $snin
   sudo ldconfig
 
-  for i in "${prog_mn[@]}"; do
+  for i in "${prog_mbs[@]}"; do
 
     cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
@@ -533,7 +533,7 @@ rebuild_wld() {
   $snin
   sudo ldconfig
 
-  for i in "${prog_mn[@]}"; do
+  for i in "${prog_mbs[@]}"; do
 
     cd "$esrc/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."

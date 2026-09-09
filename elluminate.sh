@@ -256,7 +256,7 @@ menu_selec() {
 }
 
 # --- Disk space check ---
-disk_spc() {
+disk_sp() {
   free_space=$(df -BG "$HOME" | awk 'NR==2 {print $4}' | sed 's/G//')
 
   if [ "$free_space" -lt 5 ]; then
@@ -966,7 +966,7 @@ lo() {
 # --- Then get the user's choice ---
 and_behold() {
   if [ "$usr_input" == 1 ]; then
-    disk_spc
+    disk_sp
     do_tests
     install_now
   elif [ "$usr_input" == 2 ]; then

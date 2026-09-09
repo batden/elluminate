@@ -229,7 +229,7 @@ beep_question() {
 # 2: This is a feature-rich, decently optimized build on Xorg, which is recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with NVIDIA drivers.
-menu_selec() {
+menu_slct() {
   is_einstl=$1
 
   echo
@@ -957,9 +957,9 @@ lo() {
   printf "\n$bold%s $off%s\n" "Please enter the number of your choice:"
 
   if [ ! -x /usr/local/bin/enlightenment_start ]; then
-    menu_selec false
+    menu_slct false
   else
-    menu_selec true
+    menu_slct true
   fi
 }
 

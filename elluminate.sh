@@ -55,7 +55,7 @@ off="\e[0m"
 PREFIX=/usr/local
 dldir=$(xdg-user-dir DOWNLOAD)
 docdir=$(xdg-user-dir DOCUMENTS)
-scrflr=$HOME/.elluminate
+scrfldr=$HOME/.elluminate
 rebasef="git config pull.rebase false"
 autgn="./autogen.sh --prefix=$PREFIX"
 snin="sudo ninja -C build install"
@@ -885,7 +885,7 @@ release_go() {
   printf "\n$magenta_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT - XORG *"
 
   # Check for available updates of the script folder first.
-  cd "$scrflr" && git pull &>/dev/null
+  cd "$scrfldr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
   sleep 1
@@ -917,7 +917,7 @@ wld_go() {
   printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT - WAYLAND *"
 
   # Check for available updates of the script folder first.
-  cd "$scrflr" && git pull &>/dev/null
+  cd "$scrfldr" && git pull &>/dev/null
   cp -f elluminate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elluminate.sh"
   sleep 1

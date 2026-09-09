@@ -697,7 +697,7 @@ set_p_src() {
   p_srcdir="$mypath"/sources
   echo "$p_srcdir" >"$HOME/.cache/ebuilds/storepath"
   printf "\n$green_bright%s $off%s\n\n" "You have chosen: $p_srcdir"
-  sleep 1
+  sleep 2
 }
 
 # --- Fetch and install prerequisites ---

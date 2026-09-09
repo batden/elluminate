@@ -506,7 +506,7 @@ rebuild_optim() {
 }
 
 # --- Update build (Wayland) ---
-rebuild_wld() {
+rebuild_wayld() {
   esrc=$(cat "$HOME/.cache/ebuilds/storepath")
 
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
@@ -922,7 +922,7 @@ wayld_go() {
   chmod +x "$HOME/.local/bin/elluminate.sh"
   sleep 1
 
-  rebuild_wld
+  rebuild_wayld
 
   sudo mkdir -p /usr/share/wayland-sessions
   sudo mv -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop \

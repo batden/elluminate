@@ -912,7 +912,7 @@ release_go() {
   exit 0
 }
 
-wld_go() {
+wayld_go() {
   clear
   printf "\n$orange_bright%s $off%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT - WAYLAND *"
 
@@ -974,7 +974,7 @@ and_behold() {
     release_go
   elif [ "$usr_input" == 3 ]; then
     do_tests
-    wld_go
+    wayld_go
   else
     beep_exit
     exit 1

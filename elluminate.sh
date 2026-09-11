@@ -407,7 +407,8 @@ build_plain() {
         -Dlua-interpreter=lua \
         -Devas-loaders-disabler=jxl \
         -Dglib=true \
-        -Ddocs=false
+        -Ddocs=false \
+        -Dpipewire=false
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -476,7 +477,8 @@ rebuild_optim() {
         -Ddrm=false \
         -Dwl=false \
         -Dbuild-tests=false \
-        -Ddocs=false
+        -Ddocs=false \
+        -Dpipewire=false
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -556,7 +558,9 @@ rebuild_wayld() {
         -Ddrm=true \
         -Dwl=true \
         -Dbuild-tests=false \
-        -Ddocs=false
+        -Ddocs=false \
+        -Dpipewire=false
+
       ninja -C build || mng_err
       ;;
     enlightenment)

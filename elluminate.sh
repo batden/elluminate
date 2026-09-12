@@ -465,7 +465,7 @@ rebuild_optim() {
     # unresolvable dependencies related to libpipewire. If this happens, you can try manually
     # fixing the issue by following the instructions below, in your terminal.
 
-    # cd "$(cat "$HOME/.cache/ebuilds/storepath")/enlighten/efl/"
+    # cd "$(cat "$HOME/.cache/ebuilds/storepath")/enlighten/efl"
     # meson setup --wipe build
     # ninja -C build
     # sudo ninja -C build install

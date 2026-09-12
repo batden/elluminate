@@ -470,7 +470,7 @@ rebuild_optim() {
     # ninja -C build
     # sudo ninja -C build install
     # sudo ldconfig
-    # Finally, run cd to return to your home directory.
+    # Finally, type cd to return to your home directory.
     # Now, you can relaunch the script and select option 2 again.
     case $i in
     efl)

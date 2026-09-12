@@ -461,23 +461,23 @@ rebuild_optim() {
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-# Note: Due to recent changes in the source code, rebuilding efl may fail due to missing and
-# unresolvable dependencies related to libpipewire. If this happens, you can try to manually
-# fix the issue by following the instructions below, in your terminal.
+    # Note: Due to recent changes in the source code, rebuilding efl may fail due to missing and
+    # unresolvable dependencies related to libpipewire. If this happens, you can try to manually
+    # fix the issue by following the instructions below, in your terminal.
 
-# cd $esrc/enlighten/efl/build
-# ninja -t clean
-# cd ..
-# Then copy and paste the entire meson setup command below, beginning with:
-# "meson setup --reconfigure build -Dbuildtype=plain \"
-# until:
-# "-Dpipewire=false"
-# Press Enter to execute the command.
-# Next, run ninja -C build
-# Now run sudo ninja -C build install, followed by sudo ldconfig
-# Run cd to return to your home directory.
-# Then relaunch the script and select option 2 again.
-case $i in
+    # cd $esrc/enlighten/efl/build
+    # ninja -t clean
+    # cd ..
+    # Then copy and paste the entire meson setup command below, beginning with:
+    # "meson setup --reconfigure build -Dbuildtype=plain \"
+    # until:
+    # "-Dpipewire=false"
+    # Press Enter to execute the command.
+    # Next, run ninja -C build
+    # Now run sudo ninja -C build install, followed by sudo ldconfig
+    # Run cd to return to your home directory.
+    # Then relaunch the script and select option 2 again.
+    case $i in
     efl)
       sudo chown "$USER" build/.ninja*
 
@@ -560,8 +560,8 @@ rebuild_wayld() {
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-# Note: See the comments in the rebuild_optim() function for instructions on how to fix
-# a failed efl rebuild (then relaunch the script and select option 3 again).
+    # Note: See the comments in the rebuild_optim() function for instructions on how to fix
+    # a failed efl rebuild (then relaunch the script and select option 3 again).
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*

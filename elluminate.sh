@@ -565,6 +565,7 @@ rebuild_wayld() {
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
+      
       meson setup --reconfigure build -Dbuildtype=plain \
         -Dnative-arch-optimization=true \
         -Dfb=true \

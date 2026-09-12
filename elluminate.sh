@@ -62,7 +62,7 @@ snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
 mson=1.10.1-1ubuntu2_all
-ddctl=2.2.7
+ddctl=3.0.0
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(
@@ -784,13 +784,13 @@ chk_mn() {
 }
 
 chk_ddctl() {
-  if [ -d "$esrc/ddcutil-2.2.5" ] || [ -d "$esrc/ddcutil-2.2.6" ]; then
+  if [ -d "$esrc/ddcutil-2.2.6" ] || [ -d "$esrc/ddcutil-2.2.7" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
 
-    if [ -d "$esrc/ddcutil-2.2.5" ]; then
-      olddir="$esrc/ddcutil-2.2.5"
-    elif [ -d "$esrc/ddcutil-2.2.6" ]; then
+    if [ -d "$esrc/ddcutil-2.2.6" ]; then
       olddir="$esrc/ddcutil-2.2.6"
+    elif [ -d "$esrc/ddcutil-2.2.7" ]; then
+      olddir="$esrc/ddcutil-2.2.7"
     fi
 
     cd "$olddir"

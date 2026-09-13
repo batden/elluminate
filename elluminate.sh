@@ -796,13 +796,13 @@ chk_mn() {
 }
 
 chk_ddctl() {
-  if [ -d "$esrc/ddcutil-2.2.6" ] || [ -d "$esrc/ddcutil-2.2.7" ]; then
+  if [ -d "$esrc/ddcutil-2.2.7" ] || [ -d "$esrc/ddcutil-3.0.0" ]; then
     printf "\n$bold%s $off%s\n" "Updating ddcutil..."
 
-    if [ -d "$esrc/ddcutil-2.2.6" ]; then
-      olddir="$esrc/ddcutil-2.2.6"
-    elif [ -d "$esrc/ddcutil-2.2.7" ]; then
+    if [ -d "$esrc/ddcutil-2.2.7" ]; then
       olddir="$esrc/ddcutil-2.2.7"
+    elif [ -d "$esrc/ddcutil-3.0.0" ]; then
+      olddir="$esrc/ddcutil-3.0.0"
     fi
 
     cd "$olddir"

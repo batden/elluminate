@@ -69,4 +69,4 @@ See [extinguish.sh](https://github.com/batden/extinguish).
 
 ## In the Picture
 
-![GitHub Image](/images/e_desktop.png)
+![Enlightenmnt desktop running on Ubuntu](/images/e_desktop.png)

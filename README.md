@@ -9,7 +9,7 @@
 >
 > _Sorry for the inconvenience._
 
-**This is a premium Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.**
+**This is a Bash script for building, installing, or updating Enlightenment on Ubuntu 22.04 LTS.**
 
 Please refer to the script comments for more information.
 
@@ -31,7 +31,7 @@ sudo apt install git sound-icons
 Next, clone the repository:
 
 ```bash
-git clone https://github.com/batden/elluminate.git .elluminate
+git clone https://github.com/batden/elluminate.git ~/.elluminate
 ```
 
 This creates a new hidden folder named .elluminate in your home directory.

@@ -5,13 +5,13 @@
 # based on the Enlightenment Foundation Libraries (EFL) on your Ubuntu, Kubuntu,
 # or Xubuntu LTS desktop system.
 
-# Supported distribution: Jammy Jellyfish.
-
-# ELLUMINATE.SH handles the downloading, configuration, and building of everything necessary to enjoy
-# the latest version of this unique environment. You can update your Enlightenment desktop
-# at any time, so there's no need to wait for the release of new DEB packages.
-# The programs are also better suited to your hardware. You can even collaborate with the
-# developers by reporting bugs, submitting patches, and improving translations.
+# ELLUMINATE.SH only supports Jammy Jellyfish. It does not support other ubuntu releases or
+# non-Ubuntu distributions. It handles downloading, configuring, and building everything
+# necessary to enjoy the latest version of this unique environment. You can update your
+# Enlightenment desktop at any time, so there's no need to wait for the release of
+# new DEB packages. The programs are also better suited to your hardware. You can
+# even collaborate with the developers by reporting bugs, submitting patches,
+# and improving translations.
 
 # Optional: Additional steps may be taken to achieve optimal results.
 # Please refer to the comments of the build_plain() function.

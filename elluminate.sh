@@ -62,7 +62,7 @@ snin="sudo ninja -C build install"
 smil="sudo make install"
 distro=$(lsb_release -sc)
 mson=1.10.1-1ubuntu2_all
-ddctl=3.0.0
+ddctl=3.0.1
 
 # --- Build dependencies, recommended and script-related packages ---
 deps=(

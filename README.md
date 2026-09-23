@@ -67,6 +67,10 @@ You can uninstall Enlightenment and related applications from your computer at a
 
 See [extinguish.sh](https://github.com/batden/extinguish).
 
+> Cloning the extinguish repository alongside the current elluminate repository may also be beneficial.
+>
+> This will ensure a clean uninstallation.
+
 ## In the Picture
 
 ![Enlightenmnt desktop running on Ubuntu](/images/e_desktop.png)

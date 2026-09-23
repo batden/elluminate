@@ -67,9 +67,9 @@ You can uninstall Enlightenment and related applications from your computer at a
 
 See [extinguish.sh](https://github.com/batden/extinguish).
 
-> Cloning the extinguish repository alongside the current elluminate repository may also be beneficial.
->
-> This will ensure a clean uninstallation.
+Cloning the extinguish repository alongside the current elluminate repository may also be beneficial.
+
+This will ensure a smooth uninstallation.
 
 ## In the Picture
 

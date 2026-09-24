@@ -37,6 +37,9 @@
 # If you find our scripts useful, please consider starring our repositories.
 # Thank you!
 
+# --- Uncomment the following line if you want the script to output in English. ---
+#export LANG=C
+
 # --- Color and formatting ---
 green_bright="\e[1;38;5;118m"
 magenta_bright="\e[1;38;5;201m"

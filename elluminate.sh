@@ -637,10 +637,10 @@ do_tests() {
   fi
 
   # Note: The legacy directory "e26", which was used until recently for the source folders, has been renamed
-  # "enlighten". Existing users will need to uninstall their current Enlightenment environment
-  # if the deprecated directory name is still present.
-  # Use version V17.4 available at https://github.com/batden/extinguish/releases/tag/V17.4 of
-  # the EXTINGUISH.SH script before reinstalling the environment. Sorry for the inconvenience.
+  # "enlighten". Existing users will need to uninstall their current Enlightenment environment if the
+  # deprecated directory name is still present.
+  # Please use version V17.4 available at https://github.com/batden/extinguish/releases/tag/V17.4
+  # of the EXTINGUISH.SH script before reinstalling the environment. Sorry for the inconvenience.
   if [[ -f "$HOME/.cache/ebuilds/storepath" ]]; then
     esrc=$(cat "$HOME/.cache/ebuilds/storepath")
     if [[ -d "$esrc/e26" ]]; then

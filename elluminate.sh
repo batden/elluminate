@@ -636,12 +636,16 @@ do_tests() {
     exit 1
   fi
 
+  # Note: The legacy directory "e26", which was used until recently for the source folders, has been renamed
+  # "enlighten". Existing users will need to uninstall their current Enlightenment environment
+  # if the deprecated directory name is still present.
+  # Use version V17.4 available at https://github.com/batden/extinguish/releases/tag/V17.4 of
+  # the EXTINGUISH.SH script before reinstalling the environment. Sorry for the inconvenience.
   if [[ -f "$HOME/.cache/ebuilds/storepath" ]]; then
     esrc=$(cat "$HOME/.cache/ebuilds/storepath")
     if [[ -d "$esrc/e26" ]]; then
       printf "\n$red_bright%s %s\n" "LEGACY BUILD FOLDER DETECTED: $esrc/e26"
-      printf "$red_bright%s %s\n" "PLEASE REFER TO THE README.MD FILE FOR INSTRUCTIONS."
-      printf "$red_bright%s $off%s\n\n" "SCRIPT ABORTED."
+      printf "$red_bright%s $off%s\n\n" "SEE THE NOTE IN THE do_tests() FUNCTION."
       beep_exit
       exit 1
     fi

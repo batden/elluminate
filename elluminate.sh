@@ -463,9 +463,9 @@ rebuild_optim() {
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    # Note: Due to recent changes in the source code, rebuilding efl may fail due to missing and
-    # unresolvable dependencies related to libpipewire. If this happens, you can try manually
-    # fixing the issue by following the instructions below, in your terminal.
+    # Note: Due to changes in the source code, rebuilding efl may fail due to missing and
+    # unresolvable dependencies related to libpipewire. If this happens, you can try to
+    # manually resolve the issue by following the instructions below, in your terminal.
 
     # cd "$(cat "$HOME/.cache/ebuilds/storepath")/enlighten/efl"
     # meson setup --wipe build

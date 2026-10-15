@@ -387,7 +387,7 @@ rstrt_e() {
 
 # --- Install build (Xorg) ---
 build_plain() {
-# Add optional JXL support before executing the script?
+# Add optional jxl support before executing the script?
 # JPEG XL currently has to be compiled from source.
 # If you need jxl support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
@@ -464,8 +464,8 @@ rebuild_optim() {
     $rebasef && git pull
 
     # Note: Due to changes in the source code, rebuilding efl may fail due to missing and
-    # unresolvable dependencies related to libpipewire. If this happens, you can try to
-    # manually resolve the issue by following the instructions below, in your terminal.
+    # unsolvable dependencies related to libpipewire. If this happens, you can try to
+    # manually fix the issue by following the instructions below, in your terminal.
 
     # cd "$(cat "$HOME/.cache/ebuilds/storepath")/enlighten/efl"
     # meson setup --wipe build

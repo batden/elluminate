@@ -231,6 +231,7 @@ beep_question() {
 # 2: This is a feature-rich, decently optimized build on Xorg, which is recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with NVIDIA drivers.
+
 menu_slct() {
   is_einstl=$1
 
@@ -290,6 +291,7 @@ cnt_dir() {
     beep_exit
     exit 1
   fi
+
   # Tip: You can try to download the missing file(s) manually (see clonefl or clonenl), then
   # rerun the script and select option 1 again; or relaunch the script at a later time.
   # In both cases, be sure to enter the same path for the Enlightenment source folders
@@ -332,6 +334,7 @@ e_bkp() {
     cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" 2>/dev/null || true
 
     sleep 2
+
   # Timestamp: See the date man page to convert epoch to a human-readable date
   # or visit https://www.epochconverter.com/
   # To restore a backup, use the same commands that were run, but with the source
@@ -387,12 +390,12 @@ rstrt_e() {
 
 # --- Install build (Xorg) ---
 build_plain() {
-# Add optional jxl support before executing the script?
-# JPEG XL currently has to be compiled from source.
-# If you need jxl support in efl, please follow the instructions below:
-# https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
-# Then change the option “-Devas-loaders-disabler=jxl” to “-Devas-loaders-disabler=” (no value at the end)
-# whenever it's applicable.
+  # Add optional jxl support before executing the script?
+  # JPEG XL currently has to be compiled from source.
+  # If you need jxl support in efl, please follow the instructions below:
+  # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
+  # Then change the option “-Devas-loaders-disabler=jxl” to “-Devas-loaders-disabler=” (no value at the end)
+  # whenever it's applicable.
 
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
@@ -474,6 +477,7 @@ rebuild_optim() {
     # sudo ldconfig
     # Finally, type cd to return to your home directory.
     # Now, you can relaunch the script and select option 2 again.
+
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
@@ -557,6 +561,7 @@ rebuild_wayld() {
 
     # Note: See the comments in the rebuild_optim() function for instructions on how to fix
     # a failed efl rebuild (then relaunch the script and select option 3 again).
+
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
@@ -642,6 +647,7 @@ do_tests() {
   # deprecated directory name is still present.
   # Please use version V17.4 available at https://github.com/batden/extinguish/releases/tag/V17.4
   # of the EXTINGUISH.SH script before reinstalling the environment. Sorry for the inconvenience.
+
   if [[ -f "$HOME/.cache/ebuilds/storepath" ]]; then
     esrc=$(cat "$HOME/.cache/ebuilds/storepath")
     if [[ -d "$esrc/e26" ]]; then

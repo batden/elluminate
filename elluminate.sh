@@ -5,7 +5,7 @@
 # based on the Enlightenment Foundation Libraries (EFL) on your Ubuntu, Kubuntu,
 # or Xubuntu LTS desktop system.
 
-# ELLUMINATE.SH only supports Jammy Jellyfish. It does not support other ubuntu releases or
+# ELLUMINATE.SH only supports Jammy Jellyfish. It does not support other Ubuntu releases or
 # non-Ubuntu distributions. It handles downloading, configuring, and building everything
 # necessary to enjoy the latest version of this unique environment. You can update your
 # Enlightenment desktop at any time, so there's no need to wait for the release of
@@ -237,21 +237,13 @@ menu_slct() {
 
   echo
   if [ "$is_einstl" == false ]; then
-    printf "1  $green_bright%s $off%s\n\n" \
-      "Install the Enlightenment ecosystem" | pv -qL 20
-    printf "2  $magenta_dim%s $off%s\n\n" \
-      "(Update and rebuild the ecosystem on Xorg)" | pv -qL 30
-    printf "3  $orange_dim%s $off%s\n\n" \
-      "(Update and rebuild the ecosystem with Wayland support)" \
-      | pv -qL 30
+    printf "1  $green_bright%s $off%s\n\n" "Install the Enlightenment ecosystem" | pv -qL 20
+    printf "2  $magenta_dim%s $off%s\n\n" "(Update and rebuild the ecosystem)" | pv -qL 30
+    printf "3  $orange_dim%s $off%s\n\n" "(Update and rebuild with Wayland support)" | pv -qL 30
   else
-    printf "1  $green_dim%s $off%s\n\n" \
-      "(Install the Enlightenment ecosystem)" | pv -qL 30
-    printf "2  $magenta_bright%s $off%s\n\n" \
-      "Update and rebuild the ecosystem on Xorg" | pv -qL 20
-    printf "3  $orange_bright%s $off%s\n\n" \
-      "Update and rebuild the ecosystem with Wayland support" \
-      | pv -qL 24
+    printf "1  $green_dim%s $off%s\n\n" "(Install the Enlightenment ecosystem)" | pv -qL 30
+    printf "2  $magenta_bright%s $off%s\n\n" "Update and rebuild the ecosystem" | pv -qL 20
+    printf "3  $orange_bright%s $off%s\n\n" "Update and rebuild with Wayland support" | pv -qL 24
   fi
 
   sleep 1 && printf "$italic%s $off%s\n\n" "Or press Ctrl+C to quit."

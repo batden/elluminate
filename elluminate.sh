@@ -661,7 +661,7 @@ do_tests() {
 
 # --- Create bash_aliases file ---
 do_bsh_alias() {
-  if [ -f "$HOME/.bash_aliases" ]; then
+  if [[ -f "$HOME/.bash_aliases" ]]; then
     mv -vb "$HOME/.bash_aliases" "$HOME/.bash_aliases_bak"
     echo
     touch "$HOME/.bash_aliases"
@@ -670,22 +670,22 @@ do_bsh_alias() {
   fi
 
   cat >"$HOME/.bash_aliases" <<EOF
-    # Compiler and linker flags added by ELLUMINATE.SH
-    export CC="ccache gcc"
-    export CXX="ccache g++"
-    export USE_CCACHE=1
-    export CCACHE_COMPRESS=6
-    export CPPFLAGS=-I/usr/local/include
-    export LDFLAGS=-L/usr/local/lib
-    export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
+# Compiler and linker flags added by ELLUMINATE.SH
+export CC="ccache gcc"
+export CXX="ccache g++"
+export USE_CCACHE=1
+export CCACHE_COMPRESS=6
+export CPPFLAGS=-I/usr/local/include
+export LDFLAGS=-L/usr/local/lib
+export PKG_CONFIG_PATH=/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 
-    # Keyring service workaround for Enlightenment.
-    # You also need to autostart some additional services at startup for this to work:
-    # See the repository's wiki (Startup Applications) for more info.
-    #
-    if printenv | grep -q 'XDG_CURRENT_DESKTOP=Enlightenment'; then
-      export SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh
-    fi
+# Keyring service workaround for Enlightenment.
+# You also need to autostart some additional services at startup for this to work:
+# See the repository's wiki (Startup Applications) for more info.
+#
+if printenv | grep -q 'XDG_CURRENT_DESKTOP=Enlightenment'; then
+  export SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh
+fi
 EOF
 
   source "$HOME/.bash_aliases"

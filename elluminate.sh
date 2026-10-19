@@ -78,6 +78,7 @@ deps=(
   doxygen
   fonts-noto
   freeglut3-dev
+  gperf
   graphviz
   gstreamer1.0-libav
   gstreamer1.0-plugins-bad

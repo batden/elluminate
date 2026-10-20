@@ -302,10 +302,10 @@ cnt_dir() {
     exit 1
     ;;
   *)
-    printf "\n$yellow_bright%s %s\n" "WARNING: ONLY $count OF 15 PROGRAMS HAVE BEEN DOWNLOADED!"
-    printf "\n$yellow_bright%s $off%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
+    printf "\n$yellow_bright%s %s\n" "WARNING: Only $count of 15 programs have been downloaded!"
+    printf "\n$yellow_bright%s $off%s\n\n" "Wait 10 seconds or hit Ctrl+C to exit now."
     beep_attention
-    sleep 12
+    sleep 10
     ;;
   esac
 }

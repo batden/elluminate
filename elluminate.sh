@@ -458,18 +458,6 @@ rebuild_optim() {
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    # Note: Due to changes in the source code, rebuilding efl may fail due to missing and
-    # unsolvable dependencies related to libpipewire. If this happens, you can try to
-    # manually fix the issue by following the instructions below, in your terminal.
-
-    # cd "$(cat "$HOME/.cache/ebuilds/storepath")/enlighten/efl"
-    # meson setup --wipe build
-    # ninja -C build
-    # sudo ninja -C build install
-    # sudo ldconfig
-    # Finally, type cd to return to your home directory.
-    # Now, you can relaunch the script and select option 2 again.
-
     case $i in
     efl)
       sudo chown "$USER" build/.ninja*
@@ -550,9 +538,6 @@ rebuild_wayld() {
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
-
-    # Note: See the comments in the rebuild_optim() function for instructions on how to fix
-    # a failed efl rebuild (then relaunch the script and select option 3 again).
 
     case $i in
     efl)

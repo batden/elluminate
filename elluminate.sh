@@ -760,6 +760,21 @@ mv_sysfiles() {
     /usr/share/xsessions/enlightenment.desktop
 }
 
+# --- Remove unneeded Enlightenment system files ---
+rm_sysfiles() {
+  if [ -e /usr/local/etc/enlightenment/sysactions.conf ]; then
+    sudo rm -f /usr/local/etc/enlightenment/sysactions.conf
+  fi
+
+  if [ -e /usr/local/etc/enlightenment/system.conf ]; then
+    sudo rm -f /usr/local/etc/enlightenment/system.conf
+  fi
+
+  if [ -e /usr/local/etc/xdg/menus/e-applications.menu ]; then
+    sudo rm -f /usr/local/etc/xdg/menus/e-applications.menu
+  fi
+}
+
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the pv command for menu animation..."
@@ -912,6 +927,7 @@ release_go() {
   sleep 1
 
   rebuild_optim
+  rm_sysfiles
 
   sudo mv -f /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop &>/dev/null
@@ -944,6 +960,7 @@ wayld_go() {
   sleep 1
 
   rebuild_wayld
+  rm_sysfiles
 
   sudo mkdir -p /usr/share/wayland-sessions
   sudo mv -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop \

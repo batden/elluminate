@@ -618,10 +618,10 @@ do_tests() {
     beep_exit
     exit 1
   fi
-
-  # Note: The legacy directory "e26", which was used until recently for the source folders, has been renamed
-  # "enlighten". Existing users will need to uninstall their current Enlightenment environment if the
-  # deprecated directory name is still present.
+  
+  # Note: The "e26" legacy directory, which was used for the source folders, has been renamed "Enlighten."
+  # If the deprecated directory name is still present, existing users will need to uninstall their
+  # current Enlightenment environment.
   # Please use version V17.4 available at https://github.com/batden/extinguish/releases/tag/V17.4
   # of the EXTINGUISH.SH script before reinstalling the environment. Sorry for the inconvenience.
 

@@ -890,7 +890,7 @@ install_now() {
   beep_ok
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
-  # to your Desktop, you can safely delete them if it bothers you.
+  # to your Desktop folder. You can safely delete them if it bothers you.
 
   cowsay "Now log out of your existing session, then select Enlightenment on the login screen... \
   That's All Folks!" | lolcat -a

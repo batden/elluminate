@@ -352,7 +352,7 @@ e_tokens() {
     sleep 2
   elif [[ "$token" -gt 4 ]]; then
     echo
-    # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
+    # Questions: Type y or n, or press <Enter> to accept the default value (a capital letter).
     beep_question
     read -r -t 12 -p "Back up Enlightenment and Terminology settings? [y/N] " answer
     case $answer in

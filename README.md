@@ -64,4 +64,4 @@ This will ensure a smooth uninstallation.
 
 ## In the Picture
 
-![Enlightenmnt desktop running on Ubuntu](/images/e_desktop.png)
+![Enlightenmnt desktop running on Ubuntu](/images/e_wl_desktop.jpg)

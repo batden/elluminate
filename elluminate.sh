@@ -86,7 +86,6 @@ deps=(
   gstreamer1.0-plugins-ugly
   hwdata
   i2c-tools
-  imagemagick
   libacl1-dev
   libaom-dev
   libasound2-dev

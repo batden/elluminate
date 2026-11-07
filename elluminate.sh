@@ -68,7 +68,6 @@ ddctl=3.0.2
 # --- Build dependencies, recommended and script-related packages ---
 deps=(
   arc-theme
-  aspell
   bear
   build-essential
   ccache
@@ -82,9 +81,7 @@ deps=(
   graphviz
   gstreamer1.0-libav
   gstreamer1.0-plugins-bad
-  gstreamer1.0-plugins-good
   gstreamer1.0-plugins-ugly
-  hwdata
   i2c-tools
   libacl1-dev
   libaom-dev
@@ -164,7 +161,6 @@ deps=(
   wayland-protocols
   wmctrl
   xdotool
-  xserver-xephyr
   xwayland
 )
 
@@ -617,7 +613,7 @@ do_tests() {
     beep_exit
     exit 1
   fi
-  
+
   # Note: The "e26" legacy directory, which was used for the source folders, has been renamed "Enlighten."
   # If the deprecated directory name is still present, existing users will need to uninstall their
   # current Enlightenment environment.
